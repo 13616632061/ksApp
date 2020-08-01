@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_marginTop="@dimen/bottom_bar_height"
+        android:layout_marginLeft="@dimen/layout_x_200"
+        android:background="@drawable/btn_corner_whitle"
+        android:id="@+id/stock_warning_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:textSize="14sp"
+            android:layout_centerVertical="true"
+            android:text="@string/tv_stock_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_round_shape"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/btn_stock_warning_num"
+            android:text=""
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="@dimen/layout_x_200"
+        android:background="@drawable/btn_corner_whitle"
+        android:id="@+id/less_goods_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:textSize="14sp"
+            android:layout_centerVertical="true"
+            android:text="@string/tv_less_goods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_round_shape"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/btn_less_goods_num"
+            android:text=""
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="@dimen/layout_x_200"
+        android:background="@drawable/btn_corner_whitle"
+    android:id="@+id/drop_goods_layout"
+    android:layout_width="match_parent"
+    android:layout_height="45dp">
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:textSize="14sp"
+        android:layout_centerVertical="true"
+        android:text="@string/tv_down_goods"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:gravity="center"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_round_shape"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btn_drop_goods_num"
+        android:text=""
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+</RelativeLayout>
+
+</LinearLayout>

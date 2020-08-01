@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffff8905</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--字体的颜色，纯黑色-->
+    <color name="blackText">#000000</color>
+    <!--透明度颜色-->
+    <color name="alpha_10_black">#1A000000</color>
+    <!--透明色-->
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <!--白色-->
+    <color name="whilte">#ffffff</color>
+
+    <color name="color_e8e8e8">#e8e8e8</color>
+    <color name="color_ff727272">#ff727272</color>
+
+
+</resources>

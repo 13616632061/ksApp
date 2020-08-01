@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="42dp"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="?gray_bg"
+    android:orientation="vertical">
+    <RadioGroup
+        android:id="@+id/rg_btn"
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:gravity="center">
+        <RadioButton
+            android:id="@+id/btn_good"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:textColor="@drawable/btn_shape"
+            android:button="@android:color/transparent"
+            android:textSize="15sp"
+            android:text="总店"/>
+
+        <RadioButton
+            android:id="@+id/btn_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="分店"
+            android:textColor="@drawable/btn_shape"
+            android:textSize="15sp" />
+
+    </RadioGroup>
+    <LinearLayout
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        android:weightSum="2">
+        <View
+            android:id="@+id/btn_main_line"
+            android:layout_height="2dp"
+            android:background="#ff8704"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:layout_width="0dp"/>
+        <View
+            android:id="@+id/btn_branch_line"
+            android:layout_height="2dp"
+            android:background="#ff8704"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:layout_width="0dp"/>
+    </LinearLayout>
+</LinearLayout>

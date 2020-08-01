@@ -1,0 +1,30 @@
+<RelativeLayout android:background="?gray_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:id="@id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <ListView
+        android:layout_below="@id/toolbar_layout"
+        android:background="@android:color/transparent"
+        android:listSelector="@android:color/transparent"
+        android:id="@id/lv_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:choiceMode="singleChoice"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollingCache="true"
+        android:smoothScrollbar="true"
+        android:scrollbars="none"/>
+    <include
+        android:layout_below="@id/toolbar_layout"
+        android:id="@id/layout_err"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/layout_err" />
+
+</RelativeLayout>
+

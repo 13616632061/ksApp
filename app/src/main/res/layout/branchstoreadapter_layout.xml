@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="?gray_bg"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/branchstore_layout"
+        android:layout_marginBottom="1dp"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+    <Button
+        android:id="@+id/btn_branchstore_num"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:text="1"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/viewpager_point_res"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/tv_branchstore_no"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/btn_branchstore_num"
+            android:text="NO:10001"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_branchstore_name"
+            android:layout_marginLeft="80dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_branchstore_no"
+            android:text="NO:10001"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_branchstore_drop"
+            android:src="@drawable/drop"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+        <ImageView
+            android:id="@+id/iv_branchstore_pull_up"
+            android:src="@drawable/pull_up"
+            android:visibility="gone"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="15sp"
+            android:layout_height="15sp" />
+    </RelativeLayout>
+    <include
+        android:id="@+id/branchstoreinfo_report_seller"
+        android:visibility="gone"
+        layout="@layout/report_seller"></include>
+
+</LinearLayout>

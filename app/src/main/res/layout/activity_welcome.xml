@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+    android:id="@id/relativeLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff67a8e2"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.ui.util.StretchyImageView
+        android:src="@drawable/bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@id/relativeLayout2"
+            android:paddingBottom="6.0dip"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+            <ImageView
+                android:id="@id/imageView1"
+                android:src="@drawable/w1"
+                android:duplicateParentState="true"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:layout_marginTop="3.0dip"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:textSize="14sp"
+                android:layout_below="@id/imageView1"
+                android:textColor="@color/text_secondary_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="普通登录"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@id/relativeLayout1"
+            android:paddingBottom="6.0dip"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+            <ImageView
+                android:id="@id/imageView1"
+                android:src="@drawable/w2"
+                android:duplicateParentState="true"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:layout_marginTop="3.0dip"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:textSize="14sp"
+                android:layout_below="@id/imageView1"
+                android:textColor="@color/text_secondary_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="易星到家"/>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@id/relativeLayout3"
+            android:paddingBottom="6.0dip"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+            <ImageView
+                android:id="@id/imageView1"
+                android:src="@drawable/w3"
+                android:duplicateParentState="true"
+                android:layout_width="60.0dip"
+                android:layout_height="60.0dip"
+                android:layout_marginTop="3.0dip"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:textSize="14sp"
+                android:layout_below="@id/imageView1"
+                android:textColor="@color/text_secondary_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商户登录"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

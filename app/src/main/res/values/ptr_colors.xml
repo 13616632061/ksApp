@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ptr_red">#FFC93437</color>
+    <color name="ptr_blue">#FF375BF1</color>
+    <color name="ptr_yellow">#FFF7D23E</color>
+    <color name="ptr_green">#FF34A350</color>
+</resources>

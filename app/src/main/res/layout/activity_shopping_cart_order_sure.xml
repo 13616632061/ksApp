@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shopping_cart_order_sure"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.ui.ks.ShoppingCartOrderSureActivity">
+    <include
+        layout="@layout/toolbar" android:id="@+id/toolbar_layout" />
+    <LinearLayout
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_above="@+id/layout_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    <ListView
+        android:background="@android:color/transparent"
+        android:scrollbars="none"
+        android:scrollingCache="false"
+        android:animationCache="false"
+        android:smoothScrollbar="true"
+        android:id="@+id/list_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </ListView>
+    </LinearLayout>
+    <View
+        android:layout_above="@+id/layout_bottom"
+        android:background="@drawable/line"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"></View>
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <RelativeLayout
+            android:background="@drawable/btn_corner_whitle"
+            android:id="@+id/layout_adress"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+            <ImageView
+                android:id="@+id/iv_adress"
+                android:src="@drawable/adress_gray"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_name"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/iv_adress"
+                android:textSize="14sp"
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/tv_phone"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/tv_name"
+                android:textSize="14sp"
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/iv_adress"
+                android:text=""
+                android:hint="@string/str210"
+                android:lines="2"
+                android:id="@+id/tv_area"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentBottom="true"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/iv_right"
+                android:layout_toRightOf="@+id/tv_area"
+                android:text=""
+                android:lines="2"
+                android:id="@+id/tv_adress"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentBottom="true"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_right"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/righit"
+                android:layout_alignParentRight="true"
+                android:layout_width="15dp"
+                android:layout_height="15dp" />
+
+        </RelativeLayout>
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_submitorders"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/select_remove_red_background"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:text="@string/title_activity_submitorder"
+            android:layout_width="100dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/tv_total_money"
+            android:layout_alignParentBottom="true"
+            android:textSize="16sp"
+            android:textColor="@color/primary_color"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toLeftOf="@+id/tv_submitorders"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toLeftOf="@+id/tv_total_money"
+            android:text="@string/str209"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

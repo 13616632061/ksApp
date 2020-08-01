@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ll"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/ll_iamge"
+        android:layout_marginTop="@dimen/layout_x_80"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:layout_marginBottom="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+
+            android:maxLines="1"
+            android:text="图片"
+            android:textSize="@dimen/layout_x_26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <ImageView
+            android:layout_toRightOf="@+id/tv_good_price"
+            android:id="@+id/iv_goodpicture"
+            android:scaleType="fitXY"
+            android:src="@drawable/imageadd"
+            android:layout_marginLeft="15dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:layout_marginBottom="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+
+            android:maxLines="1"
+            android:text="描述"
+            android:textSize="@dimen/layout_x_26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:textColor="#000000"
+            android:id="@+id/ed_describe"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:paddingRight="20dp"
+            android:hint="轮播图描述"
+            android:maxLength="20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:layout_marginBottom="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="链接"
+            android:textSize="@dimen/layout_x_26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:id="@+id/ed_link"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:paddingRight="20dp"
+            android:hint="跳转链接"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:text="删除"
+            android:textSize="16sp"
+            android:background="@drawable/btn_corner_whitle"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_preservation"
+            android:text="@string/tv_save"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="12sp"
+            android:id="@+id/tv_numbler1"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/iv_goods_picture1"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/iv_goods_picture1"
+            android:id="@+id/tv_good_name1"
+            android:text=""
+            android:singleLine="true"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="8dp"
+            android:textColor="#adadad"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tv_good_name1"
+            android:id="@+id/tv_good_salemoney1"
+            android:singleLine="true"
+            android:text=""
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="8dp"
+            android:textColor="#adadad"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tv_good_salemoney1"
+            android:singleLine="true"
+            android:id="@+id/tv_good_num1"
+            android:text=""
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>

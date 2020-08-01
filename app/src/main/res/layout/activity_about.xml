@@ -1,0 +1,83 @@
+<RelativeLayout android:background="?gray_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:id="@id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <ScrollView
+        android:scrollbars="none"
+        android:fadingEdge="none"
+        android:overScrollMode="always"
+        android:layout_below="@id/toolbar_layout"
+        android:id="@id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true">
+        <RelativeLayout
+            android:paddingBottom="15.0dip"
+            android:paddingTop="15.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <!--<com.makeramen.roundedimageview.RoundedImageView-->
+                <!--android:id="@+id/about_logo"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:src="@drawable/logo"-->
+                <!--app:riv_corner_radius="20dip"-->
+                <!--app:riv_border_width="2dip"-->
+                <!--app:riv_border_color="#ffffff"-->
+                <!--app:riv_mutate_background="true"-->
+                <!--app:riv_oval="false" />-->
+            <TextView
+                android:lineSpacingExtra="4.0dip"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:singleLine="false"
+                android:textColor="@color/text_secondary_color"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textSize="14.0sp"
+                android:id="@+id/about_version_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"  />
+
+            <LinearLayout
+                android:layout_below="@+id/about_version_text"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/set_line" android:id="@+id/set_update_item" />
+                <include layout="@layout/set_line" android:id="@+id/set_fk_item" />
+
+                <LinearLayout
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Copyright ©2015-2020"
+                        android:singleLine="false"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_hint_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginTop="3dp"
+                        android:text="易之星(深圳)科技有限公司"
+                        android:singleLine="false"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_hint_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

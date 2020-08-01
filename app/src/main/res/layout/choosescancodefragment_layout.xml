@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/gray_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.ui.SafeEdit.SafeEdit
+            android:id="@+id/et_safeedit"
+            android:background="@drawable/edittext_selecter"
+            android:hint="@string/str40"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="245dp"
+            android:layout_height="55dp" />
+        <com.ui.SafeEdit.ViewfinderView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/viewfinder_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</FrameLayout>

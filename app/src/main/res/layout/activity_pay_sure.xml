@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pay_sure"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.ui.ks.PaySureActivity">
+    <include
+        layout="@layout/toolbar" android:id="@+id/toolbar_layout" />
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_below="@+id/toolbar_layout"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <TextView
+            android:id="@+id/tv_paymoney"
+            android:textSize="30sp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/primary_color"
+            android:text="￥21.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_paymoney"
+            android:textSize="14sp"
+            android:text="需支付"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:paddingLeft="55dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_paymoney"
+            android:textSize="14sp"
+            android:text="订单将在24小时后删除，请尽快支付"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:id="@+id/layout_weixin"
+        android:layout_below="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <ImageView
+            android:id="@+id/iv_weixin"
+            android:layout_marginLeft="35dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/weixin"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_weixin"
+            android:text="微信支付"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/check_weixin"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layout_zhifubao"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_below="@+id/layout_weixin"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <ImageView
+            android:id="@+id/iv_zhifubao"
+            android:layout_marginLeft="35dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/zhifubao"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_zhifubao"
+            android:text="支付宝支付"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:id="@+id/check_zhifubao"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <Button
+        android:background="@drawable/btn_corner_red"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:text="确定支付"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="55dp"
+        android:layout_below="@+id/layout_zhifubao"
+        android:id="@+id/btn_surepay"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+</RelativeLayout>

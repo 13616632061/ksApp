@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/selector_cell_pressed"
+    android:padding="@dimen/layout_x_5"
+    android:minHeight="@dimen/layout_x_75"
+    android:layout_height="@dimen/layout_x_75">
+    <RelativeLayout
+        android:id="@+id/datelayout"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="@dimen/layout_x_15"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_orderlist_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#bababa"
+            android:text=""
+            android:textSize="@dimen/layout_x_18" />
+        <TextView
+            android:id="@+id/tv_orderlist_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_orderlist_date"
+            android:textColor="#bababa"
+            android:text=""
+            android:textSize="@dimen/layout_x_18" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_marginLeft="@dimen/layout_x_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/datelayout"
+        android:textColor="#bababa"
+        android:text=""
+        android:textSize="@dimen/layout_x_18" />
+
+    <RelativeLayout
+        android:layout_toRightOf="@id/iv_payment"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/layout_x_45"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_sendtype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/layout_x_18"
+            android:text=""/>
+        <TextView
+            android:id="@+id/tv_payment"
+            android:layout_below="@id/tv_sendtype"
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/layout_x_18"
+            android:text=""/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_payprice"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/layout_x_15"
+        android:textSize="@dimen/layout_x_27"
+        android:singleLine="true"
+        android:textColor="@color/text_color"
+        android:text="" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/layout_x_10"
+        android:layout_toLeftOf="@id/tv_payprice"
+        android:textSize="@dimen/layout_x_20"
+        android:singleLine="true"
+        android:textColor="@color/text_color"
+        android:text="+" />
+
+</RelativeLayout>

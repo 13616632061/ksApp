@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <RelativeLayout
+            android:id="@+id/layout_shopper"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo_default"
+            android:id="@+id/iv_logo"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:id="@+id/tv_shoppername"
+            android:textSize="14sp"
+            android:text=""
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_toRightOf="@+id/tv_shoppername"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/right_gray"
+                android:layout_width="12dp"
+                android:layout_height="12dp" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_paystatus"
+            android:textColor="#ff0000"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:text="@string/str170"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@color/gray_bg"
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+        <ImageView
+            android:id="@+id/iv_shoppingpicture1"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+        <TextView
+            android:id="@+id/tv_shoppingname1"
+            android:textSize="14sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:layout_toRightOf="@+id/iv_shoppingpicture1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/tv_shoppingprice1"
+            android:textSize="14sp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/primary_color"
+            android:text="$36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text=""
+            android:id="@+id/tv_nums1"
+            android:textSize="14sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:background="@color/gray_bg"
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+        <ImageView
+            android:id="@+id/iv_shoppingpicture2"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+        <TextView
+            android:id="@+id/tv_shoppingname2"
+            android:textSize="14sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:layout_toRightOf="@+id/iv_shoppingpicture2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_shoppingprice2"
+            android:textSize="14sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/primary_color"
+            android:text=""
+            android:layout_toRightOf="@+id/iv_shoppingpicture2"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text=""
+            android:id="@+id/tv_nums2"
+            android:textSize="14sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:background="@color/gray_bg"
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+        <ImageView
+            android:id="@+id/iv_shoppingpicture3"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+        <TextView
+            android:id="@+id/tv_shoppingname3"
+            android:textSize="14sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:layout_toRightOf="@+id/iv_shoppingpicture3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_shoppingprice3"
+            android:textSize="14sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/primary_color"
+            android:text=""
+            android:layout_toRightOf="@+id/iv_shoppingpicture3"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text=""
+            android:id="@+id/tv_nums3"
+            android:textSize="14sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:gravity="center_vertical"
+        android:id="@+id/layout_moregoods"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:id="@+id/tv_moregoods"
+            android:layout_toLeftOf="@+id/iv_right_moregoods"
+            android:layout_marginRight="15dp"
+            android:textColor="#000000"
+            android:text="@string/str171"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_right_moregoods"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/righit"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+    </RelativeLayout>
+    <View
+        android:background="@color/gray_bg"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:id="@+id/layout_bottom"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_money"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/primary_color"
+            android:text=""
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_min"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/tv_money"
+            android:text="@string/str30"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_nums"
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@+id/tv_min"
+            android:text=""
+            android:textSize="14sp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:background="@color/gray_bg"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <Button
+            android:id="@+id/btn_gopay"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="@string/str172"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_width="80dp"
+            android:layout_height="30dp" />
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_sure"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="@string/str173"
+            android:background="@drawable/btn_corner_red"
+            android:layout_width="80dp"
+            android:layout_height="30dp" />
+        <Button
+            android:id="@+id/btn_cell"
+            android:layout_toLeftOf="@+id/btn_gopay"
+            android:layout_marginRight="15dp"
+            android:textColor="#adadad"
+            android:textSize="14sp"
+            android:text="@string/str174"
+            android:background="@drawable/btn_corner_whitle"
+            android:layout_width="80dp"
+            android:layout_height="30dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

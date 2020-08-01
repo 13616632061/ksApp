@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_toLeftOf="@+id/tv_x"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_x"
+            android:layout_toLeftOf="@+id/ed_nums"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="x"
+            android:textSize="20sp"
+            android:textColor="@color/text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ed_nums"
+            android:background="@drawable/edit_bg"
+            android:layout_toLeftOf="@+id/tv_total"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:text="1"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            android:textColor="@color/text_color"
+            android:layout_width="40sp"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="78dp"
+            android:text="￥0.0"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_remark"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:gravity="center"
+            android:layout_marginRight="8sp"
+            android:layout_alignParentRight="true"
+            android:text="@string/tv_cell"
+            android:background="@drawable/btn_corner_gray"
+            android:textSize="16sp"
+            android:textColor="#ff0000"
+            android:layout_width="60dp"
+            android:layout_height="35dp" />
+
+        <TextView
+            android:background="@drawable/btn_corner_orange"
+            android:textColor="#ffffff"
+            android:layout_marginRight="8sp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/btn_determine"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/tv_delete"
+            android:text="@string/tv_save"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="35dp" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

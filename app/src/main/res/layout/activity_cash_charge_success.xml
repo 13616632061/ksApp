@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cash_charge_success"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="com.ui.ks.CashChargeSuccessActivity">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/toolbar_layout"
+        android:background="@drawable/btn_corner_whitle"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <TextView
+            android:id="@+id/tv_title_name"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/layout_x_20"
+            android:text="交易金额"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_price"
+            android:textSize="25sp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/primary_color"
+            android:text=""
+            android:layout_below="@+id/tv_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_mark"
+            android:textColor="#adadad"
+            android:textSize="16sp"
+            android:text=""
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:background="@drawable/scanmoneysuccess"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_above="@+id/tv_mark"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/imageView" />
+
+    </RelativeLayout>
+
+<LinearLayout
+    android:background="#ffffff"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+    <Button
+        android:id="@+id/btn_print"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="16sp"
+        android:text="打印购物小票"
+        android:textColor="#ffffff"
+        android:background="@drawable/btn_corner_gray"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="35dp" />
+    <Button
+        android:id="@+id/btn_continue_cash"
+        android:text="继续收银"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_corner_orange"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="35dp" />
+
+</LinearLayout>
+</RelativeLayout>

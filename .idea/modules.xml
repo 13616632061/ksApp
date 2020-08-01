@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Baselibrary/Baselibrary.iml" filepath="$PROJECT_DIR$/Baselibrary/Baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DropDownMenu/DropDownMenu.iml" filepath="$PROJECT_DIR$/DropDownMenu/DropDownMenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/finestwebview/finestwebview.iml" filepath="$PROJECT_DIR$/finestwebview/finestwebview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jsbridge/jsbridge.iml" filepath="$PROJECT_DIR$/jsbridge/jsbridge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksApp.iml" filepath="$PROJECT_DIR$/ksApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orderdishes/orderdishes.iml" filepath="$PROJECT_DIR$/orderdishes/orderdishes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
+    </modules>
+  </component>
+</project>

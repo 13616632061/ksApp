@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="category_odd_row_normal">#ffffffff</item>
+    <item type="drawable" name="category_even_row_normal">#ffefefef</item>
+    <item type="drawable" name="category_odd_row_normal_night">#ff111111</item>
+    <item type="drawable" name="category_even_row_normal_night">#ff333333</item>
+    <item type="drawable" name="list_row_pressed">#ffffdd66</item>
+
+</resources>

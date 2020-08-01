@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?gray_bg"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/Report_Marketing_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/iv_managmentfragment_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_back_white"/>
+        <TextView
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_width="250dp"
+            android:layout_height="33dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerInParent="true"
+            android:text="@string/marketing"/>
+        <TextView
+            android:visibility="gone"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/tv_new_marketing"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="@string/str179"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--android:layout_below="@+id/Report_Marketing_layout"-->
+        <!--android:id="@id/refresh_header"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent" >-->
+        <!--<com.ms.listview.PagingListView-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:listSelector="@android:color/transparent"-->
+            <!--android:id="@id/lv_content"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:choiceMode="singleChoice"-->
+            <!--android:divider="@null"-->
+            <!--android:dividerHeight="1dp"-->
+            <!--android:scrollbarStyle="outsideOverlay"-->
+            <!--android:scrollingCache="true"-->
+            <!--android:smoothScrollbar="false"-->
+            <!--android:scrollbars="none"/>-->
+
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/Report_Marketing_layout"
+        android:id="@+id/image_member"
+        android:scaleType="fitXY"
+        android:src="@drawable/memberspecifications"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/image_member"
+        android:scaleType="fitXY"
+        android:src="@drawable/sweepcode"
+        android:id="@+id/image_sweep_code"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/image_sweep_code"
+        android:scaleType="fitXY"
+        android:src="@drawable/delivery"
+        android:id="@+id/image_delivery"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+</RelativeLayout>

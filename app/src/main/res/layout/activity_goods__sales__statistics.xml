@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_goods__sales__statistics"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.ui.ks.Goods_Sales_StatisticsAcitvity">
+    <include android:visibility="gone"
+        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:id="@+id/title_sales_statistics"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/icon_back_white" />
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品销售统计"/>
+        <TextView
+            android:id="@+id/tv_search"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:text="筛选"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_below="@+id/title_sales_statistics"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:textSize="14sp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="今日数据"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_chart"
+            android:textColor="#adadad"
+            android:layout_alignParentRight="true"
+            android:textSize="14sp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:text="图表"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_list"
+            android:textColor="#adadad"
+            android:layout_alignParentRight="true"
+            android:textSize="14sp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:text="表单"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <HorizontalScrollView
+        android:id="@+id/goods_sales_horizontalScrollView"
+        android:layout_below="@+id/layout_top"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/goods_sales_layout"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="125dp">
+    </LinearLayout>
+    </HorizontalScrollView>
+    <LinearLayout
+        android:id="@+id/layout_hon"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_below="@+id/goods_sales_horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <RelativeLayout
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:textSize="14sp"
+            android:text="商品排名"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout_good_sales_num"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_good_sales_num"
+            android:textSize="14sp"
+            android:text="销售量"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/iv_horn_up_num"
+                android:layout_toRightOf="@+id/tv_good_sales_num"
+                android:background="@drawable/horn_black_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:id="@+id/iv_horn_put_num"
+                android:layout_below="@+id/iv_horn_up_num"
+                android:layout_toRightOf="@+id/tv_good_sales_num"
+                android:background="@drawable/horn_black_put"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout_goods_sales_money"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_goods_sales_money"
+            android:textSize="14sp"
+            android:text="销售额"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/iv_horn_up_money"
+                android:layout_toRightOf="@+id/tv_goods_sales_money"
+                android:background="@drawable/horn_black_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:id="@+id/iv_horn_put__money"
+                android:layout_below="@+id/iv_horn_up_money"
+                android:layout_toRightOf="@+id/tv_goods_sales_money"
+                android:background="@drawable/horn_black_put"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layout_goods_profit"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_goods_profit"
+            android:textSize="14sp"
+            android:text="利润"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/iv_horn_up_profit"
+                android:layout_toRightOf="@+id/tv_goods_profit"
+                android:background="@drawable/horn_black_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="2dp"
+                android:id="@+id/iv_horn_put_profit"
+                android:layout_below="@+id/iv_horn_up_profit"
+                android:layout_toRightOf="@+id/tv_goods_profit"
+                android:background="@drawable/horn_black_put"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ListView
+        android:layout_marginTop="1dp"
+        android:scrollbars="none"
+        android:layout_below="@+id/layout_hon"
+        android:id="@+id/goods_sales_statistic_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+    <com.ui.LineGraphicView.LineGraphicView
+        android:visibility="gone"
+        android:background="@color/white"
+        android:id="@+id/linegraphicview"
+        android:layout_below="@+id/layout_hon"
+        android:layout_width="800dp"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

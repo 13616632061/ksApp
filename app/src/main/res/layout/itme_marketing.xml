@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="?gray_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_recharge_amount"
+            android:layout_width="0dp"
+            android:padding="8dp"
+            android:layout_weight="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="充值金额"
+            android:textSize="@dimen/layout_x_26" />
+
+        <TextView
+            android:id="@+id/tv_donation_amount"
+            android:layout_width="0dp"
+            android:padding="8dp"
+            android:layout_weight="1"
+            android:lines="1"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="赠送金额"
+            android:textSize="@dimen/layout_x_26" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+</LinearLayout>

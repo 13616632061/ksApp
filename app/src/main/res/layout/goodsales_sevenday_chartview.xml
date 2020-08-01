@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/gray_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="15dp"
+        android:id="@+id/tv_goodsale_num"
+        android:layout_marginLeft="15dp"
+        android:text="销售量"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.ui.ChartView.IndexHorizontalScrollView
+        android:layout_below="@+id/tv_goodsale_num"
+        android:layout_marginTop="10dp"
+        android:id="@+id/indexHorizontalScrollView"
+        android:background="#66050505"
+        android:fadeScrollbars="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.ui.ChartView.NearlySevenDayView
+            android:id="@+id/today24HourView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.ui.ChartView.IndexHorizontalScrollView>
+    <TextView
+        android:layout_below="@+id/indexHorizontalScrollView"
+        android:layout_marginTop="15dp"
+        android:id="@+id/tv_goodsale_money"
+        android:layout_marginLeft="15dp"
+        android:text="销售额"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.ui.ChartView.IndexHorizontalScrollView
+        android:layout_below="@+id/tv_goodsale_money"
+        android:layout_marginTop="10dp"
+        android:id="@+id/indexHorizontalScrollView_money"
+        android:background="#66050505"
+        android:fadeScrollbars="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.ui.ChartView.NearlySevenDayView
+            android:id="@+id/today24HourView_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.ui.ChartView.IndexHorizontalScrollView>
+    <TextView
+        android:layout_below="@+id/indexHorizontalScrollView_money"
+        android:layout_marginTop="15dp"
+        android:id="@+id/tv_goodsale_profit"
+        android:layout_marginLeft="15dp"
+        android:text="利润"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.ui.ChartView.IndexHorizontalScrollView
+        android:layout_below="@+id/tv_goodsale_profit"
+        android:layout_marginTop="10dp"
+        android:id="@+id/indexHorizontalScrollView_profit"
+        android:background="#66050505"
+        android:fadeScrollbars="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.ui.ChartView.NearlySevenDayView
+            android:id="@+id/today24HourView_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.ui.ChartView.IndexHorizontalScrollView>
+
+</RelativeLayout>

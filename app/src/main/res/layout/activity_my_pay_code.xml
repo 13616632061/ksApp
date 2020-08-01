@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_my_pay_code"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="?gray_bg" >
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+
+    <RelativeLayout
+        android:id="@+id/savephoto_layout"
+        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:background="#ff8704">
+        <TextView
+            android:id="@+id/tv_savephoto"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:text="@string/str25"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/print_layout"
+        android:layout_above="@id/savephoto_layout"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ababab"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="*保存后可自行打印，光膜不干胶"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="打印尺寸:14.5x9.8"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/mypaycaode_layout"
+        android:layout_above="@+id/print_layout"
+        android:background="@drawable/qrcodebackground"
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_seller_name"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="80dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_mypaycaode"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/tv_seller_name"
+            android:layout_width="180dp"
+            android:layout_height="180dp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

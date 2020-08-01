@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cash_charge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="com.ui.ks.CashChargeActivity">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:id="@+id/keyboard_et_layout"
+        android:layout_below="@id/toolbar_layout"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:textColor="#bababa"
+            android:textSize="30sp"
+            android:text="@string/str3"/>
+        <TextView
+            android:layout_toRightOf="@id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="30sp"
+            android:textColor="#bababa"
+            android:text="￥"
+            android:layout_centerVertical="true" />
+        <EditText
+            android:id="@+id/et_inputscancode"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFF"
+            android:shadowColor="#ecf0f3"
+            android:shadowRadius="0.0"
+            android:textSize="35sp"
+            android:textColor="#000000"
+            android:hint=""/>
+        <ImageView
+            android:id="@+id/iv_cursor"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/dongtai"/>
+    </RelativeLayout>
+    <EditText
+        android:layout_above="@+id/keyboard_paystyles_layout"
+        android:id="@+id/et_keyoard"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="20sp"
+        android:lines="2"
+        android:ellipsize="middle"
+        android:background="@null"
+        android:textColor="?attr/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/layout_changemoney"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:layout_below="@id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <TextView
+            android:id="@+id/tv_realitygetmoney_text"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/str57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/tv_realitygetmoney"
+            android:layout_marginTop="13dp"
+            android:textSize="20sp"
+            android:layout_below="@+id/tv_realitygetmoney_text"
+            android:text="￥"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/accent_color"
+            android:id="@+id/tv_realitygetmoney"
+            android:layout_below="@+id/tv_realitygetmoney_text"
+            android:layout_marginTop="10dp"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true"
+            android:text="20.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:id="@+id/view_realitygetmoney"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray_bg"
+            android:layout_below="@+id/tv_realitygetmoney"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/view_realitygetmoney"
+            android:text="@string/str58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:id="@+id/et_realitygetmoney"
+            android:background="@null"
+            android:gravity="right|center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/view_realitygetmoney"
+            android:layout_width="85dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:id="@+id/iv_cursor2"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/view_realitygetmoney"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/dongtai"/>
+        <TextView
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/view_realitygetmoney"
+            android:layout_toLeftOf="@+id/et_realitygetmoney"
+            android:text="￥"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:id="@+id/view_changegetmoney"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray_bg"
+            android:layout_below="@+id/et_realitygetmoney"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"
+            android:text="@string/str59"
+            android:layout_below="@+id/view_changegetmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/red_color"
+            android:gravity="center_vertical|right"
+            android:textSize="20sp"
+            android:id="@+id/et_changegetmoney"
+            android:paddingRight="25dp"
+            android:text="0.00"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="3dp"
+            android:layout_below="@+id/view_changegetmoney"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp" />
+        <TextView
+            android:layout_marginRight="10dp"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/view_changegetmoney"
+            android:layout_toLeftOf="@+id/et_changegetmoney"
+            android:text="￥"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/keyboard_paystyles_layout"
+        layout="@layout/keyboard_paystyles_layout"/>
+
+    <TextView
+        android:textColor="#adadad"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/keyboard_et_layout"
+        android:layout_alignLeft="@+id/keyboard_et_layout"
+        android:layout_alignStart="@+id/keyboard_et_layout"
+        android:layout_marginTop="25dp"
+        android:id="@+id/tv_notes" />
+
+
+</RelativeLayout>

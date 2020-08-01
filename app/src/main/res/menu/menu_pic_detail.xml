@@ -1,0 +1,22 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/str83"
+        android:icon="@drawable/ic_more"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:icon="@drawable/ic_share_grey"
+                android:id="@+id/menu_main_share"
+                app:showAsAction="never"
+                android:title="@string/webview_share"/>
+            <item
+                android:icon="@drawable/ic_download_grey"
+                android:id="@+id/menu_main_save"
+                app:showAsAction="never"
+                android:title="@string/tv_save"/>
+
+        </menu>
+    </item>
+</menu>

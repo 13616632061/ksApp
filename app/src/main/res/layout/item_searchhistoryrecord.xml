@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+     android:layout_width="match_parent"
+    android:minHeight="45dp"
+    android:layout_height="45dp">
+    <ImageView
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/record"
+        android:layout_width="13dp"
+        android:layout_height="13dp" />
+    <TextView
+        android:id="@+id/tv_record"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical"
+        android:text="xxx"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

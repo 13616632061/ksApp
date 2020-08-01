@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"
+        android:id="@id/toolbar_layout"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/Report_Marketing_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/iv_managmentfragment_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_back_white"/>
+        <TextView
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_width="250dp"
+            android:layout_height="33dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerInParent="true"
+            android:text="@string/str352"/>
+        <TextView
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/tv_add"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="@string/str179"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+
+
+    <com.ui.listview.PagingListView
+        android:layout_below="@+id/Report_Marketing_layout"
+        android:id="@+id/lv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

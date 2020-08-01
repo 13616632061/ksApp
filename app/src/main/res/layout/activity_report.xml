@@ -1,0 +1,27 @@
+<RelativeLayout android:background="?gray_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:id="@id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_below="@id/toolbar_layout"
+        android:id="@id/refresh_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <ListView
+            android:background="@android:color/transparent"
+            android:listSelector="@drawable/selector_cell_pressed"
+            android:id="@id/lv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice"
+            android:dividerHeight="0dp"
+            android:divider="@null"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollingCache="true"
+            android:smoothScrollbar="true"
+            android:scrollbars="none"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</RelativeLayout>

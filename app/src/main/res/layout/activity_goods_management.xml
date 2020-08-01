@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_goods_management"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?gray_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.ui.ks.GoodsManagementActivity">
+    <include android:visibility="gone"
+        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:id="@+id/title_goodsmanagerment"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/icon_back_white" />
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_goods_management"/>
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_search"/>
+        <ImageView
+            android:id="@+id/iv_popwindow"
+            android:layout_marginRight="25dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/icon_setting"
+            android:layout_toLeftOf="@+id/iv_search"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_above="@+id/view"
+        android:layout_below="@+id/title_goodsmanagerment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        <TextView
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            android:textColor="?attr/colorPrimary"
+            android:text="@string/tv_allgoods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+                <com.ui.listview.PagingListView
+                    android:background="@android:color/transparent"
+                    android:listSelector="@drawable/select_layout_goodsortitem"
+                    android:id="@+id/list_sort"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:choiceMode="singleChoice"
+                    android:divider="@null"
+                    android:dividerHeight="1dp"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollingCache="true"
+                    android:smoothScrollbar="false"
+                    android:scrollbars="none"/>
+
+        </LinearLayout>
+        <View
+            android:visibility="gone"
+            android:background="#cdcdcd"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"></View>
+        <RelativeLayout
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+                <com.ui.listview.PagingListView
+                    android:background="@android:color/transparent"
+                    android:listSelector="@android:color/transparent"
+                    android:id="@+id/list_goods"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:choiceMode="singleChoice"
+                    android:divider="@null"
+                    android:dividerHeight="1dp"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:scrollingCache="true"
+                    android:smoothScrollbar="false"
+                    android:scrollbars="none"/>
+
+            <include
+                android:id="@id/layout_err"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                layout="@layout/layout_err" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_above="@+id/goods_managementbottom"
+        android:background="#cdcdcd"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/goods_managementbottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+        <Button
+            android:id="@+id/btn_sort"
+            android:text="@string/btn_sort"
+            android:textSize="16sp"
+            android:background="@drawable/btn_corner_whitle"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_alleditor"
+            android:text="@string/btn_alleditor"
+            android:textSize="16sp"
+            android:background="@drawable/btn_corner_whitle"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_addgood"
+            android:text="@string/btn_addgood"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_cell"
+            android:text="@string/cancel"
+            android:textSize="16sp"
+            android:background="@drawable/btn_corner_whitle"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="80dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_down"
+            android:text="@string/str113"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="80dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</RelativeLayout>

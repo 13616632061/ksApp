@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="lib_str1">加载中...</string>
+    <string name="lib_str2">请稍后...</string>
+
+
+</resources>

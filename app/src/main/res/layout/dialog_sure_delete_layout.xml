@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginLeft="@dimen/layout_x_40"
+        android:layout_marginRight="@dimen/layout_x_40"
+        android:lineSpacingExtra="@dimen/layout_x_5"
+        android:id="@+id/tv_message"
+        android:layout_marginTop="@dimen/layout_x_50"
+        android:textSize="@dimen/layout_x_25"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        <View
+            android:layout_marginTop="@dimen/layout_x_50"
+            android:background="@color/gray_bg"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_cell"
+            android:text=""
+            android:background="@drawable/select_whitle"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="@color/gray_bg"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"></View>
+        <Button
+            android:id="@+id/btn_sure"
+            android:text=""
+            android:background="@drawable/select_whitle"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="?gray_bg"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@id/refresh_header"
+        android:layout_below="@id/statistics_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
+        <ListView
+            android:background="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:id="@id/lv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice"
+            android:divider="?gray_bg"
+            android:dividerHeight="1dp"
+            android:drawSelectorOnTop="true"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollingCache="true"
+            android:smoothScrollbar="true"
+            android:scrollbars="none"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <include
+        android:layout_below="@id/toolbar_layout"
+        android:id="@id/layout_err"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/layout_err" />
+
+</RelativeLayout>

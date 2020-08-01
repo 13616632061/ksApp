@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.neenbedankt.android-apt'
+//apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion '26.0.2'
+
+//    compileOptions {
+//        sourceCompatibility rootProject.ext.sourceCompatibility
+//        targetCompatibility rootProject.ext.targetCompatibility
+//    }
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+//        versionCode rootProject.ext.versionCode
+//        versionName rootProject.ext.versionName
+//        vectorDrawables.useSupportLibrary = true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':jsbridge')
+    compile "com.android.support:support-annotations:28.0.0"
+    compile "com.android.support:appcompat-v7:28.0.0"
+    compile "com.android.support:design:28.0.0"
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.thefinestartist:utils:0.9.0'
+    annotationProcessor 'com.thefinestartist:compilers:0.9.0'
+}
+
+//publish {
+//    userOrg = 'thefinestartist'
+//    groupId = 'com.thefinestartist'
+//    artifactId = 'finestwebview'
+//    publishVersion = '1.2.7'
+//    desc = 'Beautiful and customizable Android Activity that shows web pages within an app.'
+//    website = 'https://github.com/TheFinestArtist/FinestWebView-Android'
+//}
+
+//$ ./gradlew clean build bintrayUpload -PbintrayUser=thefinestartist -PbintrayKey=BINTRAY_KEY -PdryRun=false

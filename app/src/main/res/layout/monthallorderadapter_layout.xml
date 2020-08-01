@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:minHeight="@dimen/layout_x_80"
+    android:layout_height="@dimen/layout_x_80">
+    <TextView
+        android:id="@+id/tv_order_date"
+        android:text="0"
+        android:textSize="@dimen/layout_x_20"
+        android:textColor="#adadad"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/layout_x_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_monthweek"
+        android:text="1"
+        android:textSize="@dimen/layout_x_20"
+        android:textColor="#000000"
+        android:layout_toRightOf="@id/tv_order_date"
+        android:layout_marginLeft="@dimen/layout_x_10"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_order_gong"
+        android:text="@string/all"
+        android:textColor="#000000"
+        android:textSize="@dimen/layout_x_20"
+        android:layout_marginLeft="@dimen/layout_x_35"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/tv_monthweek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_order_total_num"
+        android:text=""
+        android:textSize="@dimen/layout_x_20"
+        android:layout_marginLeft="@dimen/layout_x_3"
+        android:layout_marginRight="@dimen/layout_x_3"
+        android:textColor="?attr/colorPrimary"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/tv_order_gong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_order_bi"
+        android:text="@string/count"
+        android:textColor="#000000"
+        android:textSize="@dimen/layout_x_20"
+        android:layout_marginRight="@dimen/layout_x_10"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/tv_order_total_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_order_total_money"
+        android:text=""
+        android:textSize="@dimen/layout_x_20"
+        android:textColor="?attr/colorPrimary"
+        android:layout_marginRight="@dimen/layout_x_15"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout >

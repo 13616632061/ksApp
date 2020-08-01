@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_goods__sales__chart_statistics_acitvity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?gray_bg"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="com.ui.ks.Goods_Sales_ChartStatisticsAcitvity">
+    <include
+        android:visibility="gone"
+        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:background="@color/primary_color"
+        android:id="@+id/timeselect_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/icon_back_white" />
+        <Button
+            android:layout_toRightOf="@+id/iv_back"
+            android:id="@+id/btn_today"
+            android:layout_marginLeft="35dp"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/btn_corner_orange"
+            android:text="今日"
+            android:layout_width="55dp"
+            android:layout_height="28dp" />
+        <Button
+            android:layout_toRightOf="@+id/btn_today"
+            android:id="@+id/btn_yesterday"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="@color/primary_color"
+            android:background="@drawable/btn_corner_whitle"
+            android:text="昨日"
+            android:layout_width="55dp"
+            android:layout_height="28dp" />
+        <Button
+            android:layout_toRightOf="@+id/btn_yesterday"
+            android:id="@+id/btn_nearly_seven"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="@color/primary_color"
+            android:background="@drawable/btn_corner_whitle"
+            android:text="近7日"
+            android:layout_width="55dp"
+            android:layout_height="28dp" />
+        <Button
+            android:layout_toRightOf="@+id/btn_nearly_seven"
+            android:id="@+id/btn_nearly_thirty"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="@color/primary_color"
+            android:background="@drawable/btn_corner_whitle"
+            android:text="近30日"
+            android:layout_width="55dp"
+            android:layout_height="28dp" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_below="@+id/timeselect_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+          <include
+              android:id="@+id/todaysalesView"
+              layout="@layout/goodsaleschartview"></include>
+            <include
+                android:visibility="gone"
+                android:id="@+id/yesterdaysalesView"
+                layout="@layout/goodsaleschartview"></include>
+          <include
+              android:visibility="gone"
+              android:id="@+id/nearlysevendayView"
+              layout="@layout/goodsales_sevenday_chartview"></include>
+          <include
+              android:visibility="gone"
+              android:id="@+id/nearlythirtydayView"
+              layout="@layout/nearlythirtyday_goodsales_chartview"></include>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

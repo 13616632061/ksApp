@@ -1,0 +1,49 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//apply plugin: 'com.novoda:bintray-release'
+apply from: "config.gradle"
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.didi.virtualapk:gradle:0.9.8.6'
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+//        classpath 'com.novoda:bintray-release::0.3.4'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://jitpack.io"
+        }
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+//
+//ext {
+//    minSdkVersion = 14
+//    targetSdkVersion = 23
+//    compileSdkVersion = 25
+//    buildToolsVersion = '25.0.1'
+//
+//    sourceCompatibility = JavaVersion.VERSION_1_7
+//    targetCompatibility = JavaVersion.VERSION_1_7
+//
+//    versionCode = 27
+//    versionName = '1.4.6'
+//
+//    supportLibVersion = '23.3.0'
+//    playLibVersion = '8.4.0'
+//}

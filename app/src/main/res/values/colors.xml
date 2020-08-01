@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gray_66929292">#66929292</color>
+    <color name="gray_cdcdcd">#cdcdcd</color>
+    <color name="gray_efeff4">#efeff4</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="main_bg">#ff769038</color>
+    <color name="gray_bg">#ffedf0f3</color>
+    <color name="home_tab">#ff666666</color>
+    <color name="home_tab_active">@color/primary_color</color>
+    <color name="main_hint">#ff999999</color>
+    <color name="bar_white">#fafafa</color>
+    <color name="bar_black">#222222</color>
+    <color name="opaq_white">#ddFFffff</color>
+    <color name="opaq_dark_white">#ddf5f5f5</color>
+
+    <color name="text_color">#ff333333</color>
+    <color name="text_secondary_color">#ff727272</color>
+    <color name="text_hint_color">#ffb9b9b9</color>
+    <color name="divider_color">#ffdcdcdc</color>
+    <color name="list_divider_color">#ffefefef</color>
+    <color name="green_color">#ff00ff00</color>
+    <color name="red_color">#ffff0000</color>
+
+    <color name="primary_color">#ffff8905</color>
+    <color name="dark_primary_color">#ffff8905</color>
+    <color name="light_primary_color">#F8BBD0</color>
+    <color name="accent_color">#ffff8905</color>
+    <color name="opaq_accent_color">#ddff8905</color>
+    <color name="dark_accent_color">#ffE64A19</color>
+    <color name="opaq_dark_accent_color">#ddE64A19</color>
+    <color name="opaq_primary_color">#ddE64A19</color>
+    <color name="opaq_dark_primary_color">#ddff8905</color>
+
+    <color name="grey_color">#ff9e9e9e</color>
+    <color name="dark_grey_color">#ff616161</color>
+    <color name="opaq_grey_color">#dd9e9e9e</color>
+    <color name="opaq_dark_grey_color">#dd616161</color>
+
+    <color name="textcolor_night">#dcdcdc</color>
+    <color name="backbg_night">#ff111111</color>
+    <color name="main_link">#ff0088cc</color>
+    <color name="main_null">#ffc0c5d0</color>
+
+    <color name="crop__button_bar">#f3f3f3</color>
+    <color name="crop__button_text">#666666</color>
+    <color name="crop__selector_pressed">#1a000000</color>
+    <color name="crop__selector_focused">#77000000</color>
+
+
+    <color name="share_reg">#ff22ac38</color>
+
+    <color name="price_color">#fff44336</color>
+
+    <color name="light_yellow_bg">#fffffef8</color>
+    <color name="light_yellow_border">#ffebe9de</color>
+    <color name="bottom_line">#ffd2d2d2</color>
+
+    <color name="opaq_light_white">#ddf3f4f6</color>
+    <color name="opaq_dark_light_white">#ddf5f5f5</color>
+    <color name="ic_base_color">#6b6b6b</color>
+
+
+    <item name="subscribe_item_text_color_normal" type="color">@color/text_color</item>
+    <color name="subscribe_item_text_color_pressed">#ffb9b9b9</color>
+    <color name="subscribe_item_text_color_pressed_night">#ff303030</color>
+    <color name="subscribe_item_focused_stroke">#ffd9d9d9</color>
+    <color name="subscribe_item_drag_stroke">#ffd2d2d2</color>
+    <color name="subscribe_item_drag_bg">#fff5f5f5</color>
+    <color name="subscribe_item_drag_stroke_night">#ff464646</color>
+    <color name="subscribe_item_drag_bg_night">#ff252525</color>
+    <color name="subscribe_item_selected_bg">#ffffffff</color>
+    <color name="subscribe_item_selected_stroke">#ffcc3131</color>
+    <color name="subscribe_item_disabled_bg">#ffefefef</color>
+    <color name="subscribe_item_disabled_stroke">#ffd9d9d9</color>
+    <color name="subscribe_item_pressed_bg">#fff9f9f9</color>
+    <color name="subscribe_item_pressed_stroke">#ffcdcdcd</color>
+    <color name="subscribe_item_normal_bg">#fff5f5f5</color>
+    <color name="subscribe_item_normal_stroke">#ffcdcdcd</color>
+    <color name="subscribe_item_focused_bg_night">#ff252525</color>
+    <color name="subscribe_item_focused_stroke_night">#ff464646</color>
+    <color name="subscribe_item_selected_bg_night">#ff252525</color>
+    <color name="subscribe_item_selected_stroke_night">#ffbc494d</color>
+    <color name="subscribe_item_disabled_bg_night">#ff2b2b2b</color>
+    <color name="gray_light">#ffefefef</color>
+    <color name="bg_Gray">#CCCCCC</color>
+    <!-- 红色 -->
+    <color name="tv_Red">#CC0000</color>
+    <!-- 浅灰色 -->
+    <color name="bg_Gray_light">#EEEEEE</color>
+    <color name="shape_bg">#ddffffff</color>
+    <color name="paycode_btn">#ababab</color>
+    <color name="bg_selector">#ffe5e5e5</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+</resources>

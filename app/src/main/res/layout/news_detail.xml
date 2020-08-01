@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@id/relativeLayout5"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<com.material.widget.CircularProgress-->
+        <!--android:id="@+id/news_content_progressBar"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--app:circular_progress_size="Normal"-->
+        <!--android:layout_centerInParent="true"/>-->
+    <WebView
+        android:scrollbars="none"
+        android:id="@+id/web"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone" />
+
+    <!--<com.daimajia.numberprogressbar.NumberProgressBar-->
+        <!--android:id="@+id/news_content_progressBar"-->
+        <!--style="@style/NumberProgressBar_Funny_Orange"-->
+        <!--android:layout_width="match_parent"-->
+        <!--app:progress_reached_bar_height="2dp"-->
+        <!--app:progress_text_size="0sp"-->
+        <!--app:progress_text_visibility="invisible"-->
+        <!--app:progress_unreached_bar_height="2dp" />-->
+</RelativeLayout>

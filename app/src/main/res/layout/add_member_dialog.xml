@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="@string/str180"
+            android:textSize="14sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ed_member_name"
+            android:background="#ffffff"
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:hint="@string/str181"
+            android:textColor="@color/text_color"
+            android:textSize="14sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="@string/str79"
+            android:textSize="14sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ed_member_phone"
+            android:background="#ffffff"
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:hint="@string/str186"
+            android:inputType="number"
+            android:layout_weight="1"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/layout_x_28"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:layout_marginBottom="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="@string/str185"
+            android:textSize="@dimen/layout_x_26"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ed_member_balance"
+            android:background="#ffffff"
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_color"
+            android:layout_weight="1"
+            android:textSize="@dimen/layout_x_28"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:layout_marginBottom="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="@string/str184"
+            android:textSize="@dimen/layout_x_26"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ed_member_integral"
+            android:background="#ffffff"
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_color"
+            android:layout_weight="1"
+            android:textSize="@dimen/layout_x_28"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:layout_marginBottom="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="@string/str183"
+            android:textSize="@dimen/layout_x_26"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ed_discount_rate"
+            android:background="#ffffff"
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:hint="1"
+            android:inputType="numberDecimal"
+            android:textColor="@color/text_color"
+            android:layout_weight="1"
+            android:textSize="@dimen/layout_x_28"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btn_add_member"
+            android:text="@string/sure"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

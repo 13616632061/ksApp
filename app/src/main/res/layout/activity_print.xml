@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="12dp"
+        android:layout_below="@id/toolbar_layout">
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="打印机MAC地址"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="?colorAccent"
+            app:met_singleLineEllipsis="true"
+            android:singleLine="true"
+            android:id="@id/printnum"/>
+        <RelativeLayout
+            android:id="@+id/auto_print_rl"
+            android:layout_below="@id/printnum"
+            android:background="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp">
+            <CheckBox
+                android:id="@+id/auto_print"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true" />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_toRightOf="@+id/auto_print">
+                <TextView
+                    android:textColor="@color/primary_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str279"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="#ff747373"
+            android:id="@id/choicetv"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str280"
+            android:layout_below="@+id/auto_print_rl" />
+
+        <com.material.widget.PaperButton
+            android:id="@id/btn_test"
+            app:paper_text="@string/str281"
+            android:layout_width="fill_parent"
+            android:layout_height="54.0dip"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+        <ListView
+            android:id="@id/printers"
+            android:paddingBottom="10.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="25.0dip"
+            android:cacheColorHint="@null"
+            android:divider="@null"
+            android:layout_above="@id/btn_test"
+            android:layout_below="@id/choicetv" />
+    </RelativeLayout>
+</RelativeLayout>

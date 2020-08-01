@@ -1,0 +1,21 @@
+<LinearLayout
+    android:background="?gray_bg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <include layout="@layout/set_line" android:id="@+id/set_ship_item" />
+    <include layout="@layout/set_line" android:id="@+id/set_no_item" />
+
+    <include layout="@layout/set_line_spacer" />
+
+
+    <!--确定发货-->
+    <com.material.widget.PaperButton
+        android:id="@id/button1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/paper_height"
+        android:layout_margin="10dp"
+        app:paper_text="确定发货"/>
+</LinearLayout>

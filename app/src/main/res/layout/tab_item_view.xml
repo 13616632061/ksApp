@@ -1,0 +1,23 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingBottom="6.0dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@id/iv_home_image"
+        android:duplicateParentState="true"
+        android:layout_width="25.0dip"
+        android:layout_height="25.0dip"
+        android:layout_marginTop="6.0dip"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@id/iv_home_text"
+        android:layout_marginTop="3.0dip"
+        android:textSize="@dimen/text_size_hint"
+        android:textColor="@color/activatable_home_tab"
+        android:duplicateParentState="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_home_image"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

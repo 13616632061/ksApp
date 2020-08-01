@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cash_charge_notes"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="com.ui.ks.CashChargeNotesActivity">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <EditText
+        android:padding="10dp"
+        android:gravity="left"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:id="@+id/et_cash_charge_notes"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp" />
+
+    <TextView
+        android:textColor="#adadad"
+        android:text="0/50"
+        android:textSize="16sp"
+        android:layout_marginRight="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_cash_charge_notes"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tv_cash_charge_notes_num" />
+
+    <Button
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:text="@string/tv_save"
+        android:background="@drawable/btn_corner_orange"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/et_cash_charge_notes"
+        android:layout_marginTop="25dp"
+        android:id="@+id/btn_cash_charge_notes_save"/>
+
+
+</RelativeLayout>

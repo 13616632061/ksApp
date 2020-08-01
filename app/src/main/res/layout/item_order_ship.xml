@@ -1,0 +1,41 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/linearLayout5"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_upline_common"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/s_component_height">
+
+    <LinearLayout
+        android:id="@id/linearLayout2"
+        android:gravity="right"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:id="@id/editText1"
+            android:background="@drawable/selector_flat_text"
+            android:textSize="14sp"
+            android:textColor="@color/accent_color"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/op_button_height"
+            android:text="快递送"/>
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:id="@id/editText2"
+            android:background="@drawable/selector_flat_text"
+            android:textSize="14sp"
+            android:textColor="@color/accent_color"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/op_button_height"
+            android:text="外卖送"/>
+    </LinearLayout>
+</LinearLayout>

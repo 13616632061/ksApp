@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="@color/gray_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/layout_choosegoodsframent"
+        android:orientation="horizontal"
+        android:layout_above="@+id/view"
+        android:layout_below="@+id/title_goodsmanagerment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <com.ui.listview.PagingListView
+                android:background="@android:color/transparent"
+                android:listSelector="@drawable/select_layout_goodsortitem"
+                android:id="@+id/list_sort"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:choiceMode="singleChoice"
+                android:divider="@null"
+                android:dividerHeight="1dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollingCache="true"
+                android:smoothScrollbar="false"
+                android:scrollbars="none"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <com.ui.listview.PinnedHeaderListView
+                android:background="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:id="@+id/list_goods"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:choiceMode="singleChoice"
+                android:divider="@null"
+                android:dividerHeight="1dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollingCache="true"
+                android:smoothScrollbar="false"
+                android:scrollbars="none"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <include
+        android:id="@id/layout_err"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/layout_err" />
+
+</LinearLayout>

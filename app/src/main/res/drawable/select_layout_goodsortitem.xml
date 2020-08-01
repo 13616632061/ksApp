@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@color/Color_White" />
+    <item android:state_selected="false" android:drawable="@color/gray_bg" />
+
+    <!--&lt;!&ndash;获得焦点时的颜色&ndash;&gt;-->
+    <item android:state_focused="true" android:drawable="@color/Color_White" />
+    <item android:state_focused="false" android:drawable="@color/gray_bg" />
+    <!--点击时的颜色-->
+    <item android:state_selected="true" android:drawable="@color/Color_White" />
+    <!-- 默认颜色 -->
+    <item android:state_selected="false" android:drawable="@color/gray_bg"/>
+</selector>

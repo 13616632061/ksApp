@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/select_whitle"
+    android:layout_width="match_parent"
+    android:minHeight="60dp"
+    android:layout_height="60dp">
+    <Button
+        android:layout_centerVertical="true"
+        android:id="@+id/btn_goodsortnum"
+        android:textColor="#ffffff"
+        android:text="10"
+        android:textSize="14sp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/btn_corner_orange"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+    <TextView
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/btn_goodsortnum"
+        android:id="@+id/tv_goodsortname"
+        android:layout_marginLeft="20dp"
+        android:textSize="16sp"
+        android:text="水果"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:id="@+id/relativeLayout_goodsort_edit"
+        android:background="@drawable/btn_corner_whitle"
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+    <ImageView
+        android:clickable="false"
+        android:background="@drawable/goodsortedit"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_toLeftOf="@+id/relativeLayout_goodsort_edit"
+        android:id="@+id/relativeLayout_goodsort_remove"
+        android:background="@drawable/btn_corner_whitle"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+        <Button
+            android:textColor="#ffffff"
+            android:text="一"
+            android:clickable="false"
+            android:textSize="16sp"
+            android:background="@drawable/btn_round_shape"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+    </RelativeLayout>
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_goodsort_remove"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:background="@drawable/select_remove_red_background"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:text="删除"
+        android:layout_width="80dp"
+        android:layout_height="50dp" />
+
+</RelativeLayout>

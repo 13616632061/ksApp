@@ -1,0 +1,25 @@
+<FrameLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:id="@id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <com.ui.widget.observablescrollview.ObservableWebView
+        android:id="@+id/web"
+        android:layerType="software"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        android:layout_weight="1.0"
+        android:layout_marginTop="?attr/actionBarSize" />
+    <com.daimajia.numberprogressbar.NumberProgressBar
+        android:id="@+id/news_content_progressBar"
+        style="@style/NumberProgressBar_Funny_Orange"
+        android:layout_width="match_parent"
+        app:progress_reached_bar_height="2dp"
+        app:progress_text_size="0sp"
+        app:progress_text_visibility="invisible"
+        app:progress_unreached_bar_height="2dp"
+        android:layout_marginTop="?attr/actionBarSize" />
+</FrameLayout>

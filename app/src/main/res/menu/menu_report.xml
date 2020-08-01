@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/menu_my"
+        android:title="个人信息"
+        android:icon="@drawable/ic_my"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/menu_set"
+        android:title="充值提现"
+        android:icon="@drawable/ic_deposit"
+        app:showAsAction="always">
+    </item>
+
+</menu>

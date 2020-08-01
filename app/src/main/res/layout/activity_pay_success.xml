@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pay_success"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?gray_bg"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ui.ks.PaySuccessActivity">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <ImageView
+        android:id="@+id/iv_paysuccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/paysuccess"/>
+    <TextView
+        android:id="@+id/tv_paysuccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_paysuccess"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="收款成功"
+        android:textSize="14sp"/>
+    <TextView
+        android:id="@+id/tv_paysuccess_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_paysuccess"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text=""
+        android:textSize="25sp"/>
+    <com.material.widget.PaperButton
+        android:id="@+id/btn_paysuccess"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/paper_height"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_paysuccess_money"
+        app:paper_text="完成"/>
+</RelativeLayout>

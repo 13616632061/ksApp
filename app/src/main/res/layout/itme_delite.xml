@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="?gray_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:text="@string/tv_goodsname"
+        android:id="@+id/tv_name"
+        android:textSize="16sp"
+        android:textColor="@color/text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/et_nums"
+        android:textSize="14sp"
+        android:inputType="number|numberDecimal"
+        android:textColor="#000000"
+        android:background="@drawable/btn_corner_whitle"
+        android:singleLine="true"
+        android:hint="@string/str127"
+        android:imeOptions="actionSearch"
+        android:paddingLeft="15dp"
+        android:paddingRight="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="180dp"
+        android:layout_height="35dp" />
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:text="@string/str126"
+        android:id="@+id/tv_remark"
+        android:textSize="16sp"
+        android:textColor="@color/text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/btn_cancel"
+            android:text="@string/cancel"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp" />
+
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/btn_ubmission"
+            android:text="@string/sure"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

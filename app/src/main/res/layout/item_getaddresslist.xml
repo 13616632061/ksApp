@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+     android:layout_width="match_parent"
+    android:layout_height="100dp">
+    <RelativeLayout
+        android:id="@+id/layout_adress"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+    <ImageView
+        android:id="@+id/iv_adress"
+        android:src="@drawable/adress_gray"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/tv_name"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/iv_adress"
+            android:textSize="14sp"
+            android:text="收货人：王xx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/tv_phone"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/tv_name"
+            android:textSize="14sp"
+            android:text="1361663xxxx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/iv_right"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/iv_adress"
+            android:text="收货地址：宝安西乡街道汇潮科技大厦2005"
+            android:id="@+id/tv_adress"
+            android:lines="2"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentBottom="true"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/righit"
+            android:layout_alignParentRight="true"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_below="@+id/layout_adress"
+        android:background="@drawable/line"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"></View>
+    <RelativeLayout
+        android:layout_below="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <CheckBox
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/check"
+            android:text="设为默认"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:id="@+id/layout_remove"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_remove"
+                android:layout_centerVertical="true"
+                android:background="@drawable/clear"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/iv_remove"
+                android:layout_centerVertical="true"
+                android:textSize="14sp"
+                android:text="删除"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout> <RelativeLayout
+            android:id="@+id/layout_edit"
+            android:layout_toLeftOf="@+id/layout_remove"
+            android:layout_marginRight="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edit"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/iv_edit"
+                android:layout_centerVertical="true"
+                android:textSize="14sp"
+                android:text="编辑"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

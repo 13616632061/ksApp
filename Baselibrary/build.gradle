@@ -1,0 +1,82 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+        multiDexEnabled true
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //jdk1.8
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_7
+//        targetCompatibility JavaVersion.VERSION_1_7
+//    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //    testImplementation 'junit:junit:4.12'
+    //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api rootProject.ext.dependencies["appcompat-v7"]
+    //    api rootProject.ext.dependencies["design"]
+    api rootProject.ext.dependencies["constraint-layout"]
+    api rootProject.ext.dependencies["recyclerview"]
+    debugCompile rootProject.ext.dependencies["debugCompile-leakcanary"]
+    releaseCompile rootProject.ext.dependencies["releaseCompile-leakcanary"]
+    api rootProject.ext.dependencies["YCCountDownViewLib"]
+    api rootProject.ext.dependencies["multidex"]
+    api rootProject.ext.dependencies["butterknife"]
+    api rootProject.ext.dependencies["utilcode"]
+    api rootProject.ext.dependencies["onvenientBanner"]
+    api rootProject.ext.dependencies["logutils"]
+    api rootProject.ext.dependencies["arouter"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    api rootProject.ext.dependencies["glide"]
+    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
+    api rootProject.ext.dependencies["recyclertablayout"]
+    api rootProject.ext.dependencies["skeleton"]
+    api rootProject.ext.dependencies["shimmerlayout"]
+    api rootProject.ext.dependencies["permissiongen"]
+    api rootProject.ext.dependencies["BGARefreshLayout"]
+    api rootProject.ext.dependencies["LitePal"]
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    api rootProject.ext.dependencies["GSYVideoPlayer"]
+    api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["retrofit2-retrofit"]
+    api rootProject.ext.dependencies["retrofit2-gson"]
+    api rootProject.ext.dependencies["retrofit2-adapter-rxjava"]
+    api rootProject.ext.dependencies["retrofit2-adapter-converter-scalars"]
+    api rootProject.ext.dependencies["okhttp3-logging-interceptor"]
+    api rootProject.ext.dependencies["jpinyin"]
+    api rootProject.ext.dependencies["zxing"]
+    api rootProject.ext.dependencies["eventbus"]
+
+}

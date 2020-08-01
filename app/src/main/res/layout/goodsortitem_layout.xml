@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ui.recyclerviewleftslideremove.SlidingButtonView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:minHeight="60dp"
+    android:background="@drawable/select_whitle"
+    android:layout_marginBottom="1dp">
+    <RelativeLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:id="@+id/layout_content"
+            android:layout_width="@dimen/layout_x_480"
+            android:layout_height="match_parent">
+            <Button
+                android:layout_centerVertical="true"
+                android:id="@+id/btn_goodsortnum"
+                android:textColor="#ffffff"
+                android:clickable="false"
+                android:enabled="false"
+                android:focusable="false"
+                android:text="10"
+                android:textSize="14sp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btn_corner_orange"
+                android:layout_width="18dp"
+                android:layout_height="18dp" />
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/btn_goodsortnum"
+                android:id="@+id/tv_goodsortname"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:text="水果"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_delete"
+            android:layout_height="40dp"
+            android:layout_width="60dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/layout_content"
+            android:text="删 除"
+            android:background="#ff0000"
+            android:textColor="#DDFFFFFF"
+            />
+    </RelativeLayout>
+</com.ui.recyclerviewleftslideremove.SlidingButtonView>
+

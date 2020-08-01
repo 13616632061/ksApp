@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/inventory_activity"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?gray_bg"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal">
+
+
+    <include
+        android:id="@id/toolbar_layout"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_layout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <com.ui.listview.PagingListView
+                android:id="@+id/lv_classification"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:choiceMode="singleChoice"
+                android:divider="@null"
+                android:dividerHeight="1dp"
+                android:listSelector="@android:color/transparent"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="none"
+                android:scrollingCache="true"
+                android:smoothScrollbar="false" />
+
+            <!--<android.support.v4.widget.SwipeRefreshLayout-->
+            <!--android:id="@id/refresh_header"-->
+            <!--android:layout_weight="4"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="fill_parent" >-->
+
+            <com.ui.listview.PagingListView
+                android:id="@+id/lv_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:background="@android:color/transparent"
+                android:choiceMode="singleChoice"
+                android:divider="@null"
+                android:dividerHeight="1dp"
+                android:listSelector="@android:color/transparent"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="none"
+                android:scrollingCache="true"
+                android:smoothScrollbar="false" />
+            <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_submission"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_corner_orange"
+                android:text="@string/str187"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

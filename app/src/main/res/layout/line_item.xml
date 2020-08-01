@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+    android:padding="15.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_cell_pressed"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textSize="16dp"
+        android:textColor="@color/text_secondary_color"
+        android:id="@+id/area_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+	<ImageView 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_alignParentRight="true" 
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_right_grey" />
+</RelativeLayout>

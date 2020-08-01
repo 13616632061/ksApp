@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_print_set"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="com.ui.ks.PrintSetActivity">
+    <include
+        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:id="@+id/layout_print_set1"
+        android:layout_below="@+id/toolbar_layout"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/iv_choose"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/gray_gou"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_choose"
+            android:text="@string/str89"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_marginRight="15dp"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:text="＋"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:id="@+id/tv_num"
+            android:layout_toLeftOf="@+id/btn_add"
+            android:text="0"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_cell"
+            android:textSize="16sp"
+            android:textColor="#adadad"
+            android:text="一"
+            android:layout_toLeftOf="@+id/tv_num"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_gragshape_white"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/layout_print_set1"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:id="@+id/iv_choose2"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/gray_gou"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_choose2"
+            android:text="@string/str90"
+            android:layout_toLeftOf="@+id/btn_cell2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_add2"
+            android:layout_marginRight="15dp"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:text="＋"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_corner_orange"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:id="@+id/tv_num2"
+            android:layout_toLeftOf="@+id/btn_add2"
+            android:text="0"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_cell2"
+            android:textSize="16sp"
+            android:textColor="#adadad"
+            android:text="一"
+            android:layout_toLeftOf="@+id/tv_num2"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_gragshape_white"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/btn_save"
+        android:background="@drawable/btn_corner_orange"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:text="@string/tv_save"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+</RelativeLayout>

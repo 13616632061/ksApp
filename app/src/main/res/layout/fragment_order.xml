@@ -1,0 +1,113 @@
+<LinearLayout
+    android:background="?gray_bg"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/iv_orderfragment_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_back_white"/>
+        <TextView
+            android:id="@+id/tv_orderfragment_title"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_width="250dp"
+            android:layout_height="33dp"
+            android:background="@drawable/title_textview_shape"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerInParent="true"
+            android:text=""/>
+        <ImageView
+            android:id="@+id/iv_orderfragment_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_search"/>
+        <RelativeLayout
+            android:id="@+id/title_scroll_relayout"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="45dp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:background="@android:color/transparent"
+            android:layout_alignBottom="@id/iv_orderfragment_search" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_title_scancode"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/saocode" />
+                <ImageView
+                    android:id="@+id/iv_title_spaycode"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/paycode" />
+
+                <ImageView
+                    android:id="@+id/iv_title_statistics"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/statistics" />
+                <ImageView
+                    android:id="@+id/iv_title_ordertype"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/order_type" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <include layout="@layout/activity_orderfragment_horizontalscroll" />
+    <include layout="@layout/activity_scroll_layout" />
+    <include layout="@layout/order_total_statistics" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@id/refresh_header"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <com.ui.listview.PagingListView
+            android:background="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:id="@id/lv_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"
+            android:divider="@null"
+            android:dividerHeight="1dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollingCache="true"
+            android:smoothScrollbar="false"
+            android:scrollbars="none"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <include
+        android:id="@id/layout_err"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/layout_err" />
+    </RelativeLayout>
+</LinearLayout>
+

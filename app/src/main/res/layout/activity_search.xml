@@ -1,0 +1,42 @@
+<LinearLayout android:background="?gray_bg"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:id="@+id/activity_search"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <include
+        android:id="@+id/layout_total"
+        android:visibility="visible"
+        layout="@layout/order_total_statistics" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_below="@id/toolbar_layout"
+        android:id="@id/refresh_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    <com.ui.listview.PagingListView
+        android:background="@android:color/transparent"
+        android:listSelector="@android:color/transparent"
+        android:id="@id/lv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
+        android:divider="?gray_bg"
+        android:dividerHeight="1dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollingCache="true"
+        android:smoothScrollbar="true"
+        android:scrollbars="none"/>
+        <include
+            android:layout_below="@id/toolbar_layout"
+            android:id="@id/layout_err"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/layout_err" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

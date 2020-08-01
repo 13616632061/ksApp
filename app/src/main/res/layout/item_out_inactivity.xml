@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:id="@+id/ll_itme"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:text="1"
+        android:id="@+id/tv_xuhao"
+        android:textSize="14sp"
+        android:textColor="@color/text_color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:gravity="center_horizontal"
+        android:text="旺旺碎碎冰冰"
+        android:id="@+id/tv_name"
+        android:textSize="14sp"
+        android:textColor="@color/text_color"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_width="0dp"
+        android:layout_weight="2.5"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:gravity="center_horizontal"
+        android:text="15"
+        android:id="@+id/tv_price"
+        android:textSize="14sp"
+        android:textColor="@color/text_color"
+        android:layout_width="0dp"
+        android:layout_weight="1.5"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:gravity="center_horizontal"
+        android:text="2"
+        android:id="@+id/tv_nums"
+        android:textSize="14sp"
+        android:textColor="@color/text_color"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:gravity="center_horizontal"
+        android:text="30"
+        android:id="@+id/tv_total"
+        android:textSize="14sp"
+        android:textColor="@color/text_color"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:src="@drawable/imaginary"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+</LinearLayout>

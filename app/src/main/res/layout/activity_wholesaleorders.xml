@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_wholesaleorders"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.ui.ks.WholeSaleOrdersActivity">
+    <include android:visibility="gone"
+        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <!--<com.ms.ViewPager.NoScrollViewPager-->
+        <!--android:id="@+id/viewpager_wholesaleorders"-->
+        <!--android:layout_below="@+id/toolbar_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+    <!--</com.ms.ViewPager.NoScrollViewPager>-->
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_above="@+id/lyaout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+    <LinearLayout
+        android:id="@+id/lyaout_bottom"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/bottombg_home"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/layout_homepage"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/iv_homepage"
+                android:background="@drawable/home"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_homepage"
+                android:id="@+id/tv_homepage"
+                android:text="首页"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/layout_orders"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/iv_orders"
+                android:background="@drawable/order_gray"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_orders"
+                android:id="@+id/tv_orders"
+                android:text="订单"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/layout_choppingcar"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/iv_choppingcar"
+                android:background="@drawable/cart_gray"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_choppingcar"
+                android:id="@+id/tv_choppingcar"
+                android:text="购物车"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/layout_myinfo"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_centerHorizontal="true"
+                android:id="@+id/iv_myinfo"
+                android:background="@drawable/my_gray"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_myinfo"
+                android:id="@+id/tv_myinfo"
+                android:text="我的"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

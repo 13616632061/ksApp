@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="?gray_bg"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar" android:id="@+id/toolbar_layout"/>
+
+
+    <RelativeLayout
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:textColor="#ff0000"
+            android:layout_centerHorizontal="true"
+            android:text="@string/str75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/tv_order_tip"
+            android:layout_below="@+id/tv_tip"
+            android:textColor="#8f8d8d"
+            android:text="@string/str74"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ed_order_remarks"
+            android:layout_below="@+id/tv_order_tip"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textColor="@color/text_color"
+            android:hint="@string/str73"
+            android:background="@drawable/edit_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_goods_tip"
+            android:layout_below="@+id/ed_order_remarks"
+            android:textColor="#8f8d8d"
+            android:text="@string/str72"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/ed_goods_remarks"
+            android:layout_below="@+id/tv_goods_tip"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:hint="@string/str71"
+            android:textColor="@color/text_color"
+            android:background="@drawable/edit_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/btn_add_remarks"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+        android:background="@drawable/btn_corner_orange"
+        android:textColor="#ffffff"
+        android:text="@string/tv_save"
+        android:layout_marginBottom="20dp"
+        android:layout_width="70dp"
+        android:layout_height="32dp" />
+
+
+
+</RelativeLayout>

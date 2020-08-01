@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_goods_name"
+        android:layout_marginTop="@dimen/layout_x_10"
+        android:layout_marginLeft="@dimen/layout_x_10"
+        android:layout_marginRight="@dimen/layout_x_10"
+       android:singleLine="true"
+        android:maxLines="1"
+        android:text="商品名称"
+        android:textSize="@dimen/layout_x_30"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_goods_code"
+        android:layout_marginTop="@dimen/layout_x_10"
+        android:layout_marginLeft="@dimen/layout_x_10"
+        android:layout_marginRight="@dimen/layout_x_10"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:text="条码"
+        android:textSize="@dimen/layout_x_30"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/layout_x_10"
+        android:layout_marginLeft="@dimen/layout_x_10"
+        android:layout_marginRight="@dimen/layout_x_10"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="原库存："
+            android:textSize="@dimen/layout_x_30"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_stock"
+            android:layout_marginTop="@dimen/layout_x_10"
+            android:layout_marginLeft="@dimen/layout_x_10"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="27"
+            android:textSize="@dimen/layout_x_30"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginTop="@dimen/layout_x_10"
+        android:layout_marginLeft="@dimen/layout_x_10"
+        android:layout_marginRight="@dimen/layout_x_10"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:text="盘点库存："
+        android:textSize="@dimen/layout_x_30"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <EditText
+        android:id="@+id/ed_inventory_stock"
+        android:background="@drawable/edit_bg"
+        android:layout_marginTop="@dimen/layout_x_10"
+        android:layout_marginLeft="@dimen/layout_x_10"
+        android:layout_marginRight="@dimen/layout_x_10"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:focusableInTouchMode="true"
+        android:text=""
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/layout_x_30"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="@dimen/layout_x_100"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_add_inventory"
+        android:text="确定"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:background="@drawable/btn_corner_orange"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

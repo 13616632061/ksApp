@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/ic_room_grey"
+            android:layout_width="24.0dip"
+            android:layout_height="24.0dip"
+            android:layout_marginLeft="16.0dip"
+            android:scaleType="fitCenter" />
+        <RelativeLayout
+            android:paddingLeft="16.0dip"
+            android:paddingRight="16.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_weight="1"
+                        android:singleLine="false"
+                        android:textSize="16.0sp"
+                        android:id="@id/textView15"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:text="11111111"
+                        android:textColor="@color/text_color"
+                        android:layout_centerVertical="true" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="21212121"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_color"
+                        android:singleLine="true"
+                        android:id="@id/textView16"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent" />
+                </LinearLayout>
+                <TextView
+                    android:id="@id/textView_title"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="11111111"
+                    android:singleLine="false"
+                    android:textSize="14.0sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary_color"
+                    android:layout_centerVertical="true"  />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <include layout="@layout/set_line_grey_spacer" />
+</LinearLayout>

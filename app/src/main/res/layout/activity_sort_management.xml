@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sort_management"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?gray_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.ui.ks.SortManagementActivity">
+    <include android:visibility="gone"
+        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:id="@+id/title_sortmanagerment"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/icon_back_white" />
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_sort"/>
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="@dimen/layout_x_15"
+            android:layout_alignParentRight="true"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:text="@string/tv_editor"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_addsort"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_corner_orange"
+        android:textColor="#ffffff"
+        android:text="@string/btn_addsort"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <RelativeLayout
+        android:layout_above="@+id/btn_addsort"
+        android:layout_below="@+id/title_sortmanagerment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:background="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:id="@+id/list_addsort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:choiceMode="singleChoice"
+                android:scrollingCache="true"
+                android:smoothScrollbar="false"
+                android:scrollbars="none"/>
+
+        <include
+            android:id="@id/layout_err"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/layout_err" />
+    </RelativeLayout>
+
+</RelativeLayout>

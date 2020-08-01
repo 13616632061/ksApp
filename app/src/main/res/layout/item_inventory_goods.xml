@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/select_whitle"
+    android:layout_width="match_parent"
+    android:minHeight="75dp"
+    android:layout_height="75dp">
+    <ImageView
+        android:id="@+id/goods_photo"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_width="55dp"
+        android:layout_height="55dp" />
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/goods_photo"
+        android:layout_toLeftOf="@+id/checkbox_good"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:text="核桃"
+            android:singleLine="true"
+            android:id="@+id/tv_goods_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_good_code"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:text="1234567"
+            android:layout_below="@+id/tv_goods_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_good_sales"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="14sp"
+            android:textColor="#adadad"
+            android:text="销量:"
+            android:singleLine="true"
+            android:layout_below="@+id/tv_goods_name"
+            android:layout_toRightOf="@+id/tv_good_stocknum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:visibility="gone"
+            android:layout_toRightOf="@+id/tv_good_sales"
+            android:id="@+id/tv_good_salesnum"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:textColor="#adadad"
+            android:text=""
+            android:singleLine="true"
+            android:layout_below="@+id/tv_goods_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#adadad"
+            android:id="@+id/tv_good_price"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"
+            android:text="库存:"
+            android:layout_below="@+id/tv_good_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#adadad"
+            android:layout_toRightOf="@+id/tv_good_price"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"
+            android:id="@+id/tv_stock"
+            android:layout_marginRight="5dp"
+            android:text="23"
+            android:layout_below="@+id/tv_good_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="#ff0000"
+            android:gravity="center_horizontal"
+            android:id="@+id/tv_arrow"
+            android:layout_toRightOf="@+id/tv_stock"
+            android:layout_below="@+id/tv_good_code"
+            android:text="一>"
+            android:layout_width="50dp"
+            android:layout_height="25dp" />
+        <TextView
+            android:textColor="#ff0000"
+            android:layout_toRightOf="@+id/tv_arrow"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/tv_old_stock"
+            android:textSize="16sp"
+            android:layout_marginRight="5dp"
+            android:text="23"
+            android:layout_below="@+id/tv_good_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/image_state"
+            android:layout_marginRight="@dimen/layout_x_10"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_action_3"
+            android:layout_width="@dimen/layout_y_40"
+            android:layout_height="@dimen/layout_y_40" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:paddingTop="0dp"
+    android:paddingBottom="10dp"
+    android:background="@color/gray_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:id="@+id/layout_item_left"
+        android:orientation="vertical"
+        android:background="@drawable/btn_corner_whitle"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="2dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="75dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_name_left"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:lines="2"
+            android:text="西瓜"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    <Button
+        android:visibility="gone"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:text=""
+        android:id="@+id/btn_choose_num_left"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btn_circle_red"
+        android:layout_width="18dp"
+        android:layout_height="18dp" />
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="5dp"
+        android:id="@+id/tv_price_left"
+        android:layout_marginLeft="15dp"
+        android:textSize="14sp"
+        android:singleLine="true"
+        android:textColor="@color/primary_color"
+        android:text="￥19.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_alignParentBottom="true"
+        android:background="#adadad"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+</RelativeLayout>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_sellnum_left"
+            android:layout_marginTop="@dimen/layout_x_5"
+            android:layout_marginLeft="@dimen/layout_x_15"
+            android:textSize="@dimen/layout_x_18"
+            android:textColor="#000000"
+            android:text="销量：30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:id="@+id/layout_item_midle"
+        android:orientation="vertical"
+        android:background="@drawable/btn_corner_whitle"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="2dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="75dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_name_midle"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:lines="2"
+                android:text="西瓜"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:id="@+id/btn_choose_num_midle"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/btn_circle_red"
+                android:layout_width="18dp"
+                android:layout_height="18dp" />
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:id="@+id/tv_price_midle"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="14sp"
+                android:singleLine="true"
+                android:textColor="@color/primary_color"
+                android:text="￥19.00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_alignParentBottom="true"
+                android:background="#adadad"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></View>
+        </RelativeLayout>
+        <TextView
+
+            android:visibility="gone"
+            android:id="@+id/tv_sellnum_midle"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:text="销量：30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:id="@+id/layout_item_right"
+        android:orientation="vertical"
+        android:background="@drawable/btn_corner_whitle"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="75dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_name_right"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:lines="2"
+                android:text="西瓜"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:id="@+id/btn_choose_num_right"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/btn_circle_red"
+                android:layout_width="18dp"
+                android:layout_height="18dp" />
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:id="@+id/tv_price_right"
+                android:paddingBottom="@dimen/layout_x_5"
+                android:layout_marginLeft="@dimen/layout_x_15"
+                android:textSize="14sp"
+                android:singleLine="true"
+                android:textColor="@color/primary_color"
+                android:text="￥19.00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_alignParentBottom="true"
+                android:background="#adadad"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></View>
+        </RelativeLayout>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_sellnum_right"
+            android:layout_marginTop="@dimen/layout_x_5"
+            android:layout_marginLeft="@dimen/layout_x_15"
+            android:textSize="@dimen/layout_x_25"
+            android:textColor="#000000"
+            android:text="销量：30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

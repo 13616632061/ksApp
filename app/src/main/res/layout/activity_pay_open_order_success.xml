@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pay_open_order_success"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="com.ui.ks.PayOpenOrderSuccessActivity">
+    <include
+        android:visibility="gone"
+        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_below="@+id/toolbar_layout"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+        <RelativeLayout
+            android:id="@+id/layout_green_gou"
+            android:layout_marginTop="55dp"
+           android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_green_gou"
+        android:background="@drawable/green_gou"
+        android:layout_width="38dp"
+        android:layout_height="38dp" />
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_green_gou"
+            android:layout_marginLeft="15dp"
+            android:textSize="23sp"
+            android:text="@string/str84"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_totalprice"
+            android:layout_marginTop="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/layout_green_gou"
+            android:textSize="25sp"
+            android:text=""
+            android:textColor="@color/primary_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:textColor="#adadad"
+                android:textSize="16sp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:text="@string/str85"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_order_id"
+                android:textColor="#adadad"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:text=""
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <TextView
+                android:textColor="#adadad"
+                android:textSize="16sp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:text="@string/str86"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_creattime"
+                android:textColor="#adadad"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:text=""
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_print_set"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/select_whitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:layout_marginLeft="@dimen/layout_x_15"
+                android:text="@string/str87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/iv_drop"
+                android:clickable="false"
+                android:layout_marginRight="15dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/righit"
+                android:layout_width="10dp"
+                android:layout_height="10dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <Button
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_above="@+id/btn_backopenoder"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/btn_print"
+        android:background="@drawable/btn_corner_whitle"
+        android:textSize="16sp"
+        android:text="@string/str52"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/btn_backopenoder"
+        android:background="@drawable/btn_corner_orange"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:text="@string/str88"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+</RelativeLayout>

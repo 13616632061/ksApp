@@ -1,0 +1,376 @@
+<RelativeLayout
+    android:background="?gray_bg"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:id="@+id/managmentfragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/iv_managmentfragment_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_back_white"/>
+        <TextView
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_width="250dp"
+            android:layout_height="33dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerInParent="true"
+            android:text="@string/store_management"/>
+        <TextView
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/tv_previews"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="@string/preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:scrollbars="none"
+        android:fadingEdge="none"
+        android:overScrollMode="always"
+        android:layout_below="@id/managmentfragment_layout"
+        android:id="@id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <!--<android.support.v4.view.ViewPager-->
+                    <!--android:id="@+id/viewpager"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="150dp">-->
+                <!--</android.support.v4.view.ViewPager>-->
+                <include layout="@layout/newad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            <LinearLayout
+                android:id="@+id/point_layout"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></LinearLayout>
+            </RelativeLayout>
+            <TextView
+                android:visibility="gone"
+                android:textColor="#adadad"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="@string/tv_yxservice"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/goods_management_layout"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/selset_write"
+                    android:layout_height="100dp">
+                    <TextView
+                        android:id="@+id/tv_goods_management"
+                        android:text="@string/goods"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:background="@drawable/ic_action_widgets"
+                        android:layout_above="@+id/tv_goods_management"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/sales_statistics_layout"
+                    android:visibility="visible"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/selset_write"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="1dp"
+                   >
+                    <TextView
+                        android:id="@+id/tv_vip"
+                        android:text="@string/sales_statistics"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:background="@drawable/ic_action_insert_chart"
+                        android:layout_above="@+id/tv_vip"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/wholesaleorders_layout"
+                    android:visibility="visible"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+                    <TextView
+                        android:id="@+id/tv_store"
+                        android:text="@string/coupon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:background="@drawable/ic_action_confirmation_number"
+                        android:layout_above="@+id/tv_store"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/member_layout"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:background="@drawable/selset_write"
+                android:layout_marginLeft="1dp"
+                android:gravity="center_vertical"
+                android:layout_height="100dp">
+                <TextView
+                    android:id="@+id/tv_member"
+                    android:text="@string/member"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="8dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_above="@+id/tv_member"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/ic_action_account_box" />
+            </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/storeinfo_layout"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+                    <TextView
+                        android:id="@+id/tv_storeinfo"
+                        android:text="@string/in_and_out"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv_storeinfo"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/ic_action_swap_horizontal_circle" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/offer_layout"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+                    <TextView
+                        android:id="@+id/tv_offer"
+                        android:text="@string/quoted_price"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv_offer"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/ic_action_event_note" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/Inventory_layout"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:id="@+id/tv_Inventory"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/inventory" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv_Inventory"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/ic_action_event_available" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Report_loss_layout"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+                    <TextView
+                        android:id="@+id/tv_Report_loss"
+                        android:text="@string/loss_reporting"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv_Report_loss"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/ic_action_event_busy" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Report_Marketing_layout"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+                    <TextView
+                        android:id="@+id/tv_Report_Marketing"
+                        android:text="@string/marketing"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv_Report_Marketing"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/ic_action_marketing" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:id="@+id/Desk_layout"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:id="@+id/tv_Desk"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_on_table" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv_Desk"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/order" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+            </LinearLayout>
+       </ScrollView>
+</RelativeLayout>

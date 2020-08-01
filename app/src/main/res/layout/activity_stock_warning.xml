@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_stock_warning"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?gray_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.ui.ks.StockWarningActivity">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_above="@+id/goods_up_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <com.ui.listview.PagingListView
+                android:background="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:id="@+id/list_goods"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:choiceMode="singleChoice"
+                android:divider="@null"
+                android:dividerHeight="1dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollingCache="true"
+                android:smoothScrollbar="false"
+                android:scrollbars="none"/>
+
+        <include
+            android:id="@id/layout_err"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/layout_err" />
+    </RelativeLayout>
+    <View
+        android:visibility="gone"
+        android:id="@+id/view"
+        android:layout_above="@+id/goods_up_layout"
+        android:background="#cdcdcd"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"></View>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/goods_up_layout"
+        android:background="@color/gray_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+        <TextView
+            android:id="@+id/tv_allselect"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:text="全选"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:layout_toRightOf="@+id/tv_allselect"
+            android:id="@+id/check_allselect"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_toRightOf="@+id/check_allselect"
+            android:id="@+id/btn_goods_up"
+            android:layout_marginRight="45dp"
+            android:layout_marginLeft="45dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_corner_orange"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="商品上架"
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+    </RelativeLayout>
+</RelativeLayout>

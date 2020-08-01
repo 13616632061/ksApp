@@ -1,0 +1,16 @@
+<resources>
+    <style name="AppTheme.Translucent" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+    <!--
+    <style name="AppTheme.Translucent" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+    <style name="AppTheme.Toolbar.Translucent" parent="AppTheme.Translucent">
+        <item name="colorPrimary">@color/transparent</item>
+        <item name="title_bar_padding_top">24dp</item>
+    </style>
+    -->
+</resources>

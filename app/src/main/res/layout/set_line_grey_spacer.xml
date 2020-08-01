@@ -1,0 +1,5 @@
+<View
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="12dp"
+    android:layout_width="fill_parent"
+    android:background="?gray_bg"></View>

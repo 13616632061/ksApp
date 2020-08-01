@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@drawable/selector_cell_pressed"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:padding="@dimen/listview_padding"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/msg_top"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="1"
+                android:text=""
+                android:gravity="center_vertical"
+                android:id="@id/tv_content"
+                android:textSize="14sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"/>
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:singleLine="false"
+                android:textColor="@color/text_hint_color"
+                android:id="@id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="ss"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/msg_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text=""
+                android:gravity="center_vertical"
+                android:id="@id/textView2"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"/>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:gravity="right"
+        android:visibility="gone"
+        android:id="@id/linearLayout5"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_upline_common"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/s_component_height">
+
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:id="@id/editText1"
+            android:background="@drawable/selector_flat_text"
+            android:textSize="14sp"
+            android:textColor="@color/accent_color"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/op_button_height"
+            android:text="已读"/>
+    </LinearLayout>
+    <include layout="@layout/set_line_grey_spacer" />
+
+</LinearLayout>

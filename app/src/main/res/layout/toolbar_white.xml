@@ -1,0 +1,47 @@
+<RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:paddingTop="?title_bar_padding_top"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar
+        android:id="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:popupTheme="?actionpopup">
+        <RelativeLayout
+            android:background="@color/transparent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:text=""
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_title" />
+            <!--<Button-->
+                <!--android:id="@id/comment"-->
+                <!--android:background="@drawable/btn_comment_text"-->
+                <!--android:focusable="false"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:visibility="gone"-->
+                <!--android:text=""/>-->
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+    <!--<View-->
+        <!--android:id="@+id/toolbar_line"-->
+        <!--android:layout_below="@id/toolbar"-->
+        <!--android:background="@color/list_divider_color"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="1dp" />-->
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/iv_close"
+        android:background="@drawable/close"
+        android:layout_alignParentRight="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:text="@string/str108"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:textColor="#000000"
+        android:id="@+id/et_input"
+        android:background="@color/gray_bg"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:textSize="16sp"
+        android:singleLine="true"
+        android:paddingLeft="3dp"
+        android:inputType="number"
+        android:hint="@string/str112"
+        android:layout_below="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <TextView
+        android:id="@+id/tv_sure"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/primary_color"
+        android:layout_alignParentRight="true"
+        android:textSize="16sp"
+        android:text="@string/sure"
+        android:layout_below="@+id/et_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_nomark"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toLeftOf="@+id/tv_sure"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/et_input"
+        android:textColor="#adadad"
+        android:textSize="16sp"
+        android:text="@string/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

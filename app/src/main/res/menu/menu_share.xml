@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/share_wx_friends" android:title="微信好友" android:icon="@drawable/share_wx_friends" />
+    <item android:id="@+id/share_wx_timeline" android:title="微信朋友圈" android:icon="@drawable/share_wx_timeline" />
+    <item android:id="@+id/share_qq" android:title="QQ好友" android:icon="@drawable/share_qq" />
+    <item android:id="@+id/share_qzone" android:title="QQ空间" android:icon="@drawable/share_qzone" />
+    <!--<item android:id="@+id/share_sina" android:title="微博" android:icon="@drawable/share_sina" />-->
+    <item android:id="@+id/share_sms" android:title="发送短信" android:icon="@drawable/share_sms" />
+    <!--<item android:id="@+id/share_email" android:title="发送邮件" android:icon="@drawable/share_email" />-->
+    <item android:id="@+id/share_copy" android:title="复制链接" android:icon="@drawable/share_copy" />
+    <item android:id="@+id/share_content" android:title="更多" android:icon="@drawable/share_content" />
+</menu>

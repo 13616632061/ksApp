@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="190.0dip">
+
+    <RelativeLayout
+        android:id="@id/rl_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_alertdialog">
+
+        <ProgressBar
+            android:id="@id/center_process_bar"
+            style="@style/ProgressBar.Loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@id/top_process_promot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/center_process_bar"
+            android:gravity="left|center"
+            android:maxWidth="95.0dip"
+            android:paddingLeft="5.0dip"
+            android:text="@string/str284"
+            android:textColor="#fff8f8f8"
+            android:textSize="@dimen/text_size_info" />
+
+        <TextView
+            android:id="@id/tv_line"
+            android:layout_width="0.5dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/top_process_promot"
+            android:background="@color/text_secondary_color"
+            android:minHeight="55.0dip" />
+
+        <ImageButton
+            android:id="@id/imgbtn_guanbi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2.0dip"
+            android:layout_toRightOf="@id/tv_line"
+            android:background="@drawable/selector_btn_alert_dialog" />
+    </RelativeLayout>
+</RelativeLayout>

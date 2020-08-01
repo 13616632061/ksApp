@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_statistics"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="?gray_bg"
+    tools:context="com.ui.ks.StatisticsActivity">
+    <include
+        android:visibility="gone"
+        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:id="@+id/statistics_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary">
+        <ImageView
+            android:id="@+id/iv_statistics_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_back_white"/>
+        <RelativeLayout
+            android:id="@+id/statistics_title_layout"
+            android:layout_centerInParent="true"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_statistics_title"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerInParent="true"
+            android:text=""/>
+        <ImageView
+            android:id="@+id/iv_statistics_expand_more"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_expand_more"
+            android:visibility="gone"
+            android:layout_toRightOf="@+id/tv_statistics_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <!--<include-->
+        <!--layout="@layout/mainbranch_select"></include>-->
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@id/refresh_header"
+        android:layout_below="@id/statistics_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
+        <ListView
+            android:background="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:id="@id/lv_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice"
+            android:divider="@null"
+            android:dividerHeight="@dimen/card_divider"
+            android:drawSelectorOnTop="true"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollingCache="true"
+            android:smoothScrollbar="true"
+            android:scrollbars="none"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sort_edit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?gray_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.ui.ks.SortEditActivity">
+    <include layout="@layout/toolbar" android:id="@id/toolbar_layout" />
+    <RelativeLayout
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <com.ui.listview.PagingListView
+                android:background="@android:color/transparent"
+                android:listSelector="@android:color/transparent"
+                android:id="@+id/list_goodsortedit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:choiceMode="singleChoice"
+                android:divider="@null"
+                android:dividerHeight="1dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollingCache="true"
+                android:smoothScrollbar="false"
+                android:scrollbars="none"/>
+
+        <include
+            android:id="@id/layout_err"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/layout_err" />
+    </RelativeLayout>
+
+</RelativeLayout>
