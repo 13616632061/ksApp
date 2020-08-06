@@ -85,7 +85,7 @@ public class Global {
 	public static final String BROADCAST_GetOpenOrder_ACTION= "com.ms.ks.receiver.GetOpenOrder";
 	public static final String BROADCAST_OpenOrderPayCode_ACTION= "com.ms.ks.receiver.OpenOrderPayCode";
 	public static final String BROADCAST_SubmitOrderActivity_ACTION= "com.ms.ks.receiver.SubmitOrderActivity";
-	public static final String BROADCAST_Goods_Sales_StatisticsAcitvity_ACTION= "com.ms.ks.receiver.Goods_Sales_StatisticsAcitvity";
+	public static final String BROADCAST_Goods_Sales_StatisticsAcitvity_ACTION= "com.ms.ks.receiver.SalesStatisticsAcitvity";
 	public static final String BROADCAST_Goods_Sales_ChartStatisticsAcitvity_ACTION= "com.ms.ks.receiver.Goods_Sales_ChartStatisticsAcitvity";
 	public static final String BROADCAST_Goods_Sales_Statistics_SearchActivity_ACTION= "com.ms.ks.receiver.Goods_Sales_Statistics_SearchActivity";
 	public static final String BROADCAST_NearlyShopperGoodsActivity_ACTION= "com.ms.ks.receiver.NearlyShopperGoodsActivity";

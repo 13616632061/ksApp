@@ -29,12 +29,11 @@ import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.ui.adapter.MainStoreViewPagerAdapter;
 import com.ui.entity.News;
 import com.ui.global.Global;
 import com.ui.ks.DeskActivity;
 import com.ui.ks.GoodsManagementActivity;
-import com.ui.ks.Goods_Sales_StatisticsAcitvity;
+import com.ui.ks.SalesStatistics.SalesStatisticsAcitvity;
 import com.ui.ks.H5GoodsPreviewActivity;
 import com.ui.ks.InventoryActivity;
 import com.ui.ks.MarketingActivity;
@@ -42,7 +41,6 @@ import com.ui.ks.MemberManageActivity;
 import com.ui.ks.OpenOrderActivity;
 import com.ui.ks.Out_In_operationActivity;
 import com.ui.ks.R;
-import com.ui.ks.ShopActivity;
 import com.ui.ks.Webpage_Activity;
 import com.ui.util.BitmapCache;
 import com.ui.util.BitmapUtils;
@@ -214,7 +212,7 @@ public class  ManagerFragment extends BaseFragment {
         sales_statistics_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(),Goods_Sales_StatisticsAcitvity.class);
+                Intent intent=new Intent(getActivity(),SalesStatisticsAcitvity.class);
                 startActivity(intent);
             }
         });

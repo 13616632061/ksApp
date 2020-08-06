@@ -38,6 +38,12 @@ public interface AccountExportContract {
         void setEmail(String email);
 
         String getEmail();
+        /**
+        *@Description:跳转最近使用过的邮箱
+        *@Author:lyf
+        *@Date: 2020/8/1
+        */
+        void toGoRecentlyUsedEmailPage();
     }
 
     interface Presenter {

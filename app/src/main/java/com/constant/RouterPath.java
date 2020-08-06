@@ -19,4 +19,6 @@ public class RouterPath {
     public static final String ACTIVITY_REPORT_LOSS_GOOD = "/app/ReportLossGoodActivity";
     //报损详情
     public static final String ACTIVITY_REPORT_LOSS_DETAIL = "/app/ReportLossDetailActivity";
+    //最近使用过的邮箱
+    public static final String ACTIVITY_RECENTLY_USED_EMAIL = "/app/RecentlyUsedEmailActivity";
 }

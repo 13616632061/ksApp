@@ -1,8 +1,10 @@
 package com.ui.ks.accountExport;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +14,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.api.ApiRetrofit;
 import com.blankj.utilcode.util.LogUtils;
+import com.constant.RouterPath;
 import com.library.base.mvp.BaseActivity;
 import com.ui.ks.R;
 import com.ui.ks.accountExport.contract.AccountExportContract;
@@ -77,6 +81,10 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
     @BindView(R.id.activity_put_report)
     RelativeLayout activityPutReport;
 
+    private static final int REQUEST_CODE = 200;
+    private static final int RESULT_CODE = 200;
+
+
     private AccountExportPresenter mPresenter;
 
 
@@ -88,19 +96,19 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
     @Override
     protected void initView() {
         initTabTitle(getResources().getString(R.string.title_activity_putreport), "");//对账导出
-        mPresenter=new AccountExportPresenter(this);
+        mPresenter = new AccountExportPresenter(this);
         setEndTime(DateUtils.getCurDate());
     }
 
     @OnClick({R.id.btn_nearly_seven, R.id.btn_nearly_thirty, R.id.btn_e_mail, R.id.btn_native,
-            R.id.layout_set_starttime, R.id.layout_set_endtime})
+            R.id.layout_set_starttime, R.id.layout_set_endtime, R.id.tv_recently_used_email})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_nearly_seven://近7天
-                setStartTime(DateUtils.getNearlyDate(getEndTime(),7));
+                setStartTime(DateUtils.getNearlyDate(getEndTime(), 7));
                 break;
             case R.id.btn_nearly_thirty://近30天
-                setStartTime(DateUtils.getNearlyDate(getEndTime(),30));
+                setStartTime(DateUtils.getNearlyDate(getEndTime(), 30));
                 break;
             case R.id.btn_e_mail://导出邮箱
                 mPresenter.sendEmailReportAccount();
@@ -113,6 +121,9 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
                 break;
             case R.id.layout_set_endtime://结束时间
                 DateUtils.runTime(this, tvEndtime);
+                break;
+            case R.id.tv_recently_used_email://最近使用过的邮箱
+                toGoRecentlyUsedEmailPage();
                 break;
         }
     }
@@ -140,7 +151,7 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
      */
     @Override
     public void setEndTime(String endTime) {
-        tvEndtime.setText(TextUtils.isEmpty(endTime)?DateUtils.getCurDate():endTime);
+        tvEndtime.setText(TextUtils.isEmpty(endTime) ? DateUtils.getCurDate() : endTime);
     }
 
     @Override
@@ -156,6 +167,7 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
     @Override
     public void setEmail(String email) {
         etInputEMail.setText(email);
+        etInputEMail.setSelection(TextUtils.isEmpty(email) ? 0 : email.length());
     }
 
     @Override
@@ -163,5 +175,27 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
         return etInputEMail.getText().toString().trim();
     }
 
+    /**
+     * @Description:跳转最近使用过的邮箱
+     * @Author:lyf
+     * @Date: 2020/8/1
+     */
+    @Override
+    public void toGoRecentlyUsedEmailPage() {
+        ARouter.getInstance().build(RouterPath.ACTIVITY_RECENTLY_USED_EMAIL)
+                .navigation(this, REQUEST_CODE);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQUEST_CODE:
+                if (resultCode == RESULT_CODE) {
+                    String email = data.getExtras().getString("email");
+                    setEmail(email);
+                }
+                break;
+        }
+    }
 }

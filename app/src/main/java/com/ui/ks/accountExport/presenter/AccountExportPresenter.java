@@ -7,9 +7,11 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.api.SubscriberCallBack;
+import com.bean.RecentlyUsedEmailBean;
 import com.bean.ResultResponse;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.RegexUtils;
+import com.blankj.utilcode.util.SPUtils;
 import com.library.base.mvp.BasePresenter;
 import com.ui.ks.R;
 import com.ui.ks.accountExport.AccountExportActivity;
@@ -18,12 +20,15 @@ import com.ui.ks.accountExport.model.AccountExportModel;
 import com.ui.util.DateUtils;
 import com.ui.util.StringUtils;
 
+import org.litepal.LitePal;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 
 import rx.Subscriber;
 
@@ -40,7 +45,6 @@ public class AccountExportPresenter extends BasePresenter<AccountExportActivity>
         super(mView);
         mModel = new AccountExportModel();
     }
-
 
 
     /**
@@ -65,6 +69,7 @@ public class AccountExportPresenter extends BasePresenter<AccountExportActivity>
             mView.showToast(mView.getResources().getString(R.string.str401));//邮箱不能为空
             return;
         }
+
         mView.showLoading();
         addSubscription(mModel.sendReportAccount(starttime, endtime, e_mail), new Subscriber() {
             @Override
@@ -79,7 +84,10 @@ public class AccountExportPresenter extends BasePresenter<AccountExportActivity>
 
             @Override
             public void onNext(Object o) {
-
+                //保存最近使用过的邮箱
+                RecentlyUsedEmailBean recentlyUsedEmailBean = new RecentlyUsedEmailBean();
+                recentlyUsedEmailBean.setEmail(e_mail);
+                recentlyUsedEmailBean.save();
             }
         });
     }
@@ -123,11 +131,12 @@ public class AccountExportPresenter extends BasePresenter<AccountExportActivity>
 
         });
     }
+
     /**
-    *@Description:保存excel文件
-    *@Author:lyf
-    *@Date: 2020/8/1
-    */
+     * @Description:保存excel文件
+     * @Author:lyf
+     * @Date: 2020/8/1
+     */
     @Override
     public void saveExcelFile(String url) {
 

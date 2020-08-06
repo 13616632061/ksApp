@@ -48,7 +48,7 @@
     <string name="title_activity_getmoney">Withdrawal</string>
     <string name="title_activity_getmoneyexplain">Withdrawal rules</string>
     <string name="title_activity_mainbranchselect">Business Statistics</string>
-    <string name="title_activity_goods_salesstatistics">Commodity sales statistics</string>
+    <string name="title_goods_salesstatistics">Commodity sales statistics</string>
     <string name="title_activity_H5GoodsPreviewActivity">Product Preview</string>
     <string name="title_activity_WholeSaleOrdersActivity">YiZhiXing mall</string>
     <string name="title_activity_NearlyShopperGoodsActivity">Select product</string>
@@ -641,11 +641,12 @@
     <string name="str400">End time cannot be empty</string>
     <string name="str401">The mailbox cannot be empty</string>
     <string name="str402">Statement successfully imported to local</string>
-
-
-
-
-
+    <string name="str403">Recently used mailbox</string>
+    <string name="str404">Commodity ranking</string>
+    <string name="str405">Sales statistics</string>
+    <string name="str406">sales volume</string>
+    <string name="str407">sales nums</string>
+    <string name="str408">cash turnover</string>
 
 
 

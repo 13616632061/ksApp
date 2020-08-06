@@ -26,6 +26,7 @@ import com.ui.entity.GoodList_Item_check;
 import com.ui.entity.Goods_Sales;
 import com.ui.entity.Goods_info;
 import com.ui.global.Global;
+import com.ui.ks.SalesStatistics.SalesStatisticsAcitvity;
 import com.ui.listview.PagingListView;
 import com.library.utils.BigDecimalArith;
 import com.ui.util.CustomRequest;
@@ -215,7 +216,7 @@ public class GoodsInfoSearchActivity extends BaseActivity implements View.OnClic
                             }
                             GoodsInfoSearchActivity.this.sendBroadcast(new Intent(Global.BROADCAST_Goods_Sales_StatisticsAcitvity_ACTION));
                             GoodsInfoSearchActivity.this.sendBroadcast(new Intent(Global.BROADCAST_Goods_Sales_Statistics_SearchActivity_ACTION));
-                            Intent intent=new Intent( GoodsInfoSearchActivity.this,Goods_Sales_StatisticsAcitvity.class);
+                            Intent intent=new Intent( GoodsInfoSearchActivity.this,SalesStatisticsAcitvity.class);
                             intent.putExtra("type",2);
                             intent.putParcelableArrayListExtra("goods_sales_list",goods_sales_list);
                             startActivity(intent);

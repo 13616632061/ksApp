@@ -474,7 +474,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Goods_Sales_StatisticsAcitvity"
+            android:name=".SalesStatistics.SalesStatisticsAcitvity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
@@ -483,7 +483,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Goods_Sales_ChartStatisticsAcitvity"
-            android:label="@string/title_activity_goods_salesstatistics"
+            android:label="@string/goods_salesstatistics"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
@@ -625,7 +625,8 @@
         <activity android:name=".ReportLoss.ReportLossListActivity" />
         <activity android:name=".ReportLoss.AddReportLossActivity" />
         <activity android:name=".ReportLoss.ReportLossGoodActivity" />
-        <activity android:name=".ReportLoss.ReportLossDetailActivity"></activity>
+        <activity android:name=".ReportLoss.ReportLossDetailActivity" />
+        <activity android:name=".accountExport.RecentlyUsedEmailActivity"></activity>
     </application>
 
 </manifest>

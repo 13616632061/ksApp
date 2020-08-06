@@ -48,7 +48,7 @@
     <string name="title_activity_getmoney">提现</string>
     <string name="title_activity_getmoneyexplain">提现规则</string>
     <string name="title_activity_mainbranchselect">营业统计</string>
-    <string name="title_activity_goods_salesstatistics">商品销售统计</string>
+    <string name="title_goods_salesstatistics">商品销售统计</string>
     <string name="title_activity_H5GoodsPreviewActivity">商品预览</string>
     <string name="title_activity_WholeSaleOrdersActivity">易之星商城</string>
     <string name="title_activity_NearlyShopperGoodsActivity">选择商品</string>
@@ -640,7 +640,12 @@
     <string name="str400">结束时间不能为空</string>
     <string name="str401">邮箱不能为空</string>
     <string name="str402">对账单已成功导入至本地</string>
-
+    <string name="str403">最近使用过的邮箱</string>
+    <string name="str404">商品排名</string>
+    <string name="str405">销售额统计</string>
+    <string name="str406">销售额</string>
+    <string name="str407">销售数量</string>
+    <string name="str408">现金营业额</string>
 
 
 

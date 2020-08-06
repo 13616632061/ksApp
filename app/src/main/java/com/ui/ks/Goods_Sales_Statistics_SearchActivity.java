@@ -19,6 +19,7 @@ import com.base.BaseActivity;
 import com.ui.entity.Goods_Sales;
 import com.ui.global.Global;
 import com.library.utils.BigDecimalArith;
+import com.ui.ks.SalesStatistics.SalesStatisticsAcitvity;
 import com.ui.util.CustomRequest;
 import com.ui.util.DateUtils;
 import com.ui.util.SetEditTextInput;
@@ -193,7 +194,7 @@ public class Goods_Sales_Statistics_SearchActivity extends BaseActivity implemen
 
                         }
                         Goods_Sales_Statistics_SearchActivity.this.sendBroadcast(new Intent(Global.BROADCAST_Goods_Sales_StatisticsAcitvity_ACTION));
-                        Intent intent=new Intent(Goods_Sales_Statistics_SearchActivity.this,Goods_Sales_StatisticsAcitvity.class);
+                        Intent intent=new Intent(Goods_Sales_Statistics_SearchActivity.this,SalesStatisticsAcitvity.class);
                         intent.putExtra("type",2);
                         intent.putParcelableArrayListExtra("goods_sales_list",goods_sales_list);
                         startActivity(intent);

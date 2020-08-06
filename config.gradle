@@ -72,6 +72,8 @@ ext {
             "zxing"                              : "cn.yipianfengye.android:zxing-library:2.2",
             //eventbus
             "eventbus"                           : "org.greenrobot:eventbus:3.2.0",
+            //图表
+            "xclcharts"                          : "org.xclcharts:lib:2.4",
 
 
     ]

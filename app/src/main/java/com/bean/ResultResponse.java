@@ -4,7 +4,7 @@ package com.bean;
  * Created by lyf on 2020/7/8.
  */
 
-public class ResultResponse {
+public class ResultResponse<T> {
 
 
     /**
@@ -21,7 +21,7 @@ public class ResultResponse {
         this.response = response;
     }
 
-    public static class ResponseBean<T>{
+    public class ResponseBean{
         /**
          * status : 200
          * message : ok
