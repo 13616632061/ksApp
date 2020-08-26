@@ -17,7 +17,7 @@ public class ReportLossModel implements ReportLossListContract.Model {
     *@Date: 2020/7/19
     */
     @Override
-    public Observable getReportLossList() {
-        return ApiRetrofit.getInstance().getApiService().getReportLossList();
+    public Observable getReportLossList(String startTime,String endTime) {
+        return ApiRetrofit.getInstance().getApiService().getReportLossList(startTime,endTime);
     }
 }

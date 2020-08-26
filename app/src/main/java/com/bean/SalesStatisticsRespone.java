@@ -1,12 +1,14 @@
 package com.bean;
 
+import android.text.TextUtils;
+
 import java.util.List;
 
 /**
  * Created by lyf on 2020/8/5.
  */
 
-public class SalesStatisticsRespone  {
+public class SalesStatisticsRespone {
 
 
     /**
@@ -151,7 +153,7 @@ public class SalesStatisticsRespone  {
                  */
 
                 private String total_day;
-                private String total_money_day;
+                private String total_money_day = "0.00";
                 private String date;
 
                 public String getTotal_day() {
@@ -167,6 +169,9 @@ public class SalesStatisticsRespone  {
                 }
 
                 public void setTotal_money_day(String total_money_day) {
+                    if (TextUtils.isEmpty(total_money_day)) {
+                        total_money_day = "0.00";
+                    }
                     this.total_money_day = total_money_day;
                 }
 

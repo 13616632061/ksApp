@@ -17,7 +17,25 @@ public class SalesStatisticsFragmentModel implements SalesStatisticsFragmentCont
      * @Date: 2020/8/5
      */
     @Override
-    public Observable curMonthcashStatistics() {
-        return ApiRetrofit.getInstance().getApiService().curMonthcashStatistics(DateUtils.getMonthDate(0),"1","31");
+    public Observable curMonthcashStatistics(int month) {
+        return ApiRetrofit.getInstance().getApiService().curMonthcashStatistics(DateUtils.getMonthDate(month),"1","31");
+    }
+    /**
+    *@Description:当月移动统计
+    *@Author:lyf
+    *@Date: 2020/8/8
+    */
+    @Override
+    public Observable curMonthLineStatistics(int month) {
+        return ApiRetrofit.getInstance().getApiService().curMonthLineStatistics(DateUtils.getMonthDate(month),"1","31");
+    }
+    /**
+    *@Description:当月会员统计
+    *@Author:lyf
+    *@Date: 2020/8/8
+    */
+    @Override
+    public Observable curMonthMemberStatistics(int month) {
+        return ApiRetrofit.getInstance().getApiService().curMonthMemberStatistics(DateUtils.getMonthDate(month),"1","31","member");
     }
 }

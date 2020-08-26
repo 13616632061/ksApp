@@ -38,6 +38,18 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:text="@string/tv_save"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
         <Switch
             android:id="@+id/btn_switch"
             android:layout_width="wrap_content"
@@ -127,43 +139,6 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="1dp"
-                android:background="#ffffff"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:text="@string/tv_goodsprice"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="5dp"
-                    android:layout_height="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/btn_corner_orange" />
-
-                <EditText
-                    android:id="@+id/et_goodprice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:background="@null"
-                    android:digits="0123456789."
-                    android:gravity="right"
-                    android:hint="@string/str68"
-                    android:inputType="numberDecimal"
-                    android:paddingRight="20dp"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
 
             <RelativeLayout
 
@@ -229,6 +204,152 @@
                     android:textSize="14sp" />
 
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_good_type"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/select_whitle">
+
+                <TextView
+                    android:id="@+id/tv_name_good_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/tv_goodtype"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tv_name_good_type"
+                    android:background="@drawable/btn_corner_orange" />
+
+                <TextView
+                    android:id="@+id/tv_good_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/iv_drop"
+                    android:background="@null"
+                    android:gravity="right"
+                    android:hint="@string/str63"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/iv_drop"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_right_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/good_stock_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/tv_good_stock"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/iv_point"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tv_store"
+                    android:background="@drawable/btn_corner_orange" />
+
+                <EditText
+                    android:id="@+id/et_good_stocknum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_toLeftOf="@+id/btn_add_store"
+                    android:layout_toRightOf="@+id/iv_point"
+                    android:background="@null"
+                    android:digits="0123456789."
+                    android:gravity="right"
+                    android:hint="@string/str61"
+                    android:inputType="numberDecimal"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btn_add_store"
+                    android:layout_width="75dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/btn_corner_orange"
+                    android:text="@string/str108"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/tv_goodsprice"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/btn_corner_orange" />
+
+                <EditText
+                    android:id="@+id/et_goodprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:digits="0123456789."
+                    android:gravity="right"
+                    android:hint="@string/str68"
+                    android:inputType="numberDecimal"
+                    android:paddingRight="20dp"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -308,6 +429,217 @@
 
             </LinearLayout>
 
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_member_price01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/str413"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/ed_member_price01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toLeftOf="@+id/iv_more_member"
+                    android:layout_toRightOf="@+id/tv_member_price01"
+                    android:background="@null"
+                    android:digits="0123456789."
+                    android:gravity="right"
+                    android:hint="@string/str414"
+                    android:inputType="numberDecimal"
+                    android:paddingRight="20dp"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/iv_more_member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="15dp"
+                    android:src="@drawable/ic_right_grey" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_other_member"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_member_price02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/str413"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_corner_orange"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/ed_member_price02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@null"
+                        android:digits="0123456789."
+                        android:gravity="right"
+                        android:hint="@string/str414"
+                        android:inputType="numberDecimal"
+                        android:paddingRight="20dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_member_price03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/str413"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_corner_orange"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/ed_member_price03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@null"
+                        android:digits="0123456789."
+                        android:gravity="right"
+                        android:hint="@string/str414"
+                        android:inputType="numberDecimal"
+                        android:paddingRight="20dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_member_price04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/str413"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_corner_orange"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/ed_member_price04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@null"
+                        android:digits="0123456789."
+                        android:gravity="right"
+                        android:hint="@string/str414"
+                        android:inputType="numberDecimal"
+                        android:paddingRight="20dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/tv_member_price05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/str413"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="5dp"
+                        android:layout_height="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/btn_corner_orange"
+                        android:visibility="invisible" />
+
+                    <EditText
+                        android:id="@+id/ed_member_price05"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@null"
+                        android:digits="0123456789."
+                        android:gravity="right"
+                        android:hint="@string/str414"
+                        android:inputType="numberDecimal"
+                        android:paddingRight="20dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -347,53 +679,6 @@
 
             </LinearLayout>
 
-            <RelativeLayout
-                android:id="@+id/layout_good_type"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="1dp"
-                android:background="@drawable/select_whitle">
-
-                <TextView
-                    android:id="@+id/tv_name_good_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="15dp"
-                    android:text="@string/tv_goodtype"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="5dp"
-                    android:layout_height="5dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/tv_name_good_type"
-                    android:background="@drawable/btn_corner_orange" />
-
-                <TextView
-                    android:id="@+id/tv_good_type"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/iv_drop"
-                    android:background="@null"
-                    android:gravity="right"
-                    android:hint="@string/str63"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:id="@+id/iv_drop"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/ic_right_grey" />
-            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -535,66 +820,6 @@
 
             </LinearLayout>
 
-
-            <RelativeLayout
-                android:id="@+id/good_stock_layout"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:background="#ffffff"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:id="@+id/tv_store"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="15dp"
-                    android:text="@string/tv_good_stock"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:id="@+id/iv_point"
-                    android:layout_width="5dp"
-                    android:layout_height="5dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/tv_store"
-                    android:background="@drawable/btn_corner_orange" />
-
-                <EditText
-                    android:id="@+id/et_good_stocknum"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_toLeftOf="@+id/btn_add_store"
-                    android:layout_toRightOf="@+id/iv_point"
-                    android:background="@null"
-                    android:digits="0123456789."
-                    android:gravity="right"
-                    android:text="0"
-                    android:hint="@string/str61"
-                    android:inputType="numberDecimal"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <Button
-                    android:id="@+id/btn_add_store"
-                    android:layout_width="75dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="15dp"
-                    android:background="@drawable/btn_corner_orange"
-                    android:text="@string/str108"
-                    android:textColor="#ffffff"
-                    android:textSize="16sp"
-                    android:visibility="visible" />
-
-            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/good_stocknum_layout"

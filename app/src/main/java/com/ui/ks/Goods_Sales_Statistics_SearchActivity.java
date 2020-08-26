@@ -19,6 +19,7 @@ import com.base.BaseActivity;
 import com.ui.entity.Goods_Sales;
 import com.ui.global.Global;
 import com.library.utils.BigDecimalArith;
+import com.ui.ks.GoodsSearch.GoodsInfoSearchActivity;
 import com.ui.ks.SalesStatistics.SalesStatisticsAcitvity;
 import com.ui.util.CustomRequest;
 import com.ui.util.DateUtils;

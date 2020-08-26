@@ -645,6 +645,31 @@
     <string name="str406">销售额</string>
     <string name="str407">销售数量</string>
     <string name="str408">现金营业额</string>
+    <string name="str409">移动营业额</string>
+    <string name="str410">会员营业额</string>
+    <string name="str411">当月</string>
+    <string name="str412">上月</string>
+    <string name="str413">会员价</string>
+    <string name="str414">请输入会员价</string>
+    <string name="str415">暂无数据哦</string>
+    <string name="str416">建议反馈</string>
+    <string name="str417">近三天</string>
+    <string name="str418">近七天</string>
+    <string name="str419">本月</string>
+    <string name="str420">上月</string>
+    <string name="str421">上一天</string>
+    <string name="str422">下一天</string>
+    <string name="str423">上一月</string>
+    <string name="str424">下一月</string>
+    <string name="str425">时间筛选</string>
+    <string name="str426">库存</string>
+    <string name="str427">商品扫描</string>
+
+
+
+
+
+
 
 
 

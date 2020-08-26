@@ -38,6 +38,6 @@ public class GoodsSalesStatisticsAdapter extends BaseQuickAdapter<GoodsSalesStat
 
         }
         //商品销售数量
-        helper.setText(R.id.tv_sales_num, item.getNums());
+        helper.setText(R.id.tv_sales_num, new DecimalFormat("######0.000").format(Double.parseDouble(item.getNums())));
     }
 }

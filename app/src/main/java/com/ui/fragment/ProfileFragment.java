@@ -16,10 +16,13 @@ import android.widget.TextView;
 
 import com.MyApplication.KsApplication;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.api.ApiConstant;
 import com.base.BaseFragment;
+import com.constant.RouterPath;
 import com.material.widget.PaperButton;
 import com.ui.global.Global;
 import com.ui.ks.AddressActivity;
@@ -218,7 +221,7 @@ public class ProfileFragment extends BaseFragment {
         return view;
     }
 
-    @OnClick({R.id.iv_profilefragment_refresh, R.id.iv_profilefragment_back, R.id.ly_language_set})
+    @OnClick({R.id.iv_profilefragment_refresh, R.id.iv_profilefragment_back, R.id.ly_language_set, R.id.ly_suggestions_back})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_profilefragment_refresh://刷新
@@ -228,8 +231,11 @@ public class ProfileFragment extends BaseFragment {
                 getActivity().finish();
                 break;
             case R.id.ly_language_set://语言设置
-                Intent intent=new Intent(getActivity(), LanguageSetActivity.class);
+                Intent intent = new Intent(getActivity(), LanguageSetActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.ly_suggestions_back://建议反馈
+                ARouter.getInstance().build(RouterPath.ACTIVITY_HTML).withString("url", ApiConstant.SUGGESTION_BACK).navigation();
                 break;
         }
     }

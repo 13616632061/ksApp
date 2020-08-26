@@ -6,6 +6,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.ui.ks.MipcaActivityCapture;
 import com.ui.ks.R;
+import com.ui.ks.ScanHander.BaseScanHanderActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +20,7 @@ import android.util.Log;
 public final class CaptureActivityHandler extends Handler {
     private static final String TAG = CaptureActivityHandler.class.getSimpleName();
 
-    private final MipcaActivityCapture activity;
+    private final BaseScanHanderActivity activity;
     private final DecodeThread decodeThread;
     private State state;
 
@@ -29,7 +30,7 @@ public final class CaptureActivityHandler extends Handler {
         DONE
     }
 
-    public CaptureActivityHandler(MipcaActivityCapture activity, Vector<BarcodeFormat> decodeFormats,
+    public CaptureActivityHandler(BaseScanHanderActivity activity, Vector<BarcodeFormat> decodeFormats,
                                   String characterSet) {
         this.activity = activity;
         decodeThread = new DecodeThread(activity, decodeFormats, characterSet,

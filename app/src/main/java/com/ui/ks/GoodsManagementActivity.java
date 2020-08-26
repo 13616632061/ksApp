@@ -31,6 +31,7 @@ import com.ui.entity.GoodList_Item_check;
 import com.ui.entity.GoodSort;
 import com.ui.entity.Goods_info;
 import com.ui.global.Global;
+import com.ui.ks.GoodsSearch.GoodsInfoSearchActivity;
 import com.ui.listview.PagingListView;
 import com.ui.util.CustomRequest;
 import com.ui.util.SysUtils;
@@ -327,12 +328,14 @@ public class GoodsManagementActivity extends BaseActivity implements View.OnClic
      * 获取分类信息
      */
     private  void getSortlist(){
+        showLoading(this);
         Map<String,String> map=new HashMap<String, String>();
         map.put("page",page+"");
         CustomRequest customRequest=new CustomRequest(Request.Method.POST, SysUtils.getGoodsServiceUrl("cat_getlist"), map, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject jsonObject) {
                 try {
+                    hideLoading();
                     JSONObject ret = SysUtils.didResponse(jsonObject);
                     System.out.println("分类ret="+ret);
                     String status = ret.getString("status");
@@ -389,6 +392,7 @@ public class GoodsManagementActivity extends BaseActivity implements View.OnClic
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                hideLoading();
                 SysUtils.showNetworkError();
                 setNoNetwork();
 

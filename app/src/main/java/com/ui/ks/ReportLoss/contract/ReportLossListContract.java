@@ -12,6 +12,9 @@ import rx.Observable;
 public interface ReportLossListContract {
 
     interface View {
+        //初始化日期时间
+        void initDateTime();
+
         //初始化适配器
         ReportLossListaAdapter initAdapter();
 
@@ -20,6 +23,17 @@ public interface ReportLossListContract {
 
         //跳转报损详情页
         void toGoResportLossDetail(ReportLostListRespone.ResponseBean.DataBean bean);
+
+        void setTvTime(String time);
+
+        //请求权限
+        void requestPermission();
+
+        //跳转时间筛选
+        void goToTimeFilter();
+
+        //空视图
+        android.view.View setEmptyView();
     }
 
     interface Presenter {
@@ -27,12 +41,15 @@ public interface ReportLossListContract {
         void initAdapter();
 
         //报损列表
-        void getReportLossList();
+        void getReportLossList(String startTime, String endTime);
+
+        //空视图
+        void setEmptyView();
 
     }
 
     interface Model {
         //报损列表
-        Observable getReportLossList();
+        Observable getReportLossList(String startTime, String endTime);
     }
 }

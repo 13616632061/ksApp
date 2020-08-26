@@ -1,11 +1,9 @@
 package com.ui.ks.SalesStatistics;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -13,15 +11,13 @@ import android.widget.RadioGroup;
 import com.library.base.mvp.BaseActivity;
 import com.library.base.mvp.BaseFragment;
 import com.ui.fragment.GoodsSalesStatisticsFragment;
-import com.ui.fragment.SalesStatisticsFragment;
+import com.ui.fragment.TotalSalesStatisticsFragment;
 import com.ui.ks.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * @Description:销售统计
@@ -46,7 +42,7 @@ public class SalesStatisticsAcitvity extends BaseActivity implements RadioGroup.
     private List<Fragment> fragments = new ArrayList<>();
     private List<String> tabTitles = new ArrayList<>();
     private GoodsSalesStatisticsFragment goodsSalesStatisticsFragment;
-    private SalesStatisticsFragment salesStatisticsFragment;
+    private TotalSalesStatisticsFragment salesStatisticsFragment;
 
     @Override
     public int getContentView() {
@@ -73,7 +69,7 @@ public class SalesStatisticsAcitvity extends BaseActivity implements RadioGroup.
         fragmentManager = getSupportFragmentManager();
         //商品销售统计
         goodsSalesStatisticsFragment = new GoodsSalesStatisticsFragment();
-        salesStatisticsFragment = new SalesStatisticsFragment();
+        salesStatisticsFragment = new TotalSalesStatisticsFragment();
 
 
         rgBtn.setOnCheckedChangeListener(this);

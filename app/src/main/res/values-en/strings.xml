@@ -48,7 +48,7 @@
     <string name="title_activity_getmoney">Withdrawal</string>
     <string name="title_activity_getmoneyexplain">Withdrawal rules</string>
     <string name="title_activity_mainbranchselect">Business Statistics</string>
-    <string name="title_goods_salesstatistics">Commodity sales statistics</string>
+    <string name="goods_salesstatistics">Commodity sales statistics</string>
     <string name="title_activity_H5GoodsPreviewActivity">Product Preview</string>
     <string name="title_activity_WholeSaleOrdersActivity">YiZhiXing mall</string>
     <string name="title_activity_NearlyShopperGoodsActivity">Select product</string>
@@ -647,7 +647,25 @@
     <string name="str406">sales volume</string>
     <string name="str407">sales nums</string>
     <string name="str408">cash turnover</string>
-
+    <string name="str409">Mobile turnover</string>
+    <string name="str410">Member turnover</string>
+    <string name="str411">Current month</string>
+    <string name="str412">Last month</string>
+    <string name="str413">Membership price</string>
+    <string name="str414">Please enter member price</string>
+    <string name="str415">No data</string>
+    <string name="str416">Suggestion feedback</string>
+    <string name="str417">Nearly three days</string>
+    <string name="str418">Nearly seven days</string>
+    <string name="str419">This month</string>
+    <string name="str420">Last month</string>
+    <string name="str421">Last day</string>
+    <string name="str422">Following day</string>
+    <string name="str423">Last month</string>
+    <string name="str424">Following month</string>
+    <string name="str425">Filter time</string>
+    <string name="str426">store</string>
+    <string name="str427">Scan Goods code</string>
 
 
 </resources>

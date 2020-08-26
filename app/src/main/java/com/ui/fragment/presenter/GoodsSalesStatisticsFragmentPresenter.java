@@ -67,6 +67,7 @@ public class GoodsSalesStatisticsFragmentPresenter extends BasePresenter<GoodsSa
             @Override
             public void onError(Throwable e) {
                 mView.hideLoading();
+                setEmptyView();
 
             }
 
@@ -76,10 +77,9 @@ public class GoodsSalesStatisticsFragmentPresenter extends BasePresenter<GoodsSa
                 if (respone != null && respone.getResponse() != null) {
                     if ("200".equals(respone.getResponse().getStatus())) {
                         mData.addAll(respone.getResponse().getData());
-                        mAdapter.notifyDataSetChanged();
                     }
-
                 }
+                setEmptyView();
             }
 
 
@@ -164,6 +164,19 @@ public class GoodsSalesStatisticsFragmentPresenter extends BasePresenter<GoodsSa
 
                 }
             }
+        }
+        mAdapter.notifyDataSetChanged();
+    }
+
+    /**
+     * @Description:空视图
+     * @Author:lyf
+     * @Date: 2020/8/11
+     */
+    @Override
+    public void setEmptyView() {
+        if (mData.size() <= 0) {
+            mAdapter.setEmptyView(mView.setEmptyView());
         }
         mAdapter.notifyDataSetChanged();
     }

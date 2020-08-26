@@ -43,8 +43,9 @@ public interface ApiService {
      * @Author:lyf
      * @Date: 2020/7/19
      */
-    @GET(ApiConstant.COMMENT_SERVER_URL + ApiConstant.REPORT_LOSS)
-    Observable<ReportLostListRespone> getReportLossList();
+    @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.REPORT_LOSS)
+    @FormUrlEncoded
+    Observable<ReportLostListRespone> getReportLossList(@Field("startTime") String startTime, @Field("endTime") String endTime);
 
     /**
      * @param content 搜索内容
@@ -87,10 +88,10 @@ public interface ApiService {
 
 
     /**
-    *@Description:商品销售统计
-    *@Author:lyf
-    *@Date: 2020/8/2
-    */
+     * @Description:商品销售统计
+     * @Author:lyf
+     * @Date: 2020/8/2
+     */
     @GET(ApiConstant.COMMENT_SERVER_URL + ApiConstant.COUNT_GOODS)
     Observable<GoodsSalesStatisticsRespone> getCountGoods();
 
@@ -103,6 +104,24 @@ public interface ApiService {
     @FormUrlEncoded
     Observable<SalesStatisticsRespone> curMonthcashStatistics(@Field("date") String date, @Field("page") String page, @Field("pagelimit") String pagelimit);
 
+    /**
+     * @Description:当月移动统计
+     * @Author:lyf
+     * @Date: 2020/8/1
+     */
+    @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.MON_ORDER)
+    @FormUrlEncoded
+    Observable<SalesStatisticsRespone> curMonthLineStatistics(@Field("date") String date, @Field("page") String page, @Field("pagelimit") String pagelimit);
+
+
+    /**
+     * @Description:当月会员统计
+     * @Author:lyf
+     * @Date: 2020/8/1
+     */
+    @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.MON_ORDER)
+    @FormUrlEncoded
+    Observable<SalesStatisticsRespone> curMonthMemberStatistics(@Field("date") String date, @Field("page") String page, @Field("pagelimit") String pagelimit, @Field("tag") String member);
 
 
 }

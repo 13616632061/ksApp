@@ -16,11 +16,32 @@ public interface SalesStatisticsFragmentContract {
 
     interface View {
         /**
+         * @Description:统计时间
+         * @Author:lyf
+         * @Date: 2020/8/8
+         */
+        void setTvDate();
+
+        /**
          * @Description:当月现金统计图表
          * @Author:lyf
          * @Date: 2020/8/5
          */
         void curMonthcashStatisticsChart(List<ChartEntity> chartEntities);
+
+        /**
+         * @Description:当月移动统计图表
+         * @Author:lyf
+         * @Date: 2020/8/8
+         */
+        void curMonthLineStatisticsChart(List<ChartEntity> chartEntities);
+
+        /**
+         * @Description:当月会员统计图表
+         * @Author:lyf
+         * @Date: 2020/8/8
+         */
+        void curMonthMemberStatistics(List<ChartEntity> chartEntities);
 
     }
 
@@ -37,7 +58,21 @@ public interface SalesStatisticsFragmentContract {
          * @Author:lyf
          * @Date: 2020/8/5
          */
-        void curMonthcashStatistics();
+        void curMonthcashStatistics(int month);
+
+        /**
+         * @Description:当月移动统计
+         * @Author:lyf
+         * @Date: 2020/8/8
+         */
+        void curMonthLineStatistics(int month);
+
+        /**
+         * @Description:当月会员统计
+         * @Author:lyf
+         * @Date: 2020/8/8
+         */
+        void curMonthMemberStatistics(int month);
     }
 
     interface Model {
@@ -46,6 +81,20 @@ public interface SalesStatisticsFragmentContract {
          * @Author:lyf
          * @Date: 2020/8/5
          */
-        Observable curMonthcashStatistics();
+        Observable curMonthcashStatistics(int month);
+
+        /**
+         * @Description:当月移动统计
+         * @Author:lyf
+         * @Date: 2020/8/8
+         */
+        Observable curMonthLineStatistics(int month);
+
+        /**
+         * @Description:当月会员统计
+         * @Author:lyf
+         * @Date: 2020/8/8
+         */
+        Observable curMonthMemberStatistics(int month);
     }
 }

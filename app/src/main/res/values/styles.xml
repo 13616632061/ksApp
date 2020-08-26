@@ -41,7 +41,8 @@
     </style>
 
     <style name="AppTheme.Translucent" parent="AppTheme">
-
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <style name="Theme.MyTheme" parent="AppTheme.Translucent"></style>

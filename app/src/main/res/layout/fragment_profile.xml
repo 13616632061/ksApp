@@ -401,6 +401,29 @@
             <include
                 android:id="@+id/set_update_item"
                 layout="@layout/set_line" />
+            <!--意见反馈-->
+
+            <RelativeLayout
+                android:id="@+id/ly_suggestions_back"
+                style="@style/profile_layout_style">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:minWidth="94.0dip"
+                    android:text="@string/str416"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_list" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="16.0dip"
+                    android:layout_marginRight="16.0dip"
+                    android:src="@drawable/ic_right_grey" />
+            </RelativeLayout>
 
             <include
                 android:id="@+id/set_kefu_item"

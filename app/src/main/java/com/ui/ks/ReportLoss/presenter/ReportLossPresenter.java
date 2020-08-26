@@ -47,9 +47,9 @@ public class ReportLossPresenter extends BasePresenter<ReportLossListActivity> i
      * @Date: 2020/7/19
      */
     @Override
-    public void getReportLossList() {
+    public void getReportLossList(String startTime, String endTime) {
         mView.showLoading();
-        addSubscription(mModel.getReportLossList(), new Subscriber<ReportLostListRespone>() {
+        addSubscription(mModel.getReportLossList(startTime, endTime), new Subscriber<ReportLostListRespone>() {
             @Override
             public void onCompleted() {
                 mView.hideLoading();
@@ -58,6 +58,7 @@ public class ReportLossPresenter extends BasePresenter<ReportLossListActivity> i
             @Override
             public void onError(Throwable e) {
                 mView.hideLoading();
+                setEmptyView();
             }
 
             @Override
@@ -68,9 +69,22 @@ public class ReportLossPresenter extends BasePresenter<ReportLossListActivity> i
                     mData.clear();
                     mData.addAll(respone.getResponse().getData());
                     mAdapter.notifyDataSetChanged();
-
                 }
+                setEmptyView();
             }
         });
+    }
+
+    /**
+     * @Description:空视图
+     * @Author:lyf
+     * @Date: 2020/8/15
+     */
+    @Override
+    public void setEmptyView() {
+        if (mData.size() <= 0) {
+            mAdapter.setEmptyView(mView.setEmptyView());
+        }
+        mAdapter.notifyDataSetChanged();
     }
 }

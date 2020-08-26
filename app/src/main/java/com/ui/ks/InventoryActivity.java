@@ -3,9 +3,11 @@ package com.ui.ks;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.MyApplication.KsApplication;
@@ -17,6 +19,7 @@ import com.base.BaseActivity;
 import com.constant.RouterPath;
 import com.ui.adapter.GoodSortListAdapter;
 import com.ui.adapter.GoodsInventoryListAdapter;
+import com.ui.dialog.InventoryPopWindow;
 import com.ui.entity.GoodSort;
 import com.ui.entity.Goods_Inventory;
 import com.ui.entity.Inventory_classification;
@@ -53,6 +56,8 @@ public class InventoryActivity extends BaseActivity implements View.OnClickListe
     PagingListView lv_content;
     //分类的列表
     List<Inventory_classification> inventory_classifications = new ArrayList<>();
+    @BindView(R.id.inventory_activity)
+    RelativeLayout inventoryActivity;
 
 
     private List<GoodSort> goodsortList = new ArrayList<>();
@@ -115,14 +120,23 @@ public class InventoryActivity extends BaseActivity implements View.OnClickListe
         lv_content.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
-                DialogUtils.ShowInventory(InventoryActivity.this, goods_inventories.get(i));
-                DialogUtils dialogUtils = new DialogUtils();
-                dialogUtils.SetOnAddInventoryStock(new DialogUtils.OnAddInventoryStock() {
+//                DialogUtils.ShowInventory(InventoryActivity.this, goods_inventories.get(i));
+//                DialogUtils dialogUtils = new DialogUtils();
+//                dialogUtils.SetOnAddInventoryStock(new DialogUtils.OnAddInventoryStock() {
+//                    @Override
+//                    public void addInventoryStock(String InventoryStock) {
+//                        AddInventoryStock(InventoryStock, i);
+//                    }
+//                });
+                InventoryPopWindow popWindow = new InventoryPopWindow(InventoryActivity.this, goods_inventories.get(i));
+                popWindow.showAtLocation(inventoryActivity, Gravity.NO_GRAVITY, 0, 0);
+                popWindow.setOnAddInventoryStock(new InventoryPopWindow.OnAddInventoryStock() {
                     @Override
                     public void addInventoryStock(String InventoryStock) {
                         AddInventoryStock(InventoryStock, i);
                     }
                 });
+
             }
         });
     }

@@ -119,7 +119,7 @@ public abstract class LazyLoadFragment extends Fragment {
     }
 
     /**重置变量*/
-    private void resetVariavle(){
+    public void resetVariavle(){
         isFirstEnter = true;
         isReuseView = true;
         isFragmentVisible = false;

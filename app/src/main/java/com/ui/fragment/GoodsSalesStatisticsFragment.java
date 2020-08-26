@@ -74,6 +74,17 @@ public class GoodsSalesStatisticsFragment extends BaseFragment<GoodsSalesStatist
     }
 
     /**
+     * @Description:空视图
+     * @Author:lyf
+     * @Date: 2020/8/11
+     */
+    @Override
+    public View setEmptyView() {
+        View view = View.inflate(mActivity, R.layout.layout_empty_view, null);
+        return view;
+    }
+
+    /**
      * @Description:升序
      * @Author:lyf
      * @Date: 2020/8/2
