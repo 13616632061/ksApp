@@ -73,9 +73,10 @@
         tools:replace="android:icon, android:label">
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.ui.ks.provider"
+            android:authorities="com.ui.ks.camera_photos.provider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true"
+            android:readPermission="com.company.app.fileprovider.READ">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
@@ -426,7 +427,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".GoodsInfoSearchActivity"
+            android:name=".GoodsSearch.GoodsInfoSearchActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CashChargeActivity"
@@ -474,7 +475,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Goods_Sales_StatisticsAcitvity"
+            android:name=".SalesStatistics.SalesStatisticsAcitvity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
@@ -483,7 +484,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Goods_Sales_ChartStatisticsAcitvity"
-            android:label="@string/title_activity_goods_salesstatistics"
+            android:label="@string/goods_salesstatistics"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
@@ -625,7 +626,11 @@
         <activity android:name=".ReportLoss.ReportLossListActivity" />
         <activity android:name=".ReportLoss.AddReportLossActivity" />
         <activity android:name=".ReportLoss.ReportLossGoodActivity" />
-        <activity android:name=".ReportLoss.ReportLossDetailActivity"></activity>
+        <activity android:name=".ReportLoss.ReportLossDetailActivity" />
+        <activity android:name=".accountExport.RecentlyUsedEmailActivity" />
+        <activity android:name=".webView.HtmlActivity" />
+        <activity android:name=".TimeFilter.TimeFilterActivity" />
+        <activity android:name=".ScanHander.ScanHanderActivity" />
     </application>
 
 </manifest>

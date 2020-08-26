@@ -78,5 +78,7 @@ dependencies {
     api rootProject.ext.dependencies["jpinyin"]
     api rootProject.ext.dependencies["zxing"]
     api rootProject.ext.dependencies["eventbus"]
+    api rootProject.ext.dependencies["xclcharts"]
+    api rootProject.ext.dependencies["360replugin"]
 
 }

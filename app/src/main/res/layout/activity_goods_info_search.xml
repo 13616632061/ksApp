@@ -1,78 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_goods_info_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?gray_bg"
     android:fitsSystemWindows="true"
-    tools:context="com.ui.ks.GoodsInfoSearchActivity">
-    <include android:visibility="gone"
-        layout="@layout/toolbar" android:id="@id/toolbar_layout" />
-    <RelativeLayout
-        android:id="@+id/title_goodsmanagerment"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary">
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="15dp"
-            android:src="@drawable/icon_back_white" />
-        <EditText
-            android:id="@+id/et_inputgoodname"
-            android:textSize="14sp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:textColor="#000000"
-            android:background="@drawable/btn_corner_whitle"
-            android:singleLine="true"
-            android:gravity="center"
-            android:imeOptions="actionSearch"
-            android:paddingRight="25dp"
-            android:hint="@string/str69"
-            android:layout_width="200dp"
-            android:layout_height="37dp" />
-        <ImageView
-            android:visibility="gone"
-            android:id="@+id/iv_cell"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:layout_toLeftOf="@+id/iv_search"
-            android:layout_marginRight="55dp"
-            android:src="@drawable/cancell"/>
-        <ImageView
-            android:id="@+id/iv_search"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:layout_marginRight="15dp"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/icon_search"/>
-    </RelativeLayout>
-    <com.ui.listview.PagingListView
-        android:layout_below="@+id/title_goodsmanagerment"
-        android:background="@android:color/transparent"
-        android:listSelector="@drawable/select_layout_goodsortitem"
-        android:id="@+id/list_search_reaslt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:choiceMode="singleChoice"
-        android:divider="@null"
-        android:dividerHeight="1dp"
-        android:scrollbarStyle="outsideOverlay"
-        android:scrollingCache="true"
-        android:smoothScrollbar="false"
-        android:scrollbars="none"/>
-    <include
-        android:layout_below="@+id/title_goodsmanagerment"
-        android:id="@id/layout_err"
-        android:visibility="gone"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        layout="@layout/layout_err" />
+    android:orientation="vertical"
+    tools:context="com.ui.ks.GoodsSearch.GoodsInfoSearchActivity">
 
-</RelativeLayout>
+    <include
+        android:id="@id/toolbar_layout"
+        layout="@layout/top_layout" />
+
+    <FrameLayout
+        android:id="@+id/fl_scan"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"></FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/et_search_content"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@+id/btn_search"
+            android:background="@drawable/background_ordersearch_reset_btn"
+            android:hint="@string/str384"
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/btn_corner_orange"
+            android:text="@string/str383"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"></android.support.v7.widget.RecyclerView>
+</LinearLayout>

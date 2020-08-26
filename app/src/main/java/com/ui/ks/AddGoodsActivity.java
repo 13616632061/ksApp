@@ -1,5 +1,6 @@
 package com.ui.ks;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -45,6 +46,10 @@ import com.base.BaseActivity;
 import com.blankj.utilcode.util.LogUtils;
 import com.github.stuxuhai.jpinyin.PinyinException;
 import com.github.stuxuhai.jpinyin.PinyinHelper;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
+import com.ui.entity.GoodSort;
 import com.ui.global.Global;
 import com.ui.util.CustomRequest;
 import com.ui.util.GetImagePath;
@@ -52,10 +57,8 @@ import com.ui.util.SelectPicPopupWindow;
 import com.ui.util.SetEditTextInput;
 import com.ui.util.SysUtils;
 import com.ui.util.UploadUtil;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -66,12 +69,41 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import static com.ui.util.GetImagePath.getDataColumn;
 import static com.ui.util.GetImagePath.isDownloadsDocument;
 import static com.ui.util.GetImagePath.isExternalStorageDocument;
 import static com.ui.util.GetImagePath.isMediaDocument;
 
 public class AddGoodsActivity extends BaseActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+    @BindView(R.id.tv_member_price01)
+    TextView tvMemberPrice01;
+    @BindView(R.id.ed_member_price01)
+    EditText edMemberPrice01;
+    @BindView(R.id.tv_member_price02)
+    TextView tvMemberPrice02;
+    @BindView(R.id.ed_member_price02)
+    EditText edMemberPrice02;
+    @BindView(R.id.tv_member_price03)
+    TextView tvMemberPrice03;
+    @BindView(R.id.ed_member_price03)
+    EditText edMemberPrice03;
+    @BindView(R.id.tv_member_price04)
+    TextView tvMemberPrice04;
+    @BindView(R.id.ed_member_price04)
+    EditText edMemberPrice04;
+    @BindView(R.id.tv_member_price05)
+    TextView tvMemberPrice05;
+    @BindView(R.id.ed_member_price05)
+    EditText edMemberPrice05;
+    @BindView(R.id.tv_save)
+    TextView tvSave;
+    @BindView(R.id.layout_other_member)
+    LinearLayout layoutOtherMember;
+    @BindView(R.id.iv_more_member)
+    ImageView ivMoreMember;
     private Switch btn_switch, good_switch_up, good_group_buying, take_out_food, table_number;
     private EditText et_goodname, et_goodprice, et_goodcode, et_good_costprice, et_good_grossprice,
             et_good_stocknum, et_good_stock, et_good_remark, ed_market_value;
@@ -118,6 +150,7 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_goods);
         SysUtils.setupUI(this, findViewById(R.id.activity_add_goods));
+        ButterKnife.bind(this);
         initToolbar(this);
 //        setToolbarTitle("无码商品添加");
         initView();
@@ -136,11 +169,17 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
                 good_edit_bottombtn_layout.setVisibility(View.GONE);
                 btn_save.setVisibility(View.VISIBLE);
                 btn_add_store.setVisibility(View.GONE);
+                getSortlist();
             }
         }
     }
 
     private void initView() {
+        tvMemberPrice01.setText(getString(R.string.str413) + "1");
+        tvMemberPrice02.setText(getString(R.string.str413) + "2");
+        tvMemberPrice03.setText(getString(R.string.str413) + "3");
+        tvMemberPrice04.setText(getString(R.string.str413) + "4");
+        tvMemberPrice05.setText(getString(R.string.str413) + "5");
         btn_switch = (Switch) findViewById(R.id.btn_switch);
         good_switch_up = (Switch) findViewById(R.id.good_switch_up);
         good_group_buying = (Switch) findViewById(R.id.good_group_buying);
@@ -193,6 +232,8 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
         btn_save.setOnClickListener(this);
         btn_scangoodcode.setOnClickListener(this);
         btn_add_store.setOnClickListener(this);
+        tvSave.setOnClickListener(this);
+        ivMoreMember.setOnClickListener(this);
 
         et_goodname.addTextChangedListener(new TextWatcher() {
             @Override
@@ -286,7 +327,32 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
         String quantity_increase = tv_quantity_increase.getText().toString();
 
         String menu_intro = et_good_describe.getText().toString();
-
+        String strMemberPrice01 = edMemberPrice01.getText().toString().trim();
+        String strMemberPrice02 = edMemberPrice02.getText().toString().trim();
+        String strMemberPrice03 = edMemberPrice03.getText().toString().trim();
+        String strMemberPrice04 = edMemberPrice04.getText().toString().trim();
+        String strMemberPrice05 = edMemberPrice05.getText().toString().trim();
+        if (TextUtils.isEmpty(strMemberPrice01)) {
+            strMemberPrice01 = goodprice;
+        }
+        if (TextUtils.isEmpty(strMemberPrice02)) {
+            strMemberPrice02 = goodprice;
+        }
+        if (TextUtils.isEmpty(strMemberPrice03)) {
+            strMemberPrice03 = goodprice;
+        }
+        if (TextUtils.isEmpty(strMemberPrice04)) {
+            strMemberPrice04 = goodprice;
+        }
+        if (TextUtils.isEmpty(strMemberPrice05)) {
+            strMemberPrice05 = goodprice;
+        }
+        StringBuffer custom_member_price = new StringBuffer();
+        custom_member_price.append(strMemberPrice01).append(",")
+                .append(strMemberPrice02).append(",")
+                .append(strMemberPrice03).append(",")
+                .append(strMemberPrice04).append(",")
+                .append(strMemberPrice05);
         if (TextUtils.isEmpty(goodname)) {
             SysUtils.showError(getString(R.string.str369));//商品名称不能为空
             return;
@@ -321,6 +387,7 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
         Map<String, String> map = new HashMap<>();
         map.put("name", goodname);//名称
         map.put("py", tv_py_code.getText().toString().trim());//拼音码
+        map.put("custom_member_price", custom_member_price.toString());//会员价
         map.put("price", goodprice);//售价
         map.put("cost", good_costprice);//成本价
         map.put("bncode", goodcode);//条码
@@ -424,6 +491,29 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
                             good_trpe_result = data.getString("tag_name");
                             good_trpe_result_id = data.getString("tag_id");
                             product_id = data.getString("product_id");
+                            //会员价
+                            String custom_member_price = goods_info.getString("custom_member_price");
+                            if (!TextUtils.isEmpty(custom_member_price)) {
+                                String[] memberPrice = custom_member_price.split(",");
+                                if (memberPrice != null) {
+                                    if (memberPrice.length > 0 && !TextUtils.isEmpty(memberPrice[0])) {
+                                        edMemberPrice01.setText(memberPrice[0]);
+                                    }
+                                    if (memberPrice.length > 1 && !TextUtils.isEmpty(memberPrice[1])) {
+                                        edMemberPrice02.setText(memberPrice[1]);
+                                    }
+                                    if (memberPrice.length > 2 && !TextUtils.isEmpty(memberPrice[2])) {
+                                        edMemberPrice03.setText(memberPrice[2]);
+                                    }
+                                    if (memberPrice.length > 3 && !TextUtils.isEmpty(memberPrice[3])) {
+                                        edMemberPrice04.setText(memberPrice[3]);
+                                    }
+                                    if (memberPrice.length > 4 && !TextUtils.isEmpty(memberPrice[4])) {
+                                        edMemberPrice05.setText(memberPrice[4]);
+                                    }
+
+                                }
+                            }
                             if (btn_switch_type == 2) {
                                 btn_switch.setChecked(true);
                                 et_goodcode.setText(bncode);
@@ -475,8 +565,7 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
                     }
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
-                    System.out.print("e=" + e.toString());
+                    LogUtils.e("error=" + e.toString());
                 } finally {
                 }
             }
@@ -593,6 +682,7 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
                 isDelete();
                 break;
             case R.id.btn_edit_save://商品编辑保存
+            case R.id.tv_save:
                 addSave();
                 break;
             case R.id.iv_back:
@@ -606,9 +696,9 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
                 break;
             case R.id.iv_scangoodcode://获取扫描条码
                 if (Build.VERSION.SDK_INT >= 23) {
-                    int checkCallPhonePermission = ContextCompat.checkSelfPermission(AddGoodsActivity.this, android.Manifest.permission.CAMERA);
+                    int checkCallPhonePermission = ContextCompat.checkSelfPermission(AddGoodsActivity.this, Manifest.permission.CAMERA);
                     if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(AddGoodsActivity.this, new String[]{android.Manifest.permission.CAMERA}, 222);
+                        ActivityCompat.requestPermissions(AddGoodsActivity.this, new String[]{Manifest.permission.CAMERA}, 222);
                         return;
                     } else {
                         Intent intent = new Intent(AddGoodsActivity.this, MipcaActivityCapture.class);
@@ -624,6 +714,14 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
             case R.id.btn_add_store://补充库存
                 addstore();
                 break;
+            case R.id.iv_more_member:
+                if (layoutOtherMember.getVisibility() == View.VISIBLE) {
+                    layoutOtherMember.setVisibility(View.GONE);
+                } else {
+                    layoutOtherMember.setVisibility(View.VISIBLE);
+                }
+                break;
+
         }
     }
 
@@ -939,17 +1037,17 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
                     case R.id.btn_take_photo:
                         if (Build.VERSION.SDK_INT >= 23) {
                             //动态添加sdk写入权限，主要适配与android6.0以上的系统
-                            int checkwritefile = ContextCompat.checkSelfPermission(AddGoodsActivity.this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                            int checkwritefile = ContextCompat.checkSelfPermission(AddGoodsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                             if (checkwritefile != PackageManager.PERMISSION_GRANTED) {
-                                ActivityCompat.requestPermissions(AddGoodsActivity.this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 223);
+                                ActivityCompat.requestPermissions(AddGoodsActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 223);
                                 return;
                             } else {
                                 creatfile();
                             }
                             //动态添加拍照权限
-                            int checkCallPhonePermission = ContextCompat.checkSelfPermission(AddGoodsActivity.this, android.Manifest.permission.CAMERA);
+                            int checkCallPhonePermission = ContextCompat.checkSelfPermission(AddGoodsActivity.this, Manifest.permission.CAMERA);
                             if (checkCallPhonePermission != PackageManager.PERMISSION_GRANTED) {
-                                ActivityCompat.requestPermissions(AddGoodsActivity.this, new String[]{android.Manifest.permission.CAMERA}, 222);
+                                ActivityCompat.requestPermissions(AddGoodsActivity.this, new String[]{Manifest.permission.CAMERA}, 222);
                                 return;
                             } else {
 //                                onOpenCamera();
@@ -1027,16 +1125,18 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
         file = new File(path, "temp.jpg");
         if (!file.getParentFile().exists())
             file.getParentFile().mkdirs();
-
+        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             //步骤二：Android 7.0及以上获取文件 Uri
-            photoUri = FileProvider.getUriForFile(AddGoodsActivity.this, "com.ms.ks.provider", file);
+            photoUri = FileProvider.getUriForFile(AddGoodsActivity.this, "com.ui.ks.camera_photos.provider", file);
+//            intent.setDataAndType(photoUri, "application/vnd.android.package-archive");
+
         } else {
             //步骤三：获取文件Uri
             photoUri = Uri.fromFile(file);
         }
         //步骤四：调取系统拍照
-        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+
         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
         startActivityForResult(intent, INTENT_BTN_TAKE_PHOTO);
     }
@@ -1172,7 +1272,7 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
     public String getSDPath() {
         File sdDir = null;
         boolean sdCardExist = Environment.getExternalStorageState()
-                .equals(android.os.Environment.MEDIA_MOUNTED); //判断sd卡是否存在
+                .equals(Environment.MEDIA_MOUNTED); //判断sd卡是否存在
         if (sdCardExist) {
             sdDir = Environment.getExternalStorageDirectory();//获取跟目录
         }
@@ -1492,5 +1592,46 @@ public class AddGoodsActivity extends BaseActivity implements View.OnClickListen
                 myCaptureFile.delete();  //删除原图片
             }
         }
+    }
+
+    /**
+     * 获取分类信息
+     */
+    private void getSortlist() {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("page", "1");
+        CustomRequest customRequest = new CustomRequest(Request.Method.POST, SysUtils.getGoodsServiceUrl("cat_getlist"), map, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject jsonObject) {
+                try {
+                    JSONObject ret = SysUtils.didResponse(jsonObject);
+                    System.out.println("分类ret=" + ret);
+                    String status = ret.getString("status");
+                    String message = ret.getString("message");
+                    JSONObject data = null;
+                    if (!status.equals("200")) {
+                        SysUtils.showError(message);
+                    } else {
+                        data = ret.getJSONObject("data");
+                        JSONArray arry = data.getJSONArray("nav_info");
+                        if (arry != null && arry.length() > 0) {
+                            JSONObject jsonObject1 = arry.getJSONObject(0);
+                            String typeName = jsonObject1.getString("tag_name");
+                            tv_good_type.setText(typeName);
+                        }
+
+                    }
+
+                } catch (JSONException e) {
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                SysUtils.showNetworkError();
+
+            }
+        });
+        executeRequest(customRequest);
     }
 }

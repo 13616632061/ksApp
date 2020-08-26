@@ -10,10 +10,12 @@ import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
+import com.blankj.utilcode.util.AppUtils;
 import com.didi.virtualapk.PluginManager;
 import com.library.LanguageUtil.LanguageUtil;
 import com.library.LanguageUtil.PreferenceLanguageUtils;
 import com.library.app.LibAplication;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.ui.db.DBHelper;
 import com.ui.global.Global;
 import com.ui.util.SpeechUtilOffline;
@@ -41,8 +43,9 @@ public class KsApplication extends LibAplication {
 
     public static boolean hasNewVersion = false;
     public static String newVersionName = "";
-    public static int selectItem=0;//订单类型初始值
-    public static boolean selectItemIsCheck=true;//订单类型是否被选中
+    public static int selectItem = 0;//订单类型初始值
+    public static boolean selectItemIsCheck = true;//订单类型是否被选中
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -50,14 +53,15 @@ public class KsApplication extends LibAplication {
         //插件化
         PluginManager.getInstance(base).init();
     }
+
     @Override
     public void onCreate() {
         super.onCreate();
         //创建可以打印log的ImageLoaderConfiguration
-        ImageLoaderConfiguration configuration=new ImageLoaderConfiguration.Builder(this)
+        ImageLoaderConfiguration configuration = new ImageLoaderConfiguration.Builder(this)
                 .writeDebugLogs()
-                .memoryCache(new LruMemoryCache(2*1024*1024))//可以通过自己的内存缓存实现
-                .memoryCacheSize(2*1024*1024)//内存缓存的最大值
+                .memoryCache(new LruMemoryCache(2 * 1024 * 1024))//可以通过自己的内存缓存实现
+                .memoryCacheSize(2 * 1024 * 1024)//内存缓存的最大值
                 .memoryCacheSizePercentage(13)
                 .build();
 
@@ -67,7 +71,7 @@ public class KsApplication extends LibAplication {
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         sContext = getApplicationContext();
         //初始化语言播报
-        SpeechUtilOffline tts= new SpeechUtilOffline(this);
+        SpeechUtilOffline tts = new SpeechUtilOffline(this);
 
         if (shouldInit()) {
             MiPushClient.registerPush(this, "2882303761517488439", "5751748881439");
@@ -100,8 +104,10 @@ public class KsApplication extends LibAplication {
         initImageLoader(sContext);
         mExamApplication = this;
 
-        WifiManager.WifiLock wifiLock = ((WifiManager) getSystemService(Context.WIFI_SERVICE)) .createWifiLock(WifiManager.WIFI_MODE_FULL, "mylock");
+        WifiManager.WifiLock wifiLock = ((WifiManager) getSystemService(Context.WIFI_SERVICE)).createWifiLock(WifiManager.WIFI_MODE_FULL, "mylock");
         wifiLock.acquire();
+
+        initBugly();
 
         //bugly初始化
 //        CrashReport.initCrashReport(getApplicationContext(), "d8348de79c", false);
@@ -233,5 +239,31 @@ public class KsApplication extends LibAplication {
             }
         }
         return false;
+    }
+
+    /**
+     * 初始化腾讯bug管理平台
+     */
+    private void initBugly() {
+        /* Bugly SDK初始化
+        * 参数1：上下文对象
+        * 参数2：APPID，平台注册时得到,注意替换成你的appId
+        * 参数3：是否开启调试模式，调试模式下会输出'CrashReport'tag的日志
+        * 注意：如果您之前使用过Bugly SDK，请将以下这句注释掉。
+        */
+        CrashReport.UserStrategy strategy = new CrashReport.UserStrategy(getApplicationContext());
+        strategy.setAppVersion(AppUtils.getAppVersionName());
+        strategy.setAppPackageName(AppUtils.getAppPackageName());
+        strategy.setAppReportDelay(20000);                          //Bugly会在启动20s后联网同步数据
+
+        /*  第三个参数为SDK调试模式开关，调试模式的行为特性如下：
+            输出详细的Bugly SDK的Log；
+            每一条Crash都会被立即上报；
+            自定义日志将会在Logcat中输出。
+            建议在测试阶段建议设置成true，发布时设置为false。*/
+
+        CrashReport.initCrashReport(getApplicationContext(), "ddb29b33d7", true, strategy);
+
+        //Bugly.init(getApplicationContext(), "1374455732", false);
     }
 }

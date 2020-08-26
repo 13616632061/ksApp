@@ -26,4 +26,12 @@ public class ApiConstant {
     public static final String SEND_REPORT_ACCOUNT = "ks.seller.export";
     //导出对账流水至本地
     public static final String DOWN_EXCEL_LOCALD = "ks.seller.download";
+    //商品销售统计
+    public static final String COUNT_GOODS = "ks.pingban_goods.count_goods";
+    //现金统计
+    public static final String MON_ORDER_CASH = "ks.seller.mon_order_cash";
+    //移动统计/会员统计
+    public static final String MON_ORDER = "ks.seller.mon_order";
+    //建议反馈
+    public static final String SUGGESTION_BACK = "http://yizhongyun.mikecrm.com/2dC7asQ";
 }

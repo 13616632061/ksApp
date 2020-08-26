@@ -34,6 +34,7 @@ import com.google.zxing.Result;
 import com.ui.SafeEdit.SoftKeyBoard;
 import com.ui.entity.GetOpenOrder;
 import com.ui.entity.OrderGoods;
+import com.ui.ks.ScanHander.BaseScanHanderActivity;
 import com.ui.scancodetools.CameraManager;
 import com.ui.scancodetools.CaptureActivityHandler;
 import com.ui.scancodetools.InactivityTimer;
@@ -41,6 +42,7 @@ import com.ui.scancodetools.ViewfinderView;
 import com.ui.util.CustomRequest;
 import com.ui.util.DialogUtils;
 import com.ui.util.PreferencesService;
+import com.ui.util.RequestManager;
 import com.ui.util.ScanGunKeyEventHelper;
 import com.ui.util.SpeechUtilOffline;
 import com.ui.util.SysUtils;
@@ -60,7 +62,7 @@ import java.util.Vector;
  * 扫描器页面
  */
 
-public class MipcaActivityCapture extends BaseActivity implements SurfaceHolder.Callback, View.OnClickListener,ScanGunKeyEventHelper.OnScanSuccessListener, TextWatcher {
+public class MipcaActivityCapture extends BaseScanHanderActivity implements SurfaceHolder.Callback, View.OnClickListener,ScanGunKeyEventHelper.OnScanSuccessListener, TextWatcher {
 
     private ViewfinderView viewfinderView;
     private ImageButton mipca_capture_back;
@@ -98,7 +100,7 @@ public class MipcaActivityCapture extends BaseActivity implements SurfaceHolder.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mipca_capture);
+//        setContentView(R.layout.activity_mipca_capture);
 
         SysUtils.setupUI(this, findViewById(R.id.activity_mipca_capture));
         CameraManager.init(this);
@@ -106,7 +108,7 @@ public class MipcaActivityCapture extends BaseActivity implements SurfaceHolder.
         initView();
     }
 
-    private void initView() {
+    protected void initView() {
         viewfinderView= (ViewfinderView) findViewById(R.id.viewfinder_view);
         mipca_capture_back= (ImageButton) findViewById(R.id.mipca_capture_back);
         mipca_capture_price= (TextView) findViewById(R.id.mipca_capture_price);
@@ -194,6 +196,12 @@ public class MipcaActivityCapture extends BaseActivity implements SurfaceHolder.
         }
 
     }
+
+    @Override
+    public int setContentView() {
+        return R.layout.activity_mipca_capture;
+    }
+
     /**
      * Activity截获按键事件.发给ScanGunKeyEventHelper
      *
@@ -330,8 +338,8 @@ public class MipcaActivityCapture extends BaseActivity implements SurfaceHolder.
                 SysUtils.showNetworkError();
             }
         });
-        executeRequest(r);
-        showLoading(MipcaActivityCapture.this);
+        RequestManager.addRequest(r, this);
+        showLoading();
     }
 
 
@@ -417,8 +425,8 @@ public class MipcaActivityCapture extends BaseActivity implements SurfaceHolder.
                 SysUtils.showNetworkError();
             }
         });
-        executeRequest(r);
-        showLoading(MipcaActivityCapture.this);
+        RequestManager.addRequest(r, this);
+        showLoading();
     }
 
     @Override
@@ -794,8 +802,8 @@ public class MipcaActivityCapture extends BaseActivity implements SurfaceHolder.
             }
         });
 
-        executeRequest(r);
-        showLoading(MipcaActivityCapture.this);
+        RequestManager.addRequest(r, this);
+        showLoading();
     }
 
     @Override

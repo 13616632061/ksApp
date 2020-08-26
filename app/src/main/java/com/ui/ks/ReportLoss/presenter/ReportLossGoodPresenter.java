@@ -62,6 +62,7 @@ public class ReportLossGoodPresenter extends BasePresenter<ReportLossGoodActivit
         map.put("store", bean.getStore());
         map.put("desc", desc);
         map.put("work_id", KsApplication.getInt("seller_id", 0) + "");
+        map.put("bncode", bean.getBncode());
         addSubscription(mModel.addReportLossGoods(new Gson().toJson(map)), new Subscriber<ResultResponse>() {
             @Override
             public void onCompleted() {

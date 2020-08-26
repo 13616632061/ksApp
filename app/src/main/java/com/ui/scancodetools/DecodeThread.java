@@ -27,23 +27,24 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.ResultPointCallback;
 import com.ui.ks.MipcaActivityCapture;
+import com.ui.ks.ScanHander.BaseScanHanderActivity;
 
 /**
  * This thread does all the heavy lifting of decoding the images.
  * 解码线程
  */
-final class DecodeThread extends Thread {
+public class DecodeThread extends Thread {
 
     public static final String BARCODE_BITMAP = "barcode_bitmap";
-    private final MipcaActivityCapture activity;
+    private final BaseScanHanderActivity activity;
     private final Hashtable<DecodeHintType, Object> hints;
     private Handler handler;
     private final CountDownLatch handlerInitLatch;
 
-    DecodeThread(MipcaActivityCapture activity,
-                 Vector<BarcodeFormat> decodeFormats,
-                 String characterSet,
-                 ResultPointCallback resultPointCallback) {
+    public DecodeThread(BaseScanHanderActivity activity,
+                        Vector<BarcodeFormat> decodeFormats,
+                        String characterSet,
+                        ResultPointCallback resultPointCallback) {
 
         this.activity = activity;
         handlerInitLatch = new CountDownLatch(1);
@@ -66,7 +67,7 @@ final class DecodeThread extends Thread {
         hints.put(DecodeHintType.NEED_RESULT_POINT_CALLBACK, resultPointCallback);
     }
 
-    Handler getHandler() {
+    public Handler getHandler() {
         try {
             handlerInitLatch.await();
         } catch (InterruptedException ie) {

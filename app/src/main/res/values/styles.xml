@@ -41,11 +41,11 @@
     </style>
 
     <style name="AppTheme.Translucent" parent="AppTheme">
-
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
-    <style name="Theme.MyTheme" parent="AppTheme.Translucent">
-    </style>
+    <style name="Theme.MyTheme" parent="AppTheme.Translucent"></style>
 
     <style name="AppTheme.Toolbar.Translucent" parent="AppTheme.Translucent">
         <item name="colorPrimary">@color/transparent</item>
@@ -166,6 +166,7 @@
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="subscribe_my_tip_text">
@@ -174,9 +175,11 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
     <style name="subscribe_more_tip_text" parent="@style/subscribe_my_tip_text">
         <item name="android:textSize">13.0sp</item>
     </style>
+
     <style name="subscribe_seperate_line">
         <item name="android:background">@color/list_divider_color</item>
         <item name="android:layout_width">fill_parent</item>
@@ -203,13 +206,16 @@
         <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="NotificationText">
         <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
     </style>
+
     <style name="AnimBottom" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
         <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
     </style>
+
     <style name="AlertDialog" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
         <!-- 这里设置背景为透明，为了隐藏边框 -->
         <item name="android:windowBackground">@color/white</item>
@@ -221,6 +227,7 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
     </style>
+
     <style name="AlertDialog_success_gray" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
         <!-- 这里设置背景为透明，为了隐藏边框 -->
         <item name="android:windowBackground">@color/transparent</item>
@@ -233,6 +240,7 @@
         <item name="android:backgroundDimEnabled">false</item><!-- dim:模糊的 阴影效果 -->
         <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
     </style>
+
     <style name="AlertDialog_goodmanage_gray" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
         <!-- 这里设置背景为透明，为了隐藏边框 -->
         <item name="android:windowBackground">@color/transparent</item>
@@ -245,6 +253,7 @@
         <item name="android:backgroundDimEnabled">false</item><!-- dim:模糊的 阴影效果 -->
         <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
     </style>
+
     <style name="loading_dialog" parent="android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
@@ -257,6 +266,7 @@
 
 
     设置
+
     <style name="Theme.ActivityDialogStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <!--是否半透明-->
         <item name="android:windowIsTranslucent">true</item>
@@ -274,4 +284,8 @@
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
 
+    <style name="tabText">
+        <item name="textSize">14sp</item>
+        <item name="textColor">@color/black</item>
+    </style>
 </resources>

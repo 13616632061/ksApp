@@ -1,6 +1,7 @@
 package com.library.base.mvp;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,9 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.ethanhua.skeleton.Skeleton;
+import com.library.R;
+import com.library.utils.DialogUtils;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by Administrator on 2019/4/24.
@@ -23,6 +28,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends LazyLoadFrag
     private View rootView;
     protected Skeleton mStateView;//用于显示加载中、网络异常，空布局、内容布局
     protected Activity mActivity;
+    private Unbinder unbinder;
+
+    private Dialog progressDialog = null;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,7 +46,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends LazyLoadFrag
 //            mStateView=Skeleton.bind(rootView)
 //                    .load(R.layout.layout_img_skeleton)
 //                    .show();
-            ButterKnife.bind(this, rootView);
+            unbinder= ButterKnife.bind(this, rootView);
 
             initView(rootView);
             initData();
@@ -91,10 +99,47 @@ public abstract class BaseFragment<T extends BasePresenter> extends LazyLoadFrag
      */
     protected abstract void loadData();
 
+    public void showLoading(Context ctx, String msg) {
+        showLoading(ctx, msg, true);
+    }
 
+    public void showLoading(Context ctx, String msg, boolean canCancel) {
+        try {
+            progressDialog = DialogUtils.createLoadingDialog(ctx, msg, canCancel);
+            progressDialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showLoading() {
+        showLoading(mActivity, getString(R.string.lib_str2));
+    }
+
+    public void hideLoading() {
+        try {
+            if (progressDialog != null) {
+                progressDialog.dismiss();
+                progressDialog = null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showToast(String msg) {
+        ToastUtils.showShort(msg);
+        ToastUtils.setMsgColor(getResources().getColor(R.color.blackText));
+
+    }
     @Override
     public void onDestroy() {
         super.onDestroy();
         rootView = null;
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 }

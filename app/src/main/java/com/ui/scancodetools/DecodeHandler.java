@@ -31,15 +31,16 @@ import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 import com.ui.ks.MipcaActivityCapture;
 import com.ui.ks.R;
+import com.ui.ks.ScanHander.BaseScanHanderActivity;
 
 final class DecodeHandler extends Handler {
 
     private static final String TAG = DecodeHandler.class.getSimpleName();
 
-    private final MipcaActivityCapture activity;
+    private final BaseScanHanderActivity activity;
     private final MultiFormatReader multiFormatReader;
 
-    DecodeHandler(MipcaActivityCapture activity, Hashtable<DecodeHintType, Object> hints) {
+    DecodeHandler(BaseScanHanderActivity activity, Hashtable<DecodeHintType, Object> hints) {
         multiFormatReader = new MultiFormatReader();
         multiFormatReader.setHints(hints);
         this.activity = activity;

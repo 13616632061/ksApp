@@ -19,4 +19,12 @@ public class RouterPath {
     public static final String ACTIVITY_REPORT_LOSS_GOOD = "/app/ReportLossGoodActivity";
     //报损详情
     public static final String ACTIVITY_REPORT_LOSS_DETAIL = "/app/ReportLossDetailActivity";
+    //最近使用过的邮箱
+    public static final String ACTIVITY_RECENTLY_USED_EMAIL = "/app/RecentlyUsedEmailActivity";
+    //webView页面
+    public static final String ACTIVITY_HTML = "/app/HtmlActivity";
+    //时间筛选
+    public static final String ACTIVITY_TIME_FILTER = "/app/TimeFilterActivity";
+    //扫描处理
+    public static final String ACTIVITY_SCAN_HANDER= "/app/ScanHanderActivity";
 }

@@ -4,6 +4,8 @@ import com.bean.GoodInfoRespone;
 import com.bean.InventoryRecordRespone;
 import com.bean.ReportLostListRespone;
 import com.bean.ResultResponse;
+import com.bean.SalesStatisticsRespone;
+import com.ui.entity.GoodsSalesStatisticsRespone;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -41,8 +43,9 @@ public interface ApiService {
      * @Author:lyf
      * @Date: 2020/7/19
      */
-    @GET(ApiConstant.COMMENT_SERVER_URL + ApiConstant.REPORT_LOSS)
-    Observable<ReportLostListRespone> getReportLossList();
+    @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.REPORT_LOSS)
+    @FormUrlEncoded
+    Observable<ReportLostListRespone> getReportLossList(@Field("startTime") String startTime, @Field("endTime") String endTime);
 
     /**
      * @param content 搜索内容
@@ -72,13 +75,53 @@ public interface ApiService {
      */
     @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.SEND_REPORT_ACCOUNT)
     @FormUrlEncoded
-    Observable<ResultResponse> sendReportAccount(@Field("begintime") String begintime,@Field("endtime") String endtime,@Field("Email") String Email);
+    Observable<ResultResponse> sendReportAccount(@Field("begintime") String begintime, @Field("endtime") String endtime, @Field("Email") String Email);
+
     /**
-    *@Description:描述
-    *@Author:lyf
-    *@Date: 2020/8/1
-    */
+     * @Description:描述
+     * @Author:lyf
+     * @Date: 2020/8/1
+     */
     @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.DOWN_EXCEL_LOCALD)
     @FormUrlEncoded
-    Observable<ResultResponse> downLoadExcel(@Field("begintime") String begintime,@Field("endtime")String endtime);
+    Observable<ResultResponse> downLoadExcel(@Field("begintime") String begintime, @Field("endtime") String endtime);
+
+
+    /**
+     * @Description:商品销售统计
+     * @Author:lyf
+     * @Date: 2020/8/2
+     */
+    @GET(ApiConstant.COMMENT_SERVER_URL + ApiConstant.COUNT_GOODS)
+    Observable<GoodsSalesStatisticsRespone> getCountGoods();
+
+    /**
+     * @Description:当月现金统计
+     * @Author:lyf
+     * @Date: 2020/8/1
+     */
+    @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.MON_ORDER_CASH)
+    @FormUrlEncoded
+    Observable<SalesStatisticsRespone> curMonthcashStatistics(@Field("date") String date, @Field("page") String page, @Field("pagelimit") String pagelimit);
+
+    /**
+     * @Description:当月移动统计
+     * @Author:lyf
+     * @Date: 2020/8/1
+     */
+    @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.MON_ORDER)
+    @FormUrlEncoded
+    Observable<SalesStatisticsRespone> curMonthLineStatistics(@Field("date") String date, @Field("page") String page, @Field("pagelimit") String pagelimit);
+
+
+    /**
+     * @Description:当月会员统计
+     * @Author:lyf
+     * @Date: 2020/8/1
+     */
+    @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.MON_ORDER)
+    @FormUrlEncoded
+    Observable<SalesStatisticsRespone> curMonthMemberStatistics(@Field("date") String date, @Field("page") String page, @Field("pagelimit") String pagelimit, @Field("tag") String member);
+
+
 }
