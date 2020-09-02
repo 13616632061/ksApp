@@ -221,8 +221,7 @@ public class  ManagerFragment extends BaseFragment {
         storeinfo_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),Out_In_operationActivity.class);
-                startActivity(intent);
+                ARouter.getInstance().build(RouterPath.ACTIVITY_OUT_IN_OPERATION).navigation();
             }
         });
 
@@ -273,8 +272,9 @@ public class  ManagerFragment extends BaseFragment {
         Inventory_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getActivity(), InventoryActivity.class);
-                startActivity(intent);
+                ARouter.getInstance().build(RouterPath.ACTIVITY_INVENTORY).navigation();
+//                Intent intent=new Intent(getActivity(), InventoryActivity.class);
+//                startActivity(intent);
             }
         });
         //报损

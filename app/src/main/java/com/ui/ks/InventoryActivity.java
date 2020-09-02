@@ -1,32 +1,51 @@
 package com.ui.ks;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.MyApplication.KsApplication;
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.base.BaseActivity;
+import com.blankj.utilcode.util.LogUtils;
 import com.constant.RouterPath;
 import com.ui.adapter.GoodSortListAdapter;
 import com.ui.adapter.GoodsInventoryListAdapter;
+import com.ui.adapter.Out_In_Adapter;
 import com.ui.dialog.InventoryPopWindow;
 import com.ui.entity.GoodSort;
 import com.ui.entity.Goods_Inventory;
 import com.ui.entity.Inventory_classification;
+import com.ui.entity.Out_in_Goods;
 import com.ui.listview.PagingListView;
 import com.ui.util.CustomRequest;
 import com.ui.util.DialogUtils;
+import com.ui.util.StringUtils;
 import com.ui.util.SysUtils;
+import com.ui.view.MyListView;
+import com.ui.view.MyOut_INlistView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,10 +64,10 @@ import butterknife.OnClick;
  * 盘点
  * Created by Administrator on 2020/3/2.
  */
-
+@Route(path = RouterPath.ACTIVITY_INVENTORY)
 public class InventoryActivity extends BaseActivity implements View.OnClickListener {
 
-    @BindView(R.id.btn_set)
+    @BindView(R.id.tv_report)
     TextView btnSet;
     //分类的数据显示
     PagingListView lv_classification;
@@ -58,7 +77,11 @@ public class InventoryActivity extends BaseActivity implements View.OnClickListe
     List<Inventory_classification> inventory_classifications = new ArrayList<>();
     @BindView(R.id.inventory_activity)
     RelativeLayout inventoryActivity;
+    @BindView(R.id.iv_scan)
+    ImageView ivScan;
 
+    @BindView(R.id.et_inputgoodname)
+    EditText et_inputgoodname;
 
     private List<GoodSort> goodsortList = new ArrayList<>();
     GoodSortListAdapter mgoodSortListAdapter;
@@ -87,14 +110,21 @@ public class InventoryActivity extends BaseActivity implements View.OnClickListe
         lodatas();
     }
 
-    @OnClick({R.id.btn_set})
+    @OnClick({R.id.iv_back,R.id.tv_report,R.id.iv_scan})
     public void OnClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_set://提交记录
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.iv_scan:
+                ARouter.getInstance().build(RouterPath.ACTIVITY_SCAN_HANDER).navigation(this, 200);
+                break;
+            case R.id.tv_report://提交记录
                 ARouter.getInstance().build(RouterPath.ACTIVITY_INVENTORY_RECORD).navigation();
                 break;
         }
     }
+
 
     //初始化布局
     private void initview() {
@@ -136,9 +166,36 @@ public class InventoryActivity extends BaseActivity implements View.OnClickListe
                         AddInventoryStock(InventoryStock, i);
                     }
                 });
-
             }
         });
+
+
+
+        et_inputgoodname.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+            @Override
+            public boolean onEditorAction(TextView v, int actionId,
+                                          KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    // 先隐藏键盘
+                    ((InputMethodManager) et_inputgoodname.getContext()
+                            .getSystemService(Context.INPUT_METHOD_SERVICE))
+                            .hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                                    InputMethodManager.HIDE_NOT_ALWAYS);
+                    // 搜索，进行自己要的操作...
+//                    seachList(viewIndex);//这里是我要做的操作！
+
+                    getseek(v.getText().toString());
+
+                    et_inputgoodname.setText("");
+
+                    return true;
+                }
+                return false;
+            }
+        });
+
+
     }
 
     //盘点的数据
@@ -320,5 +377,154 @@ public class InventoryActivity extends BaseActivity implements View.OnClickListe
         });
         executeRequest(r);
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //扫描结果处理
+        if (requestCode == 200 && resultCode == 200) {
+            String resul = data.getExtras().getString("result");
+            LogUtils.i( " resul:  " + resul);
+            getseek(resul);
+        }
+    }
+
+
+    public void getseek(String str) {
+        Map<String, String> map = new HashMap<String, String>();
+        String name="";
+        if (StringUtils.isNumber1(str)) {
+            name = "bncode";
+        } else {
+            name = "search";
+        }
+        map.put(name, str);
+        showLoading(this);
+        CustomRequest r = new CustomRequest(Request.Method.POST, SysUtils.getGoodspinbanServiceUrl("goods_search"), map, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                hideLoading();
+                JSONObject ret = SysUtils.didResponse(response);
+                try {
+                    Log.e("测试数据", "onResponse: " + ret);
+                    String status = ret.getString("status");
+                    if (status.equals("200")) {
+                        JSONObject data = ret.getJSONObject("data");
+                        JSONArray goods_info = data.getJSONArray("goods_info");
+                        out_in_goodsList.clear();
+                        for (int i = 0; i < goods_info.length(); i++) {
+                            JSONObject jso = goods_info.getJSONObject(i);
+//                            Goods_Inventory goods_inventory = new Goods_Inventory();
+//                            goods_inventory.setName(jso.getString("name"));
+//                            goods_inventory.setCost(jso.getString("cost"));
+//                            goods_inventory.setStore(jso.getString("store"));
+//                            goods_inventory.setBncode(jso.getString("bncode"));
+//                            goods_inventory.setGoods_id(jso.getString("goods_id"));
+//                            goods_inventory.setReality_store(jso.getString("reality_store"));
+//                            goods_inventory.setImg_src(jso.getString("img_src"));
+                            Out_in_Goods out_in_goods = new Out_in_Goods();
+                            out_in_goods.setCost(jso.getString("cost"));
+                            out_in_goods.setGoods_id(jso.getString("goods_id"));
+                            out_in_goods.setMember_price(jso.getString("member_price"));
+                            out_in_goods.setName(jso.getString("name"));
+                            out_in_goods.setPrice(jso.getString("price"));
+                            out_in_goods.setNums("1");
+                            out_in_goods.setStore(jso.getString("store"));
+                            out_in_goods.setBncode(jso.getString("bncode"));
+                            out_in_goods.setReality_store(jso.getString("reality_store"));
+                            out_in_goods.setImg_src(jso.getString("img_src"));
+
+//                            goods_inventories.add(goods_inventory);
+
+                            out_in_goodsList.add(out_in_goods);
+                        }
+                        if (out_in_goodsList.size()>1){
+                            ShowDialog();
+                        }else if (out_in_goodsList.size()==1){
+                            setGoods(0);
+                            if (goods_inventories.size() > 0) {
+                                InventoryPopWindow popWindow = new InventoryPopWindow(InventoryActivity.this, goods_inventories.get(0));
+                                popWindow.showAtLocation(inventoryActivity, Gravity.NO_GRAVITY, 0, 0);
+                                popWindow.setOnAddInventoryStock(new InventoryPopWindow.OnAddInventoryStock() {
+                                    @Override
+                                    public void addInventoryStock(String InventoryStock) {
+                                        AddInventoryStock(InventoryStock, 0);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                hideLoading();
+            }
+        });
+        executeRequest(r);
+    }
+
+
+    public void setGoods(int i){
+        goods_inventories.clear();
+        Goods_Inventory goods_inventory = new Goods_Inventory();
+        goods_inventory.setBncode(out_in_goodsList.get(i).getBncode());
+        goods_inventory.setCost(out_in_goodsList.get(i).getCost());
+        goods_inventory.setGoods_id(out_in_goodsList.get(i).getGoods_id());
+        goods_inventory.setImg_src(out_in_goodsList.get(i).getImg_src());
+        goods_inventory.setName(out_in_goodsList.get(i).getName());
+        goods_inventory.setReality_store(out_in_goodsList.get(i).getReality_store());
+        goods_inventory.setStore(out_in_goodsList.get(i).getStore());
+        goods_inventories.add(goods_inventory);
+    }
+
+
+    Dialog dialog = null;
+    MyOut_INlistView My_ListView;
+    public List<Out_in_Goods> out_in_goodsList=new ArrayList<>();
+
+    //搜索商品的弹窗
+    public void ShowDialog() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+        if (dialog != null) {
+            dialog.dismiss();
+        }
+        dialog = new Dialog(InventoryActivity.this);
+        dialog.show();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        View rootView = View.inflate(InventoryActivity.this, R.layout.remarks, null);
+        Window window = dialog.getWindow();
+        WindowManager.LayoutParams params = new WindowManager.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        window.addContentView(rootView, params);
+        My_ListView = (MyOut_INlistView) rootView.findViewById(R.id.My_ListView);
+        Out_In_Adapter out_in_adapter = new Out_In_Adapter(InventoryActivity.this, out_in_goodsList);
+        My_ListView.setAdapter(out_in_adapter);
+
+        out_in_adapter.Setitmeonclcik(new Out_In_Adapter.Setonclick() {
+            @Override
+            public void Onitmeclick(int i) {
+                setGoods(i);
+                if (goods_inventories.size() > 0) {
+                    InventoryPopWindow popWindow = new InventoryPopWindow(InventoryActivity.this, goods_inventories.get(0));
+                    popWindow.showAtLocation(inventoryActivity, Gravity.NO_GRAVITY, 0, 0);
+                    popWindow.setOnAddInventoryStock(new InventoryPopWindow.OnAddInventoryStock() {
+                        @Override
+                        public void addInventoryStock(String InventoryStock) {
+                            AddInventoryStock(InventoryStock, 0);
+                        }
+                    });
+                }
+                dialog.dismiss();
+            }
+        });
+    }
+
 
 }

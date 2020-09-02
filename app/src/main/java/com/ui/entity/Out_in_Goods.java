@@ -13,6 +13,43 @@ public class Out_in_Goods {
     String goods_id;
     String cost;
     String nums;
+    String reality_store;
+    String img_src;
+    String bncode;
+    String store;
+
+
+    public String getReality_store() {
+        return reality_store;
+    }
+
+    public void setReality_store(String reality_store) {
+        this.reality_store = reality_store;
+    }
+
+    public String getImg_src() {
+        return img_src;
+    }
+
+    public void setImg_src(String img_src) {
+        this.img_src = img_src;
+    }
+
+    public String getBncode() {
+        return bncode;
+    }
+
+    public void setBncode(String bncode) {
+        this.bncode = bncode;
+    }
+
+    public String getStore() {
+        return store;
+    }
+
+    public void setStore(String store) {
+        this.store = store;
+    }
 
     public String getNums() {
         return nums;

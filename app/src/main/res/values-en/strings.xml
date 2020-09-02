@@ -222,6 +222,8 @@
     <string name="loss_reporting">Loss Reporting</string>
     <string name="marketing">Marketing</string>
     <string name="order_on_table">Order On Table</string>
+    <string name="Report_goods">Report goods</string>
+    <string name="staff">staff</string>
 
     <string name="reconciliation_export">Export</string>
     <string name="online_statistics">Online Statistics</string>

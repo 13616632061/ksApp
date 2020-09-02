@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.MyApplication.KsApplication;
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -61,7 +62,7 @@ import butterknife.OnClick;
 /**
  * Created by admin on 2018/7/10.
  */
-
+@Route(path = RouterPath.ACTIVITY_OUT_IN_OPERATION)
 public class Out_In_operationActivity extends BaseActivity implements View.OnClickListener, ScanGunKeyEventHelper.OnScanSuccessListener, Out_In_Adapter.Setonclick, Out_In_Adapter.SetLongOnclick {
 
     @BindView(R.id.iv_scan)
@@ -360,7 +361,13 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
 
     public void getseek(String str) {
         Map<String, String> map = new HashMap<String, String>();
-        map.put("bncode", str);
+        String name = "search";
+        if (StringUtils.isNumber1(str)) {
+            name = "bncode";
+        } else {
+            name = "search";
+        }
+        map.put(name, str);
         showLoading(this);
         CustomRequest r = new CustomRequest(Request.Method.POST, SysUtils.getGoodspinbanServiceUrl("goods_search"), map, new Response.Listener<JSONObject>() {
             @Override

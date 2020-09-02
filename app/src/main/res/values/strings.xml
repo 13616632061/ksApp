@@ -220,6 +220,8 @@
     <string name="loss_reporting">报损</string>
     <string name="marketing">营销</string>
     <string name="order_on_table">桌上点餐</string>
+    <string name="Report_goods">报货</string>
+    <string name="staff">员工</string>
 
     <string name="reconciliation_export">对账导出</string>
     <string name="online_statistics">线上交易统计</string>

@@ -186,7 +186,7 @@
                     android:layout_above="@+id/tv_member"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/ic_action_account_box" />
+                    android:background="@drawable/ic_action_member" />
             </RelativeLayout>
 
                 <RelativeLayout
@@ -362,10 +362,60 @@
                         android:background="@drawable/order" />
                 </RelativeLayout>
 
-                <View
-                    android:layout_weight="2"
+
+                <RelativeLayout
+                    android:id="@+id/Report_goods_layout"
+                    android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:id="@+id/tv_Report_goods"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Report_goods" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv_Report_goods"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/ic_action_report" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/staff_layout"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:background="@drawable/selset_write"
+                    android:layout_marginLeft="1dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:id="@+id/tv_staff_goods"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/staff" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_above="@+id/tv_staff_goods"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/ic_action_account_box" />
+                </RelativeLayout>
 
 
             </LinearLayout>

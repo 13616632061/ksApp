@@ -27,4 +27,8 @@ public class RouterPath {
     public static final String ACTIVITY_TIME_FILTER = "/app/TimeFilterActivity";
     //扫描处理
     public static final String ACTIVITY_SCAN_HANDER= "/app/ScanHanderActivity";
+    //盘点商品
+    public static final String ACTIVITY_INVENTORY= "/app/InventoryActivity";
+    //出入库
+    public static final String ACTIVITY_OUT_IN_OPERATION= "/app/Out_In_operationActivity";
 }
