@@ -1,0 +1,61 @@
+{
+    "status":200,
+    "reslut":[
+        {
+            "id":"1",
+       "imagePath":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1304878970,2752290530&fm=26&gp=0.jpg",
+            "name":"美宜佳（宝安西乡店）",
+"distance":"0.5km",
+"saleNum":241,
+"tips":"满20元减4元，满60元减15元"
+        },
+      {
+        "id": "2",
+        "imagePath": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1304878970,2752290530&fm=26&gp=0.jpg",
+        "name": "美宜佳（宝安坪洲店）",
+        "distance": "1.0km",
+        "saleNum": 199,
+        "tips": "欢迎光临美宜佳，营业时间7：00--24：00，满20元减4元，满60元减15元"
+      },
+      {
+        "id": "3",
+        "imagePath": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2866502674,2273797781&fm=26&gp=0.jpg",
+        "name": "大掌柜凉皮肉夹馍（坪洲店）",
+        "distance": "1.3km",
+        "saleNum": 3314,
+        "tips": "正宗麻酱凉皮"
+      },
+      {
+        "id": "4",
+        "imagePath": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3028567855,4003722309&fm=26&gp=0.jpg",
+        "name": "黄焖鸡米饭（西乡店）",
+        "distance": "708m",
+        "saleNum": 4506,
+        "tips": "亲爱的新老顾客，欢迎光临黄焖鸡米饭西乡店"
+      },
+      {
+        "id": "5",
+        "imagePath": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2364081651,1330924159&fm=26&gp=0.jpg",
+        "name": "北方饺子馆（坪洲店）",
+        "distance": "1.1km",
+        "saleNum": 2605,
+        "tips": "饺子好吃，经济实惠"
+      },
+      {
+        "id": "6",
+        "imagePath":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=458536206,1969755708&fm=26&gp=0.jpg",
+        "name": "百果园（深圳天琴阁）",
+        "distance": "1.3km",
+        "saleNum": 2535,
+        "tips": "绿色水果，专业品控质检"
+      },
+      {
+        "id": "7",
+        "imagePath":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2497653651,2065421212&fm=26&gp=0.jpg",
+        "name": "天天鲜果（西乡店）",
+        "distance": "699m",
+        "saleNum": 466,
+        "tips": "水果很新鲜哦！"
+      }
+    ]
+}

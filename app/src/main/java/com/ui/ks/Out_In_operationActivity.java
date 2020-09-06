@@ -1,5 +1,6 @@
 package com.ui.ks;
 
+import android.*;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -57,13 +58,18 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import kr.co.namee.permissiongen.PermissionFail;
+import kr.co.namee.permissiongen.PermissionGen;
+import kr.co.namee.permissiongen.PermissionSuccess;
 
 /**
+ * 出入库
  * Created by admin on 2018/7/10.
  */
 
 public class Out_In_operationActivity extends BaseActivity implements View.OnClickListener, ScanGunKeyEventHelper.OnScanSuccessListener, Out_In_Adapter.Setonclick, Out_In_Adapter.SetLongOnclick {
 
+    private static final String TAG = Out_In_operationActivity.class.getSimpleName();
     @BindView(R.id.iv_scan)
     ImageView ivScan;
 
@@ -94,6 +100,36 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
 
         initView();
 
+    }
+
+    /**
+     * @Description:请求权限
+     * @Author:lyf
+     * @Date: 2020/8/26
+     */
+    public void requestPermission() {
+        PermissionGen.with(this)
+                .addRequestCode(200)
+                .permissions(
+                        android.Manifest.permission.CAMERA
+                )
+                .request();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        PermissionGen.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+    }
+
+    @PermissionSuccess(requestCode = 200)
+    public void permissionSuccess() {
+        ARouter.getInstance().build(RouterPath.ACTIVITY_SCAN_HANDER).navigation(this, 200);
+
+    }
+
+    @PermissionFail(requestCode = 200)
+    public void permissionFailure() {
+        Toast.makeText(this, getString(R.string.str145), Toast.LENGTH_LONG).show();
     }
 
     private void initView() {
@@ -162,7 +198,7 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.iv_scan:
-                ARouter.getInstance().build(RouterPath.ACTIVITY_SCAN_HANDER).navigation(this, 200);
+                requestPermission();
                 break;
         }
     }
@@ -368,7 +404,7 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
                 hideLoading();
                 JSONObject ret = SysUtils.didResponse(response);
                 try {
-                    Log.e("测试数据", "onResponse: " + ret);
+                    LogUtils.i(TAG + " onResponse: " + ret);
                     String status = ret.getString("status");
                     if (status.equals("200")) {
                         isseek = false;
@@ -411,13 +447,15 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
                     }
 
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    LogUtils.i(TAG + " e: " + e.toString());
+
                 }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                LogUtils.i(TAG + " e: " + error.toString());
                 isseek = false;
                 hideLoading();
             }
@@ -505,8 +543,8 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
             @Override
             public void onClick(View view) {
 //                if (!et_inputgoodname1.getText().toString().equals("") && !et_inputgoodname2.getText().toString().equals("")) {
-                    Updatas(et_inputgoodname1.getText().toString() + "," + et_inputgoodname2.getText().toString(), type);
-                    dialog.dismiss();
+                Updatas(et_inputgoodname1.getText().toString() + "," + et_inputgoodname2.getText().toString(), type);
+                dialog.dismiss();
 //                }
             }
         });
@@ -541,7 +579,7 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
 
     @Override
     public void onScanSuccess(String barcode) {
-        Log.d("print", "扫描的商品为" + barcode);
+        LogUtils.i(TAG + " barcode: " + barcode);
         if (!isseek) {
             isseek = true;
             getseek(barcode);
@@ -674,7 +712,7 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
         //扫描结果处理
         if (requestCode == 200 && resultCode == 200) {
             String resul = data.getExtras().getString("result");
-            LogUtils.i( " resul:  " + resul);
+            LogUtils.i(TAG + " resul:  " + resul);
             getseek(resul);
         }
     }

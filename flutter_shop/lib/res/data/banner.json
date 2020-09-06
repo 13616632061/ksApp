@@ -1,0 +1,22 @@
+{
+  "status": 200,
+  "reslut": {
+    "bannerInfo": [
+      {
+        "id": "1",
+        "pictureUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3243009215,2274707566&fm=26&gp=0.jpg",
+        "linkUrl": "http://www.fruitday.com/"
+      },
+      {
+        "id": "2",
+        "pictureUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=386026323,2950003080&fm=26&gp=0.jpg",
+        "linkUrl": "https://item.taobao.com/item.htm?id=623107494496&ali_refid=a3_430673_1006:1324300186:N:te6UFA9lQ%2BwNx5zRcAEMLw%3D%3D:2f8faacbc977d15c76f821445d27fb1c&ali_trackid=1_2f8faacbc977d15c76f821445d27fb1c&spm=a2e15.8261149.07626516002.53"
+      },
+      {
+        "id": "3",
+        "pictureUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599402803567&di=d8aa8a7fc503336200d8d839122ad7c0&imgtype=0&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D1122646494%2C3552648186%26fm%3D214%26gp%3D0.jpg",
+        "linkUrl": "https://www.baidu.com/"
+      }
+    ]
+  }
+}

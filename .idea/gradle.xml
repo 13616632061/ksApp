@@ -13,7 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/finestwebview" />
             <option value="$PROJECT_DIR$/jsbridge" />
-            <option value="$PROJECT_DIR$/orderdishes" />
+            <option value="$PROJECT_DIR$/orderDishes" />
             <option value="$PROJECT_DIR$/viewpagerindicator" />
             <option value="$PROJECT_DIR$/volley" />
           </set>

@@ -233,7 +233,7 @@ public class ReportLossListActivity extends BaseActivity implements ReportLossLi
 
     @PermissionFail(requestCode = 200)
     public void permissionFailure() {
-        Toast.makeText(this, "权限拒绝,无法正常使用", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, getString(R.string.str145), Toast.LENGTH_LONG).show();
     }
 
     @Override
