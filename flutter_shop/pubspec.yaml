@@ -52,6 +52,9 @@ flutter:
     - lib/res/data/shopInfo.json
     - lib/res/data/banner.json
     - lib/res/data/fluitType.json
+    - lib/res/data/fluitGood.json
+    - lib/res/data/foodType.json
+    - lib/res/data/foodInfo.json
 
   #   - images/a_dot_ham.jpeg
 
