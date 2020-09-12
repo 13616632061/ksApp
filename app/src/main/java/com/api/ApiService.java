@@ -6,6 +6,7 @@ import com.bean.ReportLostListRespone;
 import com.bean.ResultResponse;
 import com.bean.SalesStatisticsRespone;
 import com.ui.entity.GoodsSalesStatisticsRespone;
+import com.ui.entity.OutInStoreListResponse;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -122,6 +123,15 @@ public interface ApiService {
     @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.MON_ORDER)
     @FormUrlEncoded
     Observable<SalesStatisticsRespone> curMonthMemberStatistics(@Field("date") String date, @Field("page") String page, @Field("pagelimit") String pagelimit, @Field("tag") String member);
+
+    /**
+    *@Description:查询出入库列表数据
+    *@Author:lyf
+    *@Date: 2020/9/12
+    */
+    @POST(ApiConstant.COMMENT_SERVER_URL + ApiConstant.DETAIL_LIST)
+    @FormUrlEncoded
+    Observable<OutInStoreListResponse> queryOutInStoreListData(@Field("starttime") String startTime, @Field("endtime") String endTime, @Field("page") String page);
 
 
 }

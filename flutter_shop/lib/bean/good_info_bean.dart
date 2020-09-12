@@ -35,6 +35,7 @@ class GoodInfo {
   String initPrice;
   String tips;
   String saleNum;
+  int shopCarNum;
   List<SpecificationsDetail> specificationsDetail;
 
   GoodInfo({this.goodId,
@@ -44,6 +45,7 @@ class GoodInfo {
     this.initPrice,
     this.tips,
     this.saleNum,
+    this.shopCarNum=0,
     this.specificationsDetail});
 
   GoodInfo.fromJson(Map<String, dynamic> json) {
@@ -54,6 +56,7 @@ class GoodInfo {
     initPrice = json['initPrice'];
     tips = json['tips'];
     saleNum = json['saleNum'];
+    shopCarNum = 0;
     if (json['specificationsDetail'] != null) {
       specificationsDetail = new List<SpecificationsDetail>();
       json['specificationsDetail'].forEach((v) {
@@ -71,6 +74,7 @@ class GoodInfo {
     data['initPrice'] = this.initPrice;
     data['tips'] = this.tips;
     data['saleNum'] = this.saleNum;
+    data['shopCarNum'] = this.shopCarNum;
     if (this.specificationsDetail != null) {
       data['specificationsDetail'] =
           this.specificationsDetail.map((v) => v.toJson()).toList();

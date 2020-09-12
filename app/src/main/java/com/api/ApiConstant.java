@@ -34,4 +34,6 @@ public class ApiConstant {
     public static final String MON_ORDER = "ks.seller.mon_order";
     //建议反馈
     public static final String SUGGESTION_BACK = "http://yizhongyun.mikecrm.com/2dC7asQ";
+    //出入库查询列表页
+    public static final String DETAIL_LIST = "ks.pingban_seller.detail_list";
 }

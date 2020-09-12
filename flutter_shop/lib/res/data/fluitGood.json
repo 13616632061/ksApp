@@ -6,7 +6,7 @@
       {
         "goodId": "xg001",
         "name": "大西瓜1/4个带皮不少于4斤",
-        "photoUrl": "1",
+        "photoUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=177886456,3063632309&fm=26&gp=0.jpg",
         "price": "19.9",
         "initPrice": "22.9",
         "tips": "甜甜的大西瓜",
@@ -15,7 +15,7 @@
       {
         "goodId": "xg002",
         "name": "冰镇西瓜",
-        "photoUrl": "1",
+        "photoUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2772723126,2676224467&fm=26&gp=0.jpg",
         "price": "15.5",
         "initPrice": "19.9",
         "tips": "冰镇西瓜",
@@ -55,7 +55,7 @@
       {
         "goodId": "ptjg001",
         "name": "B级-克瑞森无核珍珠红提",
-        "photoUrl": "1",
+        "photoUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2004010849,1678538403&fm=26&gp=0.jpg",
         "price": "15.5",
         "tips": "好吃不贵",
         "saleNum": "254",
@@ -80,7 +80,7 @@
       {
         "goodId": "ptjg001",
         "name": "阳光巨峰葡萄",
-        "photoUrl": "1",
+        "photoUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3120626763,3337556532&fm=26&gp=0.jpg",
         "price": "19.9",
         "tips": "",
         "saleNum": "55",
@@ -110,7 +110,7 @@
       {
         "goodId": "ptjg003",
         "name": "千禧圣女果",
-        "photoUrl": "1",
+        "photoUrl": "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=52283318,2241170299&fm=26&gp=0.jpg",
         "price": "7.9",
         "tips": "一口爆浆，甜到上瘾",
         "saleNum": "39",
@@ -137,7 +137,7 @@
       {
         "goodId": "ptjg004",
         "name": "A级-阳光玫瑰青提（不少于500g）",
-        "photoUrl": "1",
+        "photoUrl": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2273223636,168369067&fm=26&gp=0.jpg",
         "price": "35.5",
         "initPrice": "39.5",
         "tips": "一口爆浆，甜到上瘾",
@@ -152,7 +152,7 @@
       {
         "goodId": "tlmz001",
         "name": "A级-青皮凯特芒（1个/约850-950g）",
-        "photoUrl": "1",
+        "photoUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1619245021,2768724853&fm=26&gp=0.jpg",
         "price": "17.9",
         "initPrice": "20.9",
         "tips": "比你的小小小......脸还大的芒果",
@@ -161,7 +161,7 @@
       {
         "goodId": "tlmz002",
         "name": "甜蜜蜜脆冬枣（约500g）",
-        "photoUrl": "1",
+        "photoUrl": "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2823309179,3170227607&fm=26&gp=0.jpg",
         "price": "27.5",
         "initPrice": "29.9",
         "tips": "这脆爽，当仁不让",
@@ -170,7 +170,7 @@
       {
         "goodId": "tlmz003",
         "name": "B级-脆红李1份（约500g）",
-        "photoUrl": "1",
+        "photoUrl": "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4253510454,3230643549&fm=26&gp=0.jpg",
         "price": "12.5",
         "initPrice": "14.5",
         "tips": "",

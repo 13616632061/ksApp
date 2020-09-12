@@ -550,7 +550,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".Out_In_Activity"
+            android:name=".OutInStore.OutInStoreQueryListActivity"
             android:label="出入库报表"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />

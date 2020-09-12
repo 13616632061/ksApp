@@ -206,7 +206,7 @@ public class Out_In_operationActivity extends BaseActivity implements View.OnCli
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.tv_report:
+            case R.id.tv_report://出入库报表
                 Intent intent = new Intent(Out_In_operationActivity.this, OutofstorageActivity.class);
                 startActivity(intent);
                 break;

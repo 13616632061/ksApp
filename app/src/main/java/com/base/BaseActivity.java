@@ -203,8 +203,7 @@ public class BaseActivity extends AppCompatActivity {
         //标题
         String label = null;
         try {
-            label = getResources().getString(
-                    getPackageManager().getActivityInfo(getComponentName(), 0).labelRes);
+            label = getResources().getString(getPackageManager().getActivityInfo(getComponentName(), 0).labelRes);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -77,9 +77,10 @@ public class ApiRetrofit {
         okhttp3.MediaType mediaType = response.body().contentType();
         String content = response.body().string();
         LogUtils.e(TAG + "----------Request Start----------------");
-        LogUtils.e(TAG + "| " + request.toString());
+        LogUtils.e(TAG + "| Request  " + request.toString());
         LogUtils.e(TAG + "----------Request headers----------------");
         LogUtils.e(TAG + "| " + request.headers().toString());
+        LogUtils.e(TAG + "----------Request response----------------");
         LogUtils.e(TAG + "| Response:" + response);
         LogUtils.e(TAG + "----------Request End:" + duration + "毫秒----------");
         LogUtils.e(TAG + "| Response:" + content);
