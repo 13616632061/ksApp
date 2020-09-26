@@ -20,4 +20,13 @@ public class GoodsSalesStatisticsFragmentModel implements GoodsSalesStatisticsFr
     public Observable goodsSalesStatistics() {
         return ApiRetrofit.getInstance().getApiService().getCountGoods();
     }
+    /**
+    *@Description:筛选时间商品销售统计
+    *@Author:lyf
+    *@Date: 2020/9/24
+    */
+    @Override
+    public Observable goodsStatisticFilter(String beginTime, String endTime) {
+        return ApiRetrofit.getInstance().getApiService().goodsStatisticFilter(beginTime,endTime);
+    }
 }

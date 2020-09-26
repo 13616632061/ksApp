@@ -100,4 +100,13 @@ public class AccountExportModel implements AccountExportContract.Model {
             }
         });
     }
+    /**
+    *@Description:商品销售数据导出至邮箱
+    *@Author:lyf
+    *@Date: 2020/9/26
+    */
+    @Override
+    public Observable goodSalesDatasendEmail(String beginTime, String endTime, String Email) {
+        return ApiRetrofit.getInstance().getApiService().goodSalesDatasendEmail(beginTime,endTime,Email);
+    }
 }

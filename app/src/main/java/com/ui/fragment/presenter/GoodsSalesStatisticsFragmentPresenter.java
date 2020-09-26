@@ -180,4 +180,39 @@ public class GoodsSalesStatisticsFragmentPresenter extends BasePresenter<GoodsSa
         }
         mAdapter.notifyDataSetChanged();
     }
+    /**
+    *@Description:筛选时间商品销售统计
+    *@Author:lyf
+    *@Date: 2020/9/24
+    */
+    @Override
+    public void goodsStatisticFilter(String beginTime, String endTime) {
+        mView.showLoading();
+        addSubscription(mModel.goodsStatisticFilter(beginTime,endTime), new Subscriber<GoodsSalesStatisticsRespone>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                mView.hideLoading();
+                setEmptyView();
+
+            }
+
+            @Override
+            public void onNext(GoodsSalesStatisticsRespone respone) {
+                mView.hideLoading();
+                if (respone != null && respone.getResponse() != null) {
+                    if ("200".equals(respone.getResponse().getStatus())) {
+                        mData.addAll(respone.getResponse().getData());
+                    }
+                }
+                setEmptyView();
+            }
+
+
+        });
+    }
 }

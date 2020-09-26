@@ -8,7 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/finestwebview/finestwebview.iml" filepath="$PROJECT_DIR$/finestwebview/finestwebview.iml" />
       <module fileurl="file://$PROJECT_DIR$/jsbridge/jsbridge.iml" filepath="$PROJECT_DIR$/jsbridge/jsbridge.iml" />
       <module fileurl="file://$PROJECT_DIR$/ksApp.iml" filepath="$PROJECT_DIR$/ksApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/orderdishes/orderdishes.iml" filepath="$PROJECT_DIR$/orderdishes/orderdishes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orderDishes/orderDishes.iml" filepath="$PROJECT_DIR$/orderDishes/orderDishes.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
     </modules>

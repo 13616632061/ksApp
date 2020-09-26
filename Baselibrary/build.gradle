@@ -75,10 +75,12 @@ dependencies {
     api rootProject.ext.dependencies["retrofit2-adapter-rxjava"]
     api rootProject.ext.dependencies["retrofit2-adapter-converter-scalars"]
     api rootProject.ext.dependencies["okhttp3-logging-interceptor"]
+//    api rootProject.ext.dependencies["ihsanbal-LoggingInterceptor"]
     api rootProject.ext.dependencies["jpinyin"]
     api rootProject.ext.dependencies["zxing"]
     api rootProject.ext.dependencies["eventbus"]
     api rootProject.ext.dependencies["xclcharts"]
     api rootProject.ext.dependencies["360replugin"]
+    api rootProject.ext.dependencies["gson"]
 
 }

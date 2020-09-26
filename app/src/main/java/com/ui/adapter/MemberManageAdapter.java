@@ -1,15 +1,20 @@
 package com.ui.adapter;
 
+import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 import com.ui.entity.Member;
-import com.ui.ks.MemberManageActivity;
+import com.ui.ks.MemberManage.MemberManageActivity;
 import com.ui.ks.R;
 import com.ui.util.SetEditTextInput;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -17,62 +22,22 @@ import java.util.List;
  * Created by Administrator on 2016/12/24.
  */
 
-public class MemberManageAdapter extends BaseAdapter{
+public class MemberManageAdapter extends BaseQuickAdapter<Member.ResponseBean.DataBean.InfoBean, BaseViewHolder> {
 
-    private List<Member.ResponseBean.DataBean.InfoBean> cat_list;
-    private MemberManageActivity fragmentActivity;
 
-    public MemberManageAdapter(MemberManageActivity fragmentActivity, List<Member.ResponseBean.DataBean.InfoBean> cat_list) {
-        this.fragmentActivity = fragmentActivity;
-        this.cat_list = cat_list;
+    public MemberManageAdapter(int layoutResId, @Nullable List<Member.ResponseBean.DataBean.InfoBean> data) {
+        super(layoutResId, data);
     }
+
 
     @Override
-    public int getCount() {
-        return cat_list.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return cat_list.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Holder holder=null;
-        if(convertView==null){
-            convertView=View.inflate(fragmentActivity, R.layout.itme_member_manage,null);
-            holder=new Holder();
-            holder.tv_number= (TextView) convertView.findViewById(R.id.tv_number);
-            holder.tv_member_name= (TextView) convertView.findViewById(R.id.tv_member_name);
-            holder.tv_member_phone= (TextView) convertView.findViewById(R.id.tv_member_phone);
-            holder.tv_member_integral= (TextView) convertView.findViewById(R.id.tv_member_integral);
-            holder.tv_member_balance= (TextView) convertView.findViewById(R.id.tv_member_balance);
-            convertView.setTag(holder);
-        }else {
-            holder= (Holder) convertView.getTag();
-        }
-
-        Member.ResponseBean.DataBean.InfoBean data=cat_list.get(position);
-        holder.tv_number.setText((position+1)+"");
-        holder.tv_member_name.setText(data.getMember_name());
-        holder.tv_member_phone.setText(data.getMobile());
-        holder.tv_member_integral.setText(data.getScore());
-        holder.tv_member_balance.setText(SetEditTextInput.stringpointtwo(data.getSurplus()));
-        return convertView;
-    }
-
-    public class Holder{
-        TextView tv_number;//序号
-        TextView tv_member_name;//会员名
-        TextView tv_member_phone;//会员手机号
-        TextView tv_member_integral;//会员积分
-        TextView tv_member_balance;//会员余额
+    protected void convert(BaseViewHolder helper, Member.ResponseBean.DataBean.InfoBean item) {
+        helper.setText(R.id.tv_number, (helper.getAdapterPosition() + 1) + "");
+        helper.setText(R.id.tv_member_name, item.getMember_name());
+        helper.setText(R.id.tv_member_phone, item.getMobile());
+        helper.setText(R.id.tv_member_integral, item.getScore());
+        helper.setText(R.id.tv_member_balance, new DecimalFormat("######0.00")
+                .format(Double.parseDouble(TextUtils.isEmpty(item.getSurplus()) ? "0.00" : item.getSurplus())));
     }
 
 }

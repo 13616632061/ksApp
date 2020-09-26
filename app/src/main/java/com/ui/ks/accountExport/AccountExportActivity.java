@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -46,6 +48,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @Description:数据导出
+ * @Author:lyf
+ * @Date: 2020/9/26
+ */
+@Route(path = RouterPath.ACTIVITY_ACCOUNT_EXPORT)
 public class AccountExportActivity extends BaseActivity implements AccountExportContract.View, View.OnClickListener {
 
     @BindView(R.id.tv_time)
@@ -81,6 +89,9 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
     @BindView(R.id.activity_put_report)
     RelativeLayout activityPutReport;
 
+    @Autowired(name = "type")
+    int type;
+
     private static final int REQUEST_CODE = 200;
     private static final int RESULT_CODE = 200;
 
@@ -111,10 +122,26 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
                 setStartTime(DateUtils.getNearlyDate(getEndTime(), 30));
                 break;
             case R.id.btn_e_mail://导出邮箱
-                mPresenter.sendEmailReportAccount();
+                switch (type) {
+                    case 1://销售统计导出邮箱
+                        mPresenter.goodSalesDatasendEmail();
+                        break;
+                    default://对账水流导出邮箱
+                        mPresenter.sendEmailReportAccount();
+                        break;
+                }
+
                 break;
             case R.id.btn_native://导入本地
-                mPresenter.downLoadExcel();
+                switch (type) {
+                    case 1://销售统计导出邮箱
+
+                        break;
+                    default://对账水流导出邮箱
+                        mPresenter.downLoadExcel();
+                        break;
+                }
+
                 break;
             case R.id.layout_set_starttime://开始时间
                 DateUtils.runTime(this, tvStarttime);
@@ -194,6 +221,7 @@ public class AccountExportActivity extends BaseActivity implements AccountExport
                 if (resultCode == RESULT_CODE) {
                     String email = data.getExtras().getString("email");
                     setEmail(email);
+
                 }
                 break;
         }

@@ -65,7 +65,7 @@
     <string name="title_activity_getopenorder">取单</string>
     <string name="title_activity_submitorder">提交订单</string>
     <string name="title_activity_printset">小票打印设置</string>
-    <string name="title_activity_putreport">对账导出</string>
+    <string name="title_activity_putreport">数据导出</string>
     <string name="title_activity_openorderpaycode">扫一扫</string>
     <string name="tv_yxservice">易星服务</string>
     <string name="tv_goods_management">商品管理</string>
@@ -595,9 +595,9 @@
     <string name="str354">添加成功</string>
     <string name="str355">导出邮箱</string>
     <string name="str356">请输入您的邮箱地址</string>
-    <string name="str357">对账流水将以Excel表格方式发生至邮箱</string>
-    <string name="str358">导出对账流水至邮箱</string>
-    <string name="str359">导出对账流水至本地</string>
+    <string name="str357">数据将以Excel表格方式发生至邮箱</string>
+    <string name="str358">数据导出至邮箱</string>
+    <string name="str359">数据导出至本地</string>
     <string name="str360">设置时间</string>
     <string name="str361">近30天</string>
     <string name="str362">近7天</string>
@@ -666,21 +666,12 @@
     <string name="str425">时间筛选</string>
     <string name="str426">库存</string>
     <string name="str427">商品扫描</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="str428">添加会员</string>
+    <string name="str429">会员搜索</string>
+    <string name="str430">请输入搜索内容</string>
+    <string name="str431">返现</string>
+    <string name="str432">会员生日</string>
+    <string name="str433">会员编辑</string>
 
 
 </resources>

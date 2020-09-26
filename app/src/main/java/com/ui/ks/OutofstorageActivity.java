@@ -11,8 +11,11 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.base.BaseActivity;
+import com.constant.RouterPath;
 import com.material.widget.PaperButton;
+import com.ui.ks.OutInStore.OutInStoreQueryListActivity;
 import com.ui.util.DateUtils;
 import com.ui.util.SysUtils;
 
@@ -23,21 +26,21 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
+ * 出入库报表查询
  * Created by admin on 2018/5/30.
  */
 
 public class OutofstorageActivity extends BaseActivity implements View.OnClickListener {
 
 
-
     private String date_begin;
     private String date_end;
 
-    Calendar mCalendar=Calendar.getInstance(Locale.CHINA);//设置为中国时间
-    DateFormat mDateFormat=new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
-    DateFormat mTimeFormat=new SimpleDateFormat("HH:mm");//设置时间格式
-    Date mDate=new Date(System.currentTimeMillis());//获取当前系统时间
-    EditText et_orderstart_date,et_orderstart_time,et_orderend_date,et_orderend_time;
+    Calendar mCalendar = Calendar.getInstance(Locale.CHINA);//设置为中国时间
+    DateFormat mDateFormat = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+    DateFormat mTimeFormat = new SimpleDateFormat("HH:mm");//设置时间格式
+    Date mDate = new Date(System.currentTimeMillis());//获取当前系统时间
+    EditText et_orderstart_date, et_orderstart_time, et_orderend_date, et_orderend_time;
     private PaperButton btn_ordersearch_save;
     private Button btn_ordersearch_reset;
 
@@ -54,13 +57,13 @@ public class OutofstorageActivity extends BaseActivity implements View.OnClickLi
     }
 
     private void initView() {
-        et_orderstart_date= (EditText) findViewById(R.id.et_orderstart_date);
-        et_orderstart_time= (EditText) findViewById(R.id.et_orderstart_time);
-        et_orderend_date= (EditText) findViewById(R.id.et_orderend_date);
-        et_orderend_time= (EditText) findViewById(R.id.et_orderend_time);
+        et_orderstart_date = (EditText) findViewById(R.id.et_orderstart_date);
+        et_orderstart_time = (EditText) findViewById(R.id.et_orderstart_time);
+        et_orderend_date = (EditText) findViewById(R.id.et_orderend_date);
+        et_orderend_time = (EditText) findViewById(R.id.et_orderend_time);
 
-        btn_ordersearch_save= (PaperButton) findViewById(R.id.btn_ordersearch_save);
-        btn_ordersearch_reset= (Button) findViewById(R.id.btn_ordersearch_reset);
+        btn_ordersearch_save = (PaperButton) findViewById(R.id.btn_ordersearch_save);
+        btn_ordersearch_reset = (Button) findViewById(R.id.btn_ordersearch_reset);
 
 
         et_orderstart_date.setOnClickListener(this);
@@ -102,12 +105,11 @@ public class OutofstorageActivity extends BaseActivity implements View.OnClickLi
     }
 
 
-
     //点击事件
     @Override
     public void onClick(View view) {
 
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.et_orderstart_date:
                 showCalendarDate(et_orderstart_date);
                 break;
@@ -120,15 +122,10 @@ public class OutofstorageActivity extends BaseActivity implements View.OnClickLi
             case R.id.et_orderend_time:
                 showCalendarTime(et_orderend_time);
                 break;
-            case R.id.btn_ordersearch_save:
-                date_begin=et_orderstart_date.getText().toString().trim()+" "+et_orderstart_time.getText().toString().trim();
-                date_end= et_orderend_date.getText().toString().trim()+" "+et_orderend_time.getText().toString().trim();
-                Intent intent=new Intent(OutofstorageActivity.this,Out_In_Activity.class);
-                intent.putExtra("date_begin",date_begin);
-                intent.putExtra("date_end",date_end);
-                startActivity(intent);
+            case R.id.btn_ordersearch_save://保存
+                toGoOutInStoreQueryPage();
                 break;
-            case R.id.btn_ordersearch_reset:
+            case R.id.btn_ordersearch_reset://重置
                 et_orderstart_date.setText(mDateFormat.format(mDate));
                 et_orderend_date.setText(mDateFormat.format(mDate));
                 et_orderstart_time.setText("00:00");
@@ -137,51 +134,65 @@ public class OutofstorageActivity extends BaseActivity implements View.OnClickLi
         }
     }
 
-
+    /**
+     * @Description:跳转出入库查询列表页
+     * @Author:lyf
+     * @Date: 2020/9/12
+     */
+    private void toGoOutInStoreQueryPage() {
+        date_begin = et_orderstart_date.getText().toString().trim() + " " + et_orderstart_time.getText().toString().trim();
+        date_end = et_orderend_date.getText().toString().trim() + " " + et_orderend_time.getText().toString().trim();
+        ARouter.getInstance().build(RouterPath.ACTIVITY_OUT_IN_SOTRE_QUERY)
+                .withString("date_begin", date_begin)
+                .withString("date_end", date_end)
+                .navigation();
+    }
 
     /**
      * 显示时间
+     *
      * @param editText
      */
     private void showCalendarTime(final EditText editText) {
         SysUtils.hideSoftKeyboard(OutofstorageActivity.this);
-        final TimePickerDialog.OnTimeSetListener time=new TimePickerDialog.OnTimeSetListener() {
+        final TimePickerDialog.OnTimeSetListener time = new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                mCalendar.set(Calendar.HOUR_OF_DAY,hourOfDay);
-                mCalendar.set(Calendar.MINUTE,minute);
+                mCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                mCalendar.set(Calendar.MINUTE, minute);
                 editText.setText(mTimeFormat.format(mCalendar.getTime()));
             }
         };
-        TimePickerDialog mTimePickerDialog=new TimePickerDialog(OutofstorageActivity.this,time,
-                mCalendar.get(Calendar.HOUR_OF_DAY),mCalendar.get(Calendar.MINUTE),true);
+        TimePickerDialog mTimePickerDialog = new TimePickerDialog(OutofstorageActivity.this, time,
+                mCalendar.get(Calendar.HOUR_OF_DAY), mCalendar.get(Calendar.MINUTE), true);
         mTimePickerDialog.show();
     }
 
     /**
      * 显示日期
+     *
      * @param editText
      */
     private void showCalendarDate(final EditText editText) {
         SysUtils.hideSoftKeyboard(OutofstorageActivity.this);
-        final String CurDate= DateUtils.getCurDate().substring(0,10);
-        DatePickerDialog.OnDateSetListener data=new DatePickerDialog.OnDateSetListener() {
+        final String CurDate = DateUtils.getCurDate().substring(0, 10);
+        DatePickerDialog.OnDateSetListener data = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                mCalendar.set(Calendar.YEAR,year);
-                mCalendar.set(Calendar.MONTH,monthOfYear);
-                mCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-                if(DateUtils.getDateSpan(CurDate,mDateFormat.format(mCalendar.getTime()),1)>0){
+                mCalendar.set(Calendar.YEAR, year);
+                mCalendar.set(Calendar.MONTH, monthOfYear);
+                mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                if (DateUtils.getDateSpan(CurDate, mDateFormat.format(mCalendar.getTime()), 1) > 0) {
                     editText.setText(CurDate);
                     SysUtils.showError(getString(R.string.str334));
-                }else {
+                } else {
                     editText.setText(mDateFormat.format(mCalendar.getTime()));
                 }
 
             }
         };
-        DatePickerDialog mDatePickerDialog=new DatePickerDialog(OutofstorageActivity.this,data,mCalendar.get(Calendar.YEAR),
-                mCalendar.get(Calendar.MONTH),mCalendar.get(Calendar.DAY_OF_MONTH));
+        DatePickerDialog mDatePickerDialog = new DatePickerDialog(OutofstorageActivity.this, data, mCalendar.get(Calendar.YEAR),
+                mCalendar.get(Calendar.MONTH), mCalendar.get(Calendar.DAY_OF_MONTH));
         mDatePickerDialog.show();
     }
 

@@ -34,4 +34,17 @@ public class ApiConstant {
     public static final String MON_ORDER = "ks.seller.mon_order";
     //建议反馈
     public static final String SUGGESTION_BACK = "http://yizhongyun.mikecrm.com/2dC7asQ";
+    //出入库查询列表页
+    public static final String DETAIL_LIST = "ks.pingban_seller.detail_list";
+    //会员列表
+    public static final String MENBERS_LIST = "ks.pingban_seller.members_list";
+    //添加会员
+    public static final String MENBERS_ADD = "ks.pingban_seller.add_members";
+    //编辑会员
+    public static final String MENBERS_EDIT = "ks.pingban_seller.edit_members";
+    //会员搜索
+    public static final String MENBERS_SEARCH = "ks.pingban_seller.search_members";
+    //销售统计筛选
+    public static final String GOODS_FILTER = "http://api.zjzccn.com/seller/pb.goods/count.html?";
+
 }

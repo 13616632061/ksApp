@@ -74,7 +74,7 @@ public class KsApplication extends LibAplication {
         SpeechUtilOffline tts = new SpeechUtilOffline(this);
 
         if (shouldInit()) {
-            MiPushClient.registerPush(this, "2882303761517488439", "5751748881439");
+            MiPushClient.registerPush(this, "2882303761517532170", "5371753231170");
         }
         LoggerInterface newLogger = new LoggerInterface() {
 

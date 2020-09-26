@@ -668,6 +668,16 @@
     <string name="str425">Filter time</string>
     <string name="str426">store</string>
     <string name="str427">Scan Goods code</string>
+    <string name="str428">Add Member</string>
+    <string name="str429">Search Member</string>
+    <string name="str430">Please enter the search content</string>
+    <string name="str431">cash back</string>
+    <string name="str432">birthday</string>
+    <string name="str433">Edite Member</string>
+
+
+
+
 
 
 </resources>

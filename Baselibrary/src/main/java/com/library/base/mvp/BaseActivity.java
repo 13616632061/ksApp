@@ -71,7 +71,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         ARouter.getInstance().inject(this);
 
 
-
         //初始化的时候将其添加到集合中
         synchronized (mActivitys) {
             mActivitys.add(this);
@@ -173,5 +172,19 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         ToastUtils.showShort(msg);
         ToastUtils.setMsgColor(getResources().getColor(R.color.blackText));
 
+    }
+
+    /**
+     * @Description:分页页数
+     * @Author:lyf
+     * @Date: 2020/9/12
+     */
+    public int totalPage(int totalNum) {
+        int pageNum = 20;
+        int page = totalNum / pageNum;
+        if (totalNum % pageNum > 0) {
+            page++;
+        }
+        return page;
     }
 }

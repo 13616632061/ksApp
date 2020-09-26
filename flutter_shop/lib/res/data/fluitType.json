@@ -1,0 +1,52 @@
+{
+  "status": 200,
+  "reslut": [
+    {
+      "id": "1",
+      "typeName": "西瓜蜜瓜",
+      "isSelect": true
+    }
+  ,
+    {
+      "id": "2",
+      "typeName": "葡提浆果",
+      "isSelect": false
+    },
+    {
+      "id": "3",
+      "typeName": "热带水果",
+      "isSelect": false
+
+    },
+    {
+      "id": "4",
+      "typeName": "苹果梨蕉",
+      "isSelect": false
+
+    },
+    {
+      "id": "5",
+      "typeName": "桃李芒枣",
+      "isSelect": false
+
+    },
+    {
+      "id": "6",
+      "typeName": "柑橘橙柚",
+      "isSelect": false
+
+    },
+    {
+      "id": "7",
+      "typeName": "奇异果",
+      "isSelect": false
+
+    },
+    {
+      "id": "8",
+      "typeName": "水果礼盒",
+      "isSelect": false
+
+    }
+  ]
+}

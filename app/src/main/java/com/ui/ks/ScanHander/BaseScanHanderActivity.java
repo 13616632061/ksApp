@@ -92,9 +92,8 @@ public abstract class BaseScanHanderActivity extends BaseActivity implements Sur
     private void initCamera(SurfaceHolder surfaceHolder) {
         try {
             CameraManager.get().openDriver(surfaceHolder);
-        } catch (IOException ioe) {
-            return;
-        } catch (RuntimeException e) {
+        } catch (Exception e) {
+            LogUtils.e(TAG + "  e:  " + e.toString());
             return;
         }
         if (handler == null) {
@@ -117,7 +116,8 @@ public abstract class BaseScanHanderActivity extends BaseActivity implements Sur
                 file.close();
                 mediaPlayer.setVolume(BEEP_VOLUME, BEEP_VOLUME);
                 mediaPlayer.prepare();
-            } catch (IOException e) {
+            } catch (Exception e) {
+                LogUtils.e(TAG + "  e:  " + e.toString());
                 mediaPlayer = null;
             }
         }
@@ -125,7 +125,7 @@ public abstract class BaseScanHanderActivity extends BaseActivity implements Sur
 
     private static final long VIBRATE_DURATION = 200L;
 
-    private void playBeepSoundAndVibrate() {
+    public void playBeepSoundAndVibrate() {
         if (playBeep && mediaPlayer != null) {
             mediaPlayer.start();
         }
@@ -156,16 +156,16 @@ public abstract class BaseScanHanderActivity extends BaseActivity implements Sur
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        if (!hasSurface) {
-            hasSurface = true;
-            initCamera(holder);
-        }
+//        if (!hasSurface) {
+//            hasSurface = true;
+        initCamera(holder);
+//        }
 
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        hasSurface = false;
+//        hasSurface = false;
 
     }
 
@@ -211,13 +211,13 @@ public abstract class BaseScanHanderActivity extends BaseActivity implements Sur
     }
 
     /**
-    *@Description:扫码枪成功
-    *@Author:lyf
-    *@Date: 2020/8/25
-    */
+     * @Description:扫码枪成功
+     * @Author:lyf
+     * @Date: 2020/8/25
+     */
     @Override
     public void onScanSuccess(String barcode) {
         Result result = new Result(barcode, null, null, null);
-        handleDecode(result,null);
+        handleDecode(result, null);
     }
 }

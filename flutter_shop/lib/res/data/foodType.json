@@ -1,0 +1,40 @@
+{
+  "status": 200,
+  "reslut": [
+    {
+      "id": "1",
+      "typeName": "鲜肉铺",
+      "isSelect": true
+    }
+  ,
+    {
+      "id": "2",
+      "typeName": "新鲜蔬菜",
+      "isSelect": false
+    },
+    {
+      "id": "3",
+      "typeName": "蛋类",
+      "isSelect": false
+
+    },
+    {
+      "id": "4",
+      "typeName": "肉禽",
+      "isSelect": false
+
+    },
+    {
+      "id": "5",
+      "typeName": "水产海鲜",
+      "isSelect": false
+
+    },
+    {
+      "id": "6",
+      "typeName": "粮油调料",
+      "isSelect": false
+
+    }
+  ]
+}
