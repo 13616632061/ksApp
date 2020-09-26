@@ -141,6 +141,7 @@
                     android:textSize="16dp" />
 
             </RelativeLayout>
+
             <TextView
                 android:id="@+id/tv_recently_used_email"
                 android:layout_width="wrap_content"
@@ -151,6 +152,8 @@
                 android:text="@string/str403"
                 android:textColor="@color/primary_color"
                 android:textSize="16sp" />
+
+
             <RelativeLayout
                 android:id="@+id/layout_e_mail"
                 android:layout_width="match_parent"

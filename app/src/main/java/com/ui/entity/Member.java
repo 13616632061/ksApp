@@ -1,5 +1,8 @@
 package com.ui.entity;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
@@ -96,7 +99,7 @@ public class Member {
                 this.info = info;
             }
 
-            public static class InfoBean {
+            public static class InfoBean implements Parcelable{
                 private String is_require_pass;
                 private String member_id;
                 private String member_lv_custom_id;
@@ -111,6 +114,37 @@ public class Member {
                 private String remark;
                 private String member_lv_custom_name;
                 private String member_lv_custom_remark;
+                private String fanxian;
+
+                protected InfoBean(Parcel in) {
+                    is_require_pass = in.readString();
+                    member_id = in.readString();
+                    member_lv_custom_id = in.readString();
+                    member_lv_custom_key = in.readString();
+                    surplus = in.readString();
+                    member_name = in.readString();
+                    mobile = in.readString();
+                    discount_rate = in.readString();
+                    score = in.readString();
+                    addtime = in.readString();
+                    birthday = in.readString();
+                    remark = in.readString();
+                    member_lv_custom_name = in.readString();
+                    member_lv_custom_remark = in.readString();
+                    fanxian = in.readString();
+                }
+
+                public static final Creator<InfoBean> CREATOR = new Creator<InfoBean>() {
+                    @Override
+                    public InfoBean createFromParcel(Parcel in) {
+                        return new InfoBean(in);
+                    }
+
+                    @Override
+                    public InfoBean[] newArray(int size) {
+                        return new InfoBean[size];
+                    }
+                };
 
                 public String getIs_require_pass() {
                     return is_require_pass;
@@ -222,6 +256,38 @@ public class Member {
 
                 public void setMember_lv_custom_remark(String member_lv_custom_remark) {
                     this.member_lv_custom_remark = member_lv_custom_remark;
+                }
+
+                public String getFanxian() {
+                    return fanxian;
+                }
+
+                public void setFanxian(String fanxian) {
+                    this.fanxian = fanxian;
+                }
+
+                @Override
+                public int describeContents() {
+                    return 0;
+                }
+
+                @Override
+                public void writeToParcel(Parcel dest, int flags) {
+                    dest.writeString(is_require_pass);
+                    dest.writeString(member_id);
+                    dest.writeString(member_lv_custom_id);
+                    dest.writeString(member_lv_custom_key);
+                    dest.writeString(surplus);
+                    dest.writeString(member_name);
+                    dest.writeString(mobile);
+                    dest.writeString(discount_rate);
+                    dest.writeString(score);
+                    dest.writeString(addtime);
+                    dest.writeString(birthday);
+                    dest.writeString(remark);
+                    dest.writeString(member_lv_custom_name);
+                    dest.writeString(member_lv_custom_remark);
+                    dest.writeString(fanxian);
                 }
             }
         }

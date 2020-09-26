@@ -3,6 +3,7 @@ package com.ui.util;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -30,9 +31,9 @@ public class SetEditTextInput {
             public void onTextChanged(CharSequence s, int start, int before,
                                       int count) {
                 StringBuilder sb = new StringBuilder();
-                CharSequence a[]=s.toString().split("[+]");
-                for(int i=0;i<a.length;i++){
-                    if(a[i].length()<8) {
+                CharSequence a[] = s.toString().split("[+]");
+                for (int i = 0; i < a.length; i++) {
+                    if (a[i].length() < 8) {
                         a[i] = a[i].subSequence(0, a[i].length());
                         if (a[i].toString().contains(".")) {
                             if (a[i].length() - 1 - a[i].toString().indexOf(".") > 2) {
@@ -69,7 +70,7 @@ public class SetEditTextInput {
                                 }
                             }
                         }
-                        if(a[i].length()>1&&a[i].toString().startsWith("0")&&a[i].toString().substring(1, 2).equals("0")){
+                        if (a[i].length() > 1 && a[i].toString().startsWith("0") && a[i].toString().substring(1, 2).equals("0")) {
                             a[i] = "0";
                             sb.append(a[i] + "+");
                             if (sb.substring(sb.length() - 1).equals("+")) {
@@ -151,25 +152,27 @@ public class SetEditTextInput {
         });
 
     }
+
     /**
      * 限制只能输入字母、数字和汉字
+     *
      * @return
      * @throws PatternSyntaxException
      */
-    public static void setStringFilter(final EditText editText)throws PatternSyntaxException{
+    public static void setStringFilter(final EditText editText) throws PatternSyntaxException {
         editText.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
                                       int count) {
-                String editable=editText.getText().toString();
+                String editable = editText.getText().toString();
                 // 只允许字母、数字和汉字
-                String   regEx  =  "[^a-zA-Z0-9\u4E00-\u9FA5]";
-                Pattern p   =   Pattern.compile(regEx);
-                Matcher m   =   p.matcher(editable);
-                String str=m.replaceAll("").trim();
+                String regEx = "[^a-zA-Z0-9\u4E00-\u9FA5]";
+                Pattern p = Pattern.compile(regEx);
+                Matcher m = p.matcher(editable);
+                String str = m.replaceAll("").trim();
 
-                if(!editable.equals(str)){
+                if (!editable.equals(str)) {
                     editText.setText(str);
                     //设置新的光标所在位置
                     editText.setSelection(str.length());
@@ -190,6 +193,7 @@ public class SetEditTextInput {
 
         });
     }
+
     /**
      * 小数点后两位
      *
@@ -253,11 +257,13 @@ public class SetEditTextInput {
         });
 
     }
+
     /**
-            * 金额输入框中的内容限制（最大：小数点前五位，小数点后2位）
-            * @param edt
-    */
-    public static void judgeNumber(final TextView edt){
+     * 金额输入框中的内容限制（最大：小数点前五位，小数点后2位）
+     *
+     * @param edt
+     */
+    public static void judgeNumber(final TextView edt) {
 
         edt.addTextChangedListener(new TextWatcher() {
             @Override
@@ -290,12 +296,14 @@ public class SetEditTextInput {
         });
 
     }
+
     /**
      * 金额输入框中的内容限制（最大：小数点前五位，小数点后2位）
      * 并限制输入最大数值
+     *
      * @param edt
      */
-    public static void judgeNumber2(final EditText edt, final double mdouble){
+    public static void judgeNumber2(final EditText edt, final double mdouble) {
 
         edt.addTextChangedListener(new TextWatcher() {
             @Override
@@ -323,8 +331,8 @@ public class SetEditTextInput {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (StringUtils.toDouble(edt.getEditableText().toString())>=mdouble){
-                    edt.setText(mdouble+"");
+                if (StringUtils.toDouble(edt.getEditableText().toString()) >= mdouble) {
+                    edt.setText(mdouble + "");
                 }
 
             }
@@ -334,36 +342,40 @@ public class SetEditTextInput {
 
     /**
      * 字符串小数点后两位
+     *
      * @param str
      */
-    public static String stringpointtwo(String str){
-        int posDot=str.lastIndexOf(".");
+    public static String stringpointtwo(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return "";
+        }
+        int posDot = str.lastIndexOf(".");
         if (str.length() - posDot - 1 > 2)//如果包含小数点
         {
-            str= str.subSequence(0,posDot+3).toString();//删除小数点后的第三位
+            str = str.subSequence(0, posDot + 3).toString();//删除小数点后的第三位
         }
-        if(str.length() - posDot - 1==1)//只有一位小数点，补齐两位小数
+        if (str.length() - posDot - 1 == 1)//只有一位小数点，补齐两位小数
         {
-            str=str+"0";
+            str = str + "0";
         }
-        if(str.length() - posDot - 1==0)//0位小数点，补齐两位小数
+        if (str.length() - posDot - 1 == 0)//0位小数点，补齐两位小数
         {
-            str=str+".00";
+            str = str + ".00";
         }
         return str;
     }
 
 
-
     /**
      * 禁止EditText输入空格
+     *
      * @param editText
      */
-    public static void setEditTextInhibitInputSpace(EditText editText){
-        InputFilter filter=new InputFilter() {
+    public static void setEditTextInhibitInputSpace(EditText editText) {
+        InputFilter filter = new InputFilter() {
             @Override
             public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
-                if(source.equals(" ") )
+                if (source.equals(" "))
                     return "";
                 else
                     return null;

@@ -38,11 +38,12 @@ public interface AccountExportContract {
         void setEmail(String email);
 
         String getEmail();
+
         /**
-        *@Description:跳转最近使用过的邮箱
-        *@Author:lyf
-        *@Date: 2020/8/1
-        */
+         * @Description:跳转最近使用过的邮箱
+         * @Author:lyf
+         * @Date: 2020/8/1
+         */
         void toGoRecentlyUsedEmailPage();
     }
 
@@ -68,6 +69,13 @@ public interface AccountExportContract {
          */
         void saveExcelFile(String url);
 
+        /**
+         * @Description:商品销售数据导出至邮箱
+         * @Author:lyf
+         * @Date: 2020/9/26
+         */
+        void goodSalesDatasendEmail();
+
     }
 
     interface Model {
@@ -91,5 +99,12 @@ public interface AccountExportContract {
          * @Date: 2020/8/1
          */
         Observable saveExcelFile(String url);
+
+        /**
+         * @Description:商品销售数据导出至邮箱
+         * @Author:lyf
+         * @Date: 2020/9/26
+         */
+        Observable goodSalesDatasendEmail(String begintime, String endtime, String Email);
     }
 }

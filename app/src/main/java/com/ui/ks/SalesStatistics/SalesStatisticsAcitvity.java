@@ -1,13 +1,19 @@
 package com.ui.ks.SalesStatistics;
 
+import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.LogUtils;
+import com.constant.RouterPath;
 import com.library.base.mvp.BaseActivity;
 import com.library.base.mvp.BaseFragment;
 import com.ui.fragment.GoodsSalesStatisticsFragment;
@@ -18,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * @Description:销售统计
@@ -26,6 +33,7 @@ import butterknife.BindView;
  */
 public class SalesStatisticsAcitvity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
+    private static final String TAG = SalesStatisticsAcitvity.class.getSimpleName();
 
     @BindView(R.id.rb_goods_statistics)
     RadioButton rbGoodsStatistics;
@@ -51,11 +59,22 @@ public class SalesStatisticsAcitvity extends BaseActivity implements RadioGroup.
 
     @Override
     protected void initView() {
-        initTabTitle(getResources().getString(R.string.sales_statistics), "");//销售统计
+        initTabTitle(getResources().getString(R.string.sales_statistics), getResources().getString(R.string.str355));//销售统计
         initTabTitle();
         initFragment();
 
 
+    }
+
+    @OnClick({R.id.toolbar_right})
+    public void setOnClick(View view) {
+        switch (view.getId()) {
+            case R.id.toolbar_right://导出邮箱
+                ARouter.getInstance().build(RouterPath.ACTIVITY_ACCOUNT_EXPORT)
+                        .withInt("type", 1)
+                        .navigation();
+                break;
+        }
     }
 
     private void initTabTitle() {

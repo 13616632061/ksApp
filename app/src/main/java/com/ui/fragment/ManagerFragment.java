@@ -37,7 +37,7 @@ import com.ui.ks.SalesStatistics.SalesStatisticsAcitvity;
 import com.ui.ks.H5GoodsPreviewActivity;
 import com.ui.ks.InventoryActivity;
 import com.ui.ks.MarketingActivity;
-import com.ui.ks.MemberManageActivity;
+import com.ui.ks.MemberManage.MemberManageActivity;
 import com.ui.ks.OpenOrderActivity;
 import com.ui.ks.Out_In_operationActivity;
 import com.ui.ks.R;

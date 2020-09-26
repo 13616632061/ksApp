@@ -26,7 +26,15 @@ public class RouterPath {
     //时间筛选
     public static final String ACTIVITY_TIME_FILTER = "/app/TimeFilterActivity";
     //扫描处理
-    public static final String ACTIVITY_SCAN_HANDER= "/app/ScanHanderActivity";
+    public static final String ACTIVITY_SCAN_HANDER = "/app/ScanHanderActivity";
     //处理库查询列表
-    public static final String ACTIVITY_OUT_IN_SOTRE_QUERY= "/app/OutInStoreQueryListActivity";
+    public static final String ACTIVITY_OUT_IN_SOTRE_QUERY = "/app/OutInStoreQueryListActivity";
+    //会员管理
+    public static final String ACTIVITY_MEMBER_MANAGE = "/app/MemberManageActivity";
+    //添加会员
+    public static final String ACTIVITY_ADD_MEMBER = "/app/AddEditMemberInfoActivity";
+    //会员搜索
+    public static final String ACTIVITY_SEARCH_MEMBER = "/app/MemberSearchActivity";
+    //数据导出
+    public static final String ACTIVITY_ACCOUNT_EXPORT = "/app/AccountExportActivity";
 }

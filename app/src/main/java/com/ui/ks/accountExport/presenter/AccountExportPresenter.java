@@ -13,6 +13,7 @@ import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.RegexUtils;
 import com.blankj.utilcode.util.SPUtils;
 import com.library.base.mvp.BasePresenter;
+import com.ui.entity.GoodsSalesStatisticsRespone;
 import com.ui.ks.R;
 import com.ui.ks.accountExport.AccountExportActivity;
 import com.ui.ks.accountExport.contract.AccountExportContract;
@@ -71,7 +72,7 @@ public class AccountExportPresenter extends BasePresenter<AccountExportActivity>
         }
 
         mView.showLoading();
-        addSubscription(mModel.sendReportAccount(starttime, endtime, e_mail), new Subscriber() {
+        addSubscription(mModel.sendReportAccount(starttime, endtime, e_mail), new Subscriber<ResultResponse>() {
             @Override
             public void onCompleted() {
                 mView.hideLoading();
@@ -83,11 +84,16 @@ public class AccountExportPresenter extends BasePresenter<AccountExportActivity>
             }
 
             @Override
-            public void onNext(Object o) {
+            public void onNext(ResultResponse response) {
                 //保存最近使用过的邮箱
                 RecentlyUsedEmailBean recentlyUsedEmailBean = new RecentlyUsedEmailBean();
                 recentlyUsedEmailBean.setEmail(e_mail);
                 recentlyUsedEmailBean.save();
+                if (response != null && response.getResponse() != null
+                        && "200".equals(response.getResponse().getStatus())){
+                    mView.showToast(mView.getResources().getString(R.string.errcode_success));//发送邮箱成功
+
+                }
             }
         });
     }
@@ -161,6 +167,58 @@ public class AccountExportPresenter extends BasePresenter<AccountExportActivity>
             }
         });
 
+    }
+    /**
+    *@Description:商品销售数据导出至邮箱
+    *@Author:lyf
+    *@Date: 2020/9/26
+    */
+    @Override
+    public void goodSalesDatasendEmail() {
+        mView.showLoading();
+        String starttime = mView.getStartTime();
+        String endtime = mView.getEndTime();
+        String e_mail = mView.getEmail();
+        if (TextUtils.isEmpty(starttime)) {
+            mView.showToast(mView.getResources().getString(R.string.str399));//开始时间不能为空
+            return;
+        }
+        if (TextUtils.isEmpty(endtime)) {
+            mView.showToast(mView.getResources().getString(R.string.str400));//结束时间不能为空
+            return;
+        }
+        if (TextUtils.isEmpty(e_mail)) {
+            mView.showToast(mView.getResources().getString(R.string.str401));//邮箱不能为空
+            return;
+        }
+        addSubscription(mModel.goodSalesDatasendEmail(starttime,endtime,e_mail), new Subscriber<ResultResponse>() {
+            @Override
+            public void onCompleted() {
+                mView.hideLoading();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                mView.hideLoading();
+
+            }
+
+            @Override
+            public void onNext(ResultResponse response) {
+                mView.hideLoading();
+                //保存最近使用过的邮箱
+                RecentlyUsedEmailBean recentlyUsedEmailBean = new RecentlyUsedEmailBean();
+                recentlyUsedEmailBean.setEmail(e_mail);
+                recentlyUsedEmailBean.save();
+                if (response != null && response.getResponse() != null
+                        && "200".equals(response.getResponse().getStatus())){
+                    mView.showToast(mView.getResources().getString(R.string.errcode_success));//发送邮箱成功
+
+                }
+            }
+
+
+        });
     }
 
 

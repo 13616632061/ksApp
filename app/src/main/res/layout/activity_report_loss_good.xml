@@ -7,7 +7,6 @@
     android:background="?gray_bg"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-
     tools:context="com.ui.ks.ReportLoss.ReportLossGoodActivity">
 
     <include

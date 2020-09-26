@@ -9,19 +9,29 @@ import com.ui.util.SysUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.internal.platform.Platform;
+import okhttp3.logging.HttpLoggingInterceptor;
+import okio.Buffer;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 
 /**
  * Created by Administrator on 2019/5/9.
@@ -68,26 +78,20 @@ public class ApiRetrofit {
     /**
      * 请求访问quest和response拦截器
      */
-    private Interceptor mLogInterceptor = chain -> {
-        Request request = chain.request();
-        long startTime = System.currentTimeMillis();
-        Response response = chain.proceed(chain.request());
-        long endTime = System.currentTimeMillis();
-        long duration = endTime - startTime;
-        okhttp3.MediaType mediaType = response.body().contentType();
-        String content = response.body().string();
-        LogUtils.e(TAG + "----------Request Start----------------");
-        LogUtils.e(TAG + "| Request  " + request.toString());
-        LogUtils.e(TAG + "----------Request headers----------------");
-        LogUtils.e(TAG + "| " + request.headers().toString());
-        LogUtils.e(TAG + "----------Request response----------------");
-        LogUtils.e(TAG + "| Response:" + response);
-        LogUtils.e(TAG + "----------Request End:" + duration + "毫秒----------");
-        LogUtils.e(TAG + "| Response:" + content);
-        return response.newBuilder()
-                .body(okhttp3.ResponseBody.create(mediaType, content))
-                .build();
-    };
+    private HttpLoggingInterceptor mLogInterceptor() {
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                //打印retrofit日志
+                LogUtils.e(TAG + "retrofitBack = " + URLDecoder.decode(message));
+            }
+        });
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        return loggingInterceptor;
+    }
+
+    ;
+
 
     /**
      * 增加头部信息的拦截器
@@ -113,16 +117,6 @@ public class ApiRetrofit {
                 .addParam("seller_token", KsApplication.getString("token", ""))
                 .build();
         return baseParamsLoggingInterceptor;
-//
-//        Request request = chain.request();
-//        Request.Builder requestBuilder = request.newBuilder();
-//        HttpUrl.Builder httpUrlBuilder = request.url().newBuilder();
-//        httpUrlBuilder.addQueryParameter("vsn", "1.0");
-//        httpUrlBuilder.addQueryParameter("format", "json");
-//        httpUrlBuilder.addQueryParameter("seller_token", KsApplication.getString("token", ""));
-//        requestBuilder.url(httpUrlBuilder.build());
-//        request = requestBuilder.build();
-//        return chain.proceed(requestBuilder.build());
     }
 
     public ApiRetrofit() {
@@ -136,7 +130,7 @@ public class ApiRetrofit {
 
         mClient = new OkHttpClient.Builder()
                 .addInterceptor(mHeaderInterceptor)//添加头部信息拦截器
-                .addInterceptor(mLogInterceptor)//添加log拦截器
+                .addInterceptor(mLogInterceptor())//添加log拦截器
                 .addInterceptor(mBaseParams())//添加公共参数拦截器
                 .cache(cache)
                 .connectTimeout(20, TimeUnit.SECONDS)
@@ -162,6 +156,7 @@ public class ApiRetrofit {
                 }
             }
         }
+        LogUtils.e(TAG + "token = " + KsApplication.getString("token", ""));
         return mApiRetrofit;
     }
 

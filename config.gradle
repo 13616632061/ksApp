@@ -25,6 +25,7 @@ ext {
             "retrofit2-adapter-rxjava"           : "com.squareup.retrofit2:adapter-rxjava:2.5.0",
             "retrofit2-adapter-converter-scalars": "com.squareup.retrofit2:converter-scalars:2.5.0",
             "okhttp3-logging-interceptor"        : "com.squareup.okhttp3:logging-interceptor:3.8.1",
+            "ihsanbal-LoggingInterceptor"        : "com.github.ihsanbal:LoggingInterceptor:3.1.0",
             //Rx
             "rxandroid"                          : "io.reactivex:rxandroid:1.2.0",
 
