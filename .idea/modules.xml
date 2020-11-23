@@ -5,9 +5,19 @@
       <module fileurl="file://$PROJECT_DIR$/Baselibrary/Baselibrary.iml" filepath="$PROJECT_DIR$/Baselibrary/Baselibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/DropDownMenu/DropDownMenu.iml" filepath="$PROJECT_DIR$/DropDownMenu/DropDownMenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jsbridge/com.github.lzyzsd.jsbridge-jsbridge.iml" filepath="$PROJECT_DIR$/.idea/modules/jsbridge/com.github.lzyzsd.jsbridge-jsbridge.iml" group="ksApp/jsbridge" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/component-shoper-platform/component-shoper-platform.iml" filepath="$PROJECT_DIR$/.idea/modules/component-shoper-platform/component-shoper-platform.iml" group="ksApp/component-shoper-platform" />
       <module fileurl="file://$PROJECT_DIR$/finestwebview/finestwebview.iml" filepath="$PROJECT_DIR$/finestwebview/finestwebview.iml" />
       <module fileurl="file://$PROJECT_DIR$/jsbridge/jsbridge.iml" filepath="$PROJECT_DIR$/jsbridge/jsbridge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ks-ksApp.iml" filepath="$PROJECT_DIR$/.idea/modules/ks-ksApp.iml" group="ksApp" />
       <module fileurl="file://$PROJECT_DIR$/ksApp.iml" filepath="$PROJECT_DIR$/ksApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Baselibrary/ksApp-Baselibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/Baselibrary/ksApp-Baselibrary.iml" group="ksApp/Baselibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DropDownMenu/ksApp-DropDownMenu.iml" filepath="$PROJECT_DIR$/.idea/modules/DropDownMenu/ksApp-DropDownMenu.iml" group="ksApp/DropDownMenu" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ksApp-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ksApp-app.iml" group="ksApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/finestwebview/ksApp-finestwebview.iml" filepath="$PROJECT_DIR$/.idea/modules/finestwebview/ksApp-finestwebview.iml" group="ksApp/finestwebview" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/orderDishes/ksApp-orderDishes.iml" filepath="$PROJECT_DIR$/.idea/modules/orderDishes/ksApp-orderDishes.iml" group="ksApp/orderDishes" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/viewpagerindicator/ksApp-viewpagerindicator.iml" filepath="$PROJECT_DIR$/.idea/modules/viewpagerindicator/ksApp-viewpagerindicator.iml" group="ksApp/viewpagerindicator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/volley/ksApp-volley.iml" filepath="$PROJECT_DIR$/.idea/modules/volley/ksApp-volley.iml" group="ksApp/volley" />
       <module fileurl="file://$PROJECT_DIR$/orderDishes/orderDishes.iml" filepath="$PROJECT_DIR$/orderDishes/orderDishes.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />
       <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
