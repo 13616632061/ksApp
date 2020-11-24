@@ -5,14 +5,14 @@
     android:minWidth="190.0dip">
 
     <RelativeLayout
-        android:id="@id/rl_background"
+        android:id="@+id/rl_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@drawable/bg_alertdialog">
 
         <ProgressBar
-            android:id="@id/center_process_bar"
+            android:id="@+id/center_process_bar"
             style="@style/ProgressBar.Loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
             android:layout_centerVertical="true" />
 
         <TextView
-            android:id="@id/top_process_promot"
+            android:id="@+id/top_process_promot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -33,7 +33,7 @@
             android:textSize="@dimen/text_size_info" />
 
         <TextView
-            android:id="@id/tv_line"
+            android:id="@+id/tv_line"
             android:layout_width="0.5dip"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -43,7 +43,7 @@
             android:minHeight="55.0dip" />
 
         <ImageButton
-            android:id="@id/imgbtn_guanbi"
+            android:id="@+id/imgbtn_guanbi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

@@ -11,7 +11,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 
 import com.blankj.utilcode.util.AppUtils;
-import com.didi.virtualapk.PluginManager;
+//import com.didi.virtualapk.PluginManager;
 import com.library.LanguageUtil.LanguageUtil;
 import com.library.LanguageUtil.PreferenceLanguageUtils;
 import com.library.app.LibAplication;
@@ -51,7 +51,7 @@ public class KsApplication extends LibAplication {
         super.attachBaseContext(base);
         MultiDex.install(this);
         //插件化
-        PluginManager.getInstance(base).init();
+//        PluginManager.getInstance(base).init();
     }
 
     @Override

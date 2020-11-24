@@ -30,7 +30,7 @@
             android:layout_marginLeft="10dp"
             android:layout_gravity="center_vertical"
             android:clickable="true"
-            android:id="@id/editText2"
+            android:id="@+id/editText2"
             android:background="@drawable/selector_flat_text"
             android:textSize="14sp"
             android:textColor="@color/accent_color"

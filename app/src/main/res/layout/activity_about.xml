@@ -10,7 +10,7 @@
         android:fadingEdge="none"
         android:overScrollMode="always"
         android:layout_below="@id/toolbar_layout"
-        android:id="@id/scrollView1"
+        android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true">

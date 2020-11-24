@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.didi.virtualapk.host'
+//apply plugin: 'com.didi.virtualapk.host'
 
 
 android {
 
 
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion '26.0.2'
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
     aaptOptions {
         cruncherEnabled = false
         useNewCruncher = false
@@ -129,7 +129,7 @@ dependencies {
     implementation 'com.quicklib:quicklib-multidex:1.0.1'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
-    implementation 'com.didi.virtualapk:core:0.9.8'
+//    implementation 'com.didi.virtualapk:core:0.9.8'
 
     api rootProject.ext.dependencies["arouter"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]

@@ -22,7 +22,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@id/btn_local"
+                android:id="@+id/btn_local"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:background="?attr/actionBarItemBackground"
@@ -30,7 +30,7 @@
                 android:visibility="gone" />
 
             <ImageButton
-                android:id="@id/btn_my"
+                android:id="@+id/btn_my"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="32dp"
@@ -59,7 +59,7 @@
                 android:visibility="gone" />
 
             <ImageButton
-                android:id="@id/btn_expand"
+                android:id="@+id/btn_expand"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:background="?attr/actionBarItemBackground"

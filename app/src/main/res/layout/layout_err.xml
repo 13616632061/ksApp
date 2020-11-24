@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     android:gravity="center_horizontal"
-    android:id="@id/rl_err"
+    android:id="@+id/rl_err"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="30dp"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <include
-        android:id="@id/include_noresult"
+        android:id="@+id/include_noresult"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
         android:layout_centerVertical="true"
         layout="@layout/load_noresult" />
     <include
-        android:id="@id/include_nowifi"
+        android:id="@+id/include_nowifi"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -54,7 +54,7 @@
             </RelativeLayout>
 
             <com.material.widget.PaperButton
-                android:id="@id/button1"
+                android:id="@+id/button1"
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/paper_height"
                 android:layout_margin="10dp"

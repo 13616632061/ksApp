@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RelativeLayout
-    android:id="@id/relativeLayout5"
+    android:id="@+id/relativeLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff67a8e2"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
-            android:id="@id/relativeLayout2"
+            android:id="@+id/relativeLayout2"
             android:paddingBottom="6.0dip"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"
@@ -74,7 +74,7 @@
 
 
         <RelativeLayout
-            android:id="@id/relativeLayout3"
+            android:id="@+id/relativeLayout3"
             android:paddingBottom="6.0dip"
             android:layout_width="0.0dip"
             android:layout_height="fill_parent"

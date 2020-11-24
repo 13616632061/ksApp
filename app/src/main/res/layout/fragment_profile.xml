@@ -257,7 +257,7 @@
 
             <!--打印设置-->
             <LinearLayout
-                android:id="@id/linearlayout01"
+                android:id="@+id/linearlayout01"
                 style="@style/profile_layout_style"
                 android:clickable="true">
 

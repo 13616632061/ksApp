@@ -87,7 +87,7 @@
         android:visibility="gone"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:id="@id/line"
+        android:id="@+id/line"
         android:layout_alignParentBottom="true"
         android:background="@color/divider_color"
         android:layout_width="match_parent"

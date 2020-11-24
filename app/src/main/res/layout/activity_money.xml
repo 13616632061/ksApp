@@ -65,7 +65,7 @@
                     app:paper_text="充值"/>
 
                 <com.material.widget.PaperButton
-                    android:id="@id/button2"
+                    android:id="@+id/button2"
                     android:layout_width="0.0dip"
                     android:layout_weight="1.0"
                     android:layout_height="@dimen/paper_height"

@@ -1,3 +1,5 @@
+include ':interface-take-out'
+include ':interface-shoper-platform'
 include ':component-shoper-platform'
 include ':app', ':volley', ':viewpagerindicator', ':finestwebview', ':jsbridge', ':DropDownMenu',
         ':orderDishes', ':Baselibrary'

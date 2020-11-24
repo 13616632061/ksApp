@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.MainActivity">
 
-   <fragment
-      android:name="com.example.component_shoper_platform.view.fragment.ShopperPlatformFragment"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"></fragment>
+<!--   <fragment-->
+<!--      android:name="com.example.component_shoper_platform.view.fragment.ShopperPlatformFragment"-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="match_parent"></fragment>-->
 
 </android.support.constraint.ConstraintLayout>

@@ -1,19 +1,18 @@
 package com.example.component_shoper_platform.view.activity;
 
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
 import com.example.component_shoper_platform.R;
-import com.library.base.mvp.BaseActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends Activity {
 
-
-    @Override
-    public int getContentView() {
-        return R.layout.activity_main;
-    }
 
     @Override
-    protected void initView() {
-
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
     }
 }
