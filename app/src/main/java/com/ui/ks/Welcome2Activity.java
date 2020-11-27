@@ -8,6 +8,7 @@ import android.view.View;
 import com.base.BaseActivity;
 import com.ui.util.LoginUtils;
 import com.ui.util.SysUtils;
+import com.ui.view.avtivity.ShopActivity;
 
 /**
  * 启动app时的欢迎页面，2s后进入

@@ -4,7 +4,6 @@
     package="com.example.component_shoper_platform">
 
     <application
-        android:name=".app.ShoperPlatformAplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".view.activity.MainActivity">
+        <activity android:name="com.example.component_shoper_platform.view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

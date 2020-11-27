@@ -29,11 +29,6 @@ android {
     }
 
     //jdk1.8
-//    compileOptions {
-//        sourceCompatibility JavaVersion.VERSION_1_7
-//        targetCompatibility JavaVersion.VERSION_1_7
-//    }
-
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
@@ -42,11 +37,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    //    testImplementation 'junit:junit:4.12'
-    //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    //    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api rootProject.ext.dependencies["appcompat-v7"]
-    //    api rootProject.ext.dependencies["design"]
     api rootProject.ext.dependencies["constraint-layout"]
     api rootProject.ext.dependencies["recyclerview"]
     debugCompile rootProject.ext.dependencies["debugCompile-leakcanary"]
@@ -75,12 +66,11 @@ dependencies {
     api rootProject.ext.dependencies["retrofit2-adapter-rxjava"]
     api rootProject.ext.dependencies["retrofit2-adapter-converter-scalars"]
     api rootProject.ext.dependencies["okhttp3-logging-interceptor"]
-//    api rootProject.ext.dependencies["ihsanbal-LoggingInterceptor"]
     api rootProject.ext.dependencies["jpinyin"]
     api rootProject.ext.dependencies["zxing"]
     api rootProject.ext.dependencies["eventbus"]
     api rootProject.ext.dependencies["xclcharts"]
-    api rootProject.ext.dependencies["360replugin"]
+//    api rootProject.ext.dependencies["360replugin"]
     api rootProject.ext.dependencies["gson"]
 
 }

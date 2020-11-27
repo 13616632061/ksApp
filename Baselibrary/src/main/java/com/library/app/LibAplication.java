@@ -11,8 +11,6 @@ import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.Utils;
 import com.library.LanguageUtil.LanguageUtil;
 import com.library.LanguageUtil.PreferenceLanguageUtils;
-import com.qihoo360.replugin.RePlugin;
-import com.qihoo360.replugin.RePluginApplication;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
@@ -24,7 +22,7 @@ import org.litepal.tablemanager.callback.DatabaseListener;
  * Created by Administrator on 2019/4/24.
  */
 
-public class LibAplication extends RePluginApplication {
+public class LibAplication extends Application {
 
     private RefWatcher refWatcher;
     //以下属性应用于整个应用程序，合理利用资源，减少资源浪费
@@ -55,7 +53,7 @@ public class LibAplication extends RePluginApplication {
         SQLiteDatabase db = LitePal.getDatabase();
         dbregisterDatabaseListener();
         //360插件初始化
-        RePlugin.App.onCreate();
+//        RePlugin.App.onCreate();
     }
 
     @Override
@@ -63,7 +61,7 @@ public class LibAplication extends RePluginApplication {
         super.attachBaseContext(base);
         MultiDex.install(this);
 
-        RePlugin.App.attachBaseContext(this);
+//        RePlugin.App.attachBaseContext(this);
     }
 
 

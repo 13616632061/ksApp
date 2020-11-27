@@ -10,7 +10,7 @@ buildscript {
     }
     dependencies {
 //        classpath 'com.android.tools.build:gradle:3.1.0'
-        classpath 'com.qihoo360.replugin:replugin-host-gradle:2.3.3'
+//        classpath 'com.qihoo360.replugin:replugin-host-gradle:2.3.3'
         classpath 'com.android.tools.build:gradle:3.5.3'
 //        classpath 'com.didi.virtualapk:gradle:0.9.8.6'
         classpath 'com.tencent.bugly:symtabfileuploader:2.1.0'

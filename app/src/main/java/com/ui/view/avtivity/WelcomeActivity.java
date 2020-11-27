@@ -1,4 +1,4 @@
-package com.ui.ks;
+package com.ui.view.avtivity;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -26,6 +26,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.base.BaseActivity;
 import com.ui.global.Global;
+import com.ui.ks.LoginActivity;
+import com.ui.ks.MainStoreActivity;
+import com.ui.ks.R;
+import com.ui.ks.ReportActivity;
 import com.ui.util.CustomRequest;
 import com.ui.util.LoginUtils;
 import com.ui.util.StringUtils;

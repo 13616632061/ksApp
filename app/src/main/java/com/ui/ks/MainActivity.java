@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.base.BaseActivity;
 import com.ui.global.Global;
 import com.ui.util.SysUtils;
+import com.ui.view.avtivity.ShopActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;

@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.astuetz.PagerSlidingTabStrip;
 import com.base.BaseFragment;
 import com.ui.ks.R;
-import com.ui.ks.ShopActivity;
+import com.ui.view.avtivity.ShopActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;

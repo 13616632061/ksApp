@@ -61,7 +61,10 @@ android {
     }
 
 
-
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
@@ -69,10 +72,12 @@ dependencies {
     api rootProject.ext.dependencies["appcompat-v7"]
     api rootProject.ext.dependencies["constraint-layout"]
     api rootProject.ext.dependencies["recyclerview"]
-//    implementation project(':Baselibrary')
+    implementation project(':Baselibrary')
     api rootProject.ext.dependencies["arouter"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
+    implementation project(':interface-shoper-platform')
 
 }
 repositories {

@@ -1,4 +1,4 @@
-package com.ui.ks;
+package com.ui.view.avtivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -21,6 +21,8 @@ import com.ui.fragment.ManagerFragment;
 import com.ui.fragment.ProfileFragment;
 import com.ui.fragment.ReportFragment;
 import com.ui.global.Global;
+import com.ui.ks.R;
+import com.ui.ks.SearchActivity;
 import com.ui.util.LoginUtils;
 import com.ui.util.SysUtils;
 import com.ui.view.FragmentTabHost;

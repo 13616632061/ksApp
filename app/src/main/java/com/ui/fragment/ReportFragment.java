@@ -33,7 +33,7 @@ import com.ui.ks.NoticeActivity;
 import com.ui.ks.OpenActivity;
 import com.ui.ks.accountExport.AccountExportActivity;
 import com.ui.ks.R;
-import com.ui.ks.ShopActivity;
+import com.ui.view.avtivity.ShopActivity;
 import com.ui.ks.ThisMonthAllOrderActivity;
 import com.ui.ks.TodayAllOrderActivity;
 import com.ui.util.CustomRequest;

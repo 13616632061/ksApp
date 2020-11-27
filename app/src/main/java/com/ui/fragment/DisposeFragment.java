@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import com.astuetz.PagerSlidingTabStrip;
 import com.base.BaseFragment;
 import com.ui.ks.R;
-import com.ui.ks.ShopActivity;
+import com.ui.view.avtivity.ShopActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;

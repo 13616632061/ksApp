@@ -9,7 +9,7 @@ import android.view.View;
 import com.base.BaseActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.ui.ks.R;
-import com.ui.ks.ShopActivity;
+import com.ui.view.avtivity.ShopActivity;
 import com.ui.languageSet.adapter.LanguageSetAdapter;
 import com.ui.languageSet.presenter.LanguageSetPresenter;
 import com.ui.languageSet.view.ILanguageSetViewImp;

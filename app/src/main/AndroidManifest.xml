@@ -170,10 +170,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WelcomeActivity"
+            android:name="com.ui.view.avtivity.WelcomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ShopActivity"
+            android:name="com.ui.view.avtivity.ShopActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity

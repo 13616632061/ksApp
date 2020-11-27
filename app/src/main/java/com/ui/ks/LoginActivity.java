@@ -46,6 +46,7 @@ import com.ui.util.DeleteEditText;
 import com.ui.util.LoginUtils;
 import com.ui.util.StringUtils;
 import com.ui.util.SysUtils;
+import com.ui.view.avtivity.ShopActivity;
 
 import org.json.JSONObject;
 
