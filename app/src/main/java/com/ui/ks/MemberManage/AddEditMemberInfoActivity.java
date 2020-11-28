@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.utils.TextUtils;
+import com.blankj.utilcode.util.TimeUtils;
 import com.constant.RouterPath;
 import com.library.base.mvp.BaseActivity;
 import com.ui.entity.Member;
@@ -111,7 +113,7 @@ public class AddEditMemberInfoActivity extends BaseActivity implements AddEditMe
         setMemberIntegral(memberBean.getScore());
         setDiscountRate(memberBean.getDiscount_rate());
         setCashBack(memberBean.getFanxian());
-        setBirthday(memberBean.getBirthday());
+        setBirthday(TextUtils.isEmpty(memberBean.getBirthday()) ? "" : TimeUtils.millis2String(Long.parseLong(memberBean.getBirthday())));
     }
 
     /**

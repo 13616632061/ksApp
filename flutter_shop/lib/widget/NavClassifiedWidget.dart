@@ -3,6 +3,8 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:convert';
 import 'package:flutter_shop/bean/HomeDataBean.dart';
+import 'package:flutter_shop/page/ShopListPage.dart';
+import 'package:flutter_shop/utils/NavigatorUtil.dart';
 
 /**
  * 分类导航
@@ -42,12 +44,17 @@ class _NavClassifiedWidgetState extends State<NavClassifiedWidget> {
   }
 
   Widget _item(List<NavClassifiedBean> datas, int index) {
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Image.asset(datas[index].imagePath, height: 40, width: 40,),
-          Text(datas[index].typeName, style: TextStyle(fontSize: 14),)
-        ],
+    return GestureDetector(
+      onTap: (){
+        NavigatorUtil.push(context, ShopListPage());
+      },
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            Image.asset(datas[index].imagePath, height: 40, width: 40,),
+            Text(datas[index].typeName, style: TextStyle(fontSize: 14),)
+          ],
+        ),
       ),
     );
   }

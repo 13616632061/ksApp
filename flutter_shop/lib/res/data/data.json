@@ -24,27 +24,27 @@
         {
             "id":"5",
             "imagePath":"lib/res/images/icon_food.png",
-            "typeName":"甜品饮品"
+            "typeName":"粮油副食"
         },
         {
             "id":"6",
             "imagePath":"lib/res/images/icon_food.png",
-            "typeName":"快餐便当"
+            "typeName":"饮料酒水"
         },
         {
             "id":"7",
             "imagePath":"lib/res/images/icon_food.png",
-            "typeName":"包子粥店"
+            "typeName":"休闲零食"
         },
         {
             "id":"8",
             "imagePath":"lib/res/images/icon_food.png",
-            "typeName":"米粉面馆"
+            "typeName":"粮食米面"
         },
         {
             "id":"9",
             "imagePath":"lib/res/images/icon_food.png",
-            "typeName":"麻辣烫"
+            "typeName":"日用百货"
         },
         {
             "id":"10",
@@ -54,12 +54,12 @@
         {
             "id":"11",
             "imagePath":"lib/res/images/icon_food.png",
-            "typeName":"火锅"
+            "typeName":"面包派类"
         },
         {
             "id":"12",
             "imagePath":"lib/res/images/icon_food.png",
-            "typeName":"特色小吃"
+            "typeName":"方便熟食"
         }
     ]
 }

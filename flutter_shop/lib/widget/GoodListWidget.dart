@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/bean/BannerBean.dart';
 import 'package:flutter_shop/bean/good_info_list_bean.dart';
-import 'package:flutter_shop/widget/shop_car_widget.dart';
+import 'package:flutter_shop/widget/bottom_ettlement.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_shop/utils/ScreenUtils.dart';
 import 'package:flutter_shop/bean/GoodTypeBean.dart';
@@ -47,8 +47,9 @@ class _GoodListWidgetState extends State<GoodListWidget> {
           children: <Widget>[
             _BannerSwiper(),
             _goodList(),
-            ShopCarWidget(
+            BottomEttlementWidget(
               shopCarNum: shopCarNum,
+              goodsInfoData: _goodsInfoData,
             )
           ]),
     );
@@ -265,6 +266,7 @@ class _GoodListWidgetState extends State<GoodListWidget> {
           ],
         ));
   }
+
 
   /**
    * 头部当前分类
