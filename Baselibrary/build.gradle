@@ -61,6 +61,7 @@ dependencies {
     api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
     api rootProject.ext.dependencies["GSYVideoPlayer"]
     api rootProject.ext.dependencies["rxandroid"]
+    api rootProject.ext.dependencies["rxjava"]
     api rootProject.ext.dependencies["retrofit2-retrofit"]
     api rootProject.ext.dependencies["retrofit2-gson"]
     api rootProject.ext.dependencies["retrofit2-adapter-rxjava"]
